@@ -44,17 +44,20 @@ interface LogoProps {
   variant?: 'full' | 'mark' | 'wordmark'
   className?: string
   wordmarkClassName?: string
+  /** 'onDark' renders the wordmark near-white for dark/overlay placements. */
+  tone?: 'default' | 'onDark'
 }
 
-/** Black EMOTO wordmark with a yellow sting-dot, paired with the winged-E bee. */
-export function Logo({ variant = 'full', className, wordmarkClassName }: LogoProps) {
+/** EMOTO wordmark with a yellow sting-dot, paired with the winged-E bee. */
+export function Logo({ variant = 'full', className, wordmarkClassName, tone = 'default' }: LogoProps) {
   return (
     <span className={['inline-flex items-center gap-2', className].filter(Boolean).join(' ')}>
       {variant !== 'wordmark' && <Mark className="h-8 w-8 shrink-0" />}
       {variant !== 'mark' && (
         <span
           className={[
-            'font-display font-black uppercase leading-none tracking-tight text-text-strong',
+            'font-display font-black uppercase leading-none tracking-tight',
+            tone === 'onDark' ? 'text-paper' : 'text-text-strong',
             'text-[1.4rem]',
             wordmarkClassName,
           ]

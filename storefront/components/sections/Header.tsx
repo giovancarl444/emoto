@@ -49,6 +49,13 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
   const otherLocale: Locale = locale === 'sv' ? 'en' : 'sv'
   const switchedPath = pathname.replace(/^\/(sv|en)/, `/${otherLocale}`)
 
+  // Cinematic overlay: transparent header with light text over the dark home hero.
+  const isHome = pathname === `/${locale}`
+  const overlay = isHome && !scrolled && !menuOpen
+  const linkClass = overlay
+    ? 'text-paper/70 hover:text-paper'
+    : 'text-text-muted hover:text-text-strong'
+
   return (
     <header
       className={`sticky top-0 z-header border-b transition-colors duration-2 ${
@@ -59,7 +66,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
     >
       <div className="container-emoto flex h-16 items-center justify-between gap-4">
         <Link href={`/${locale}`} aria-label="EMOTO home" className="shrink-0">
-          <Logo />
+          <Logo tone={overlay ? 'onDark' : 'default'} />
         </Link>
 
         {/* Desktop nav */}
@@ -74,7 +81,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
               >
                 <Link
                   href={l.href}
-                  className="inline-flex h-11 items-center gap-1 px-3 text-sm text-text-muted transition-colors hover:text-text-strong"
+                  className={`inline-flex h-11 items-center gap-1 px-3 text-sm transition-colors ${linkClass}`}
                   aria-expanded={modelsOpen}
                 >
                   {l.label}
@@ -105,7 +112,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
               <Link
                 key={l.href}
                 href={l.href}
-                className="inline-flex h-11 items-center px-3 text-sm text-text-muted transition-colors hover:text-text-strong"
+                className={`inline-flex h-11 items-center px-3 text-sm transition-colors ${linkClass}`}
               >
                 {l.label}
               </Link>
@@ -116,7 +123,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
         <div className="flex items-center gap-1">
           <Link
             href={switchedPath}
-            className="hidden h-11 items-center gap-1.5 rounded-sm px-3 font-mono text-2xs uppercase tracking-caps text-text-muted hover:text-text-strong sm:inline-flex"
+            className={`hidden h-11 items-center gap-1.5 rounded-sm px-3 font-mono text-2xs uppercase tracking-caps sm:inline-flex ${linkClass}`}
             aria-label={`Switch to ${otherLocale.toUpperCase()}`}
           >
             <Icon name="globe" size={15} />
@@ -124,7 +131,9 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
           </Link>
           <CartButton label={t('cart.title', locale)} />
           <button
-            className="inline-flex h-11 w-11 items-center justify-center rounded-sm text-text-strong hover:bg-surface lg:hidden"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-sm lg:hidden ${
+              overlay ? 'text-paper hover:bg-white/10' : 'text-text-strong hover:bg-surface'
+            }`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Menu"
             aria-expanded={menuOpen}

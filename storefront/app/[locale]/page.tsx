@@ -3,7 +3,7 @@ import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
 import { getAllModels, getAllParts } from '@/lib/content'
-import { Hero } from '@/components/sections/Hero'
+import { ShowcaseHero } from '@/components/sections/ShowcaseHero'
 import { TrustStrip } from '@/components/sections/TrustStrip'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ProductCard } from '@/components/commerce/ProductCard'
@@ -27,7 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <Hero locale={locale} />
+      <ShowcaseHero locale={locale} />
       <TrustStrip locale={locale} />
 
       {/* Model lineup */}
