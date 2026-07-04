@@ -1,0 +1,13 @@
+{%- comment -%} EMOTO — 404 {%- endcomment -%}
+<section class="error404">
+  <div class="container error404__inner">
+    <span class="error404__code">404</span>
+    <h1 class="error404__title">{{ '404.title' | t: default: 'Sidan hittades inte' }}</h1>
+    <p class="error404__body">{{ '404.body' | t: default: "Sidan du letade efter finns inte." }}</p>
+    <a class="btn-signal" href="{{ routes.root_url }}">{{ '404.home' | t: default: 'Tillbaka till startsidan' }}</a>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "404", "tag": "section", "settings": [] }
+{% endschema %}

@@ -1,0 +1,38 @@
+{%- comment -%} EMOTO — search results {%- endcomment -%}
+<section class="search">
+  <div class="container">
+    <header class="search__head">
+      <span class="eyebrow">{{ 'search.title' | t: default: 'Sök' }}</span>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search__form">
+        <input type="search" name="q" value="{{ search.terms | escape }}"
+               placeholder="{{ 'search.placeholder' | t: default: 'Sök i butiken' }}"
+               class="search__input" autocomplete="off">
+        <button type="submit" class="btn-action search__submit">{{ 'search.title' | t: default: 'Sök' }}</button>
+      </form>
+    </header>
+
+    {%- if search.performed -%}
+      {%- if search.results.size > 0 -%}
+        <p class="search__count">{{ search.results_count }} {{ 'search.results' | t: default: 'resultat för' }} “{{ search.terms | escape }}”</p>
+        <div class="collection__grid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {%- render 'product-card', card_product: item, index: forloop.index0 -%}
+            {%- else -%}
+              <a class="search__result" href="{{ item.url }}">
+                <span class="search__result-kind">{{ item.object_type }}</span>
+                <span class="search__result-title">{{ item.title }}</span>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <p class="search__empty">{{ 'search.no_results' | t: default: 'Inga resultat hittades.' }} “{{ search.terms | escape }}”</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Search", "tag": "section", "settings": [] }
+{% endschema %}

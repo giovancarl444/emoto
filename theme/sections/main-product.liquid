@@ -1,0 +1,122 @@
+{%- liquid
+  assign product = product
+  assign variant = product.selected_or_first_available_variant
+-%}
+<section class="pdp" data-product-section data-product-url="{{ product.url }}">
+  <div class="container pdp__grid">
+    {%- comment -%} ── Media gallery ── {%- endcomment -%}
+    <div class="pdp__media">
+      <div class="pdp__stage" data-pdp-stage>
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            <div class="pdp__slide{% if forloop.first %} is-active{% endif %}" data-pdp-slide="{{ forloop.index0 }}">
+              {{ media.preview_image | image_url: width: 1400 | image_tag: alt: media.alt | default: product.title, loading: forloop.first | default: 'lazy' }}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="pdp__slide is-active"><img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ product.title }}" width="803" height="429"></div>
+        {%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="pdp__thumbs" data-pdp-thumbs>
+          {%- for media in product.media -%}
+            <button type="button" class="pdp__thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb="{{ forloop.index0 }}" aria-label="{{ 'product.media' | t: default: 'Image' }} {{ forloop.index }}">
+              {{ media.preview_image | image_url: width: 200 | image_tag: alt: '', loading: 'lazy' }}
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Info / buy ── {%- endcomment -%}
+    <div class="pdp__info">
+      {%- if product.vendor != blank -%}<span class="eyebrow">{{ product.vendor }}</span>{%- endif -%}
+      <h1 class="pdp__title">{{ product.title }}</h1>
+
+      <div class="pdp__pricerow">
+        <span class="pdp__price" data-pdp-price>{{ variant.price | money }}</span>
+        {%- if variant.compare_at_price > variant.price -%}
+          <s class="pdp__compare" data-pdp-compare>{{ variant.compare_at_price | money }}</s>
+        {%- endif -%}
+      </div>
+      <p class="pdp__fin" data-pdp-fin>
+        {{ 'product.or' | t: default: 'eller' }} <span data-pdp-monthly>{{ variant.price | divided_by: 36 | money }}</span>/{{ 'product.month' | t: default: 'mån' }} · {{ 'product.incl_vat' | t: default: 'inkl. moms' }}
+      </p>
+
+      {%- if product.description != blank -%}
+        <div class="pdp__lead">{{ product.description | strip_html | truncatewords: 34 }}</div>
+      {%- endif -%}
+
+      {%- form 'product', product, id: 'product-form', class: 'pdp__form' -%}
+        <input type="hidden" name="id" value="{{ variant.id }}" data-pdp-variant-id>
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="pdp__opt" data-pdp-option="{{ option.position }}">
+              <div class="pdp__opt-head">
+                <span class="pdp__opt-label">{{ option.name }}</span>
+                <span class="pdp__opt-selected" data-pdp-opt-selected="{{ option.position }}">{{ option.selected_value }}</span>
+              </div>
+              <div class="pdp__opt-values">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="pdp__opt-btn{% if option.selected_value == value %} is-selected{% endif %}"
+                    data-pdp-value
+                    data-option-position="{{ option.position }}"
+                    data-value="{{ value | escape }}"
+                  >{{ value }}</button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <button type="submit" name="add" class="pdp__atc btn-action" data-pdp-atc {% unless variant.available %}disabled{% endunless %}>
+          <span data-pdp-atc-text>
+            {%- if variant.available -%}{{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' }}{%- else -%}{{ 'product.sold_out' | t: default: 'Slutsåld' }}{%- endif -%}
+          </span>
+        </button>
+      {%- endform -%}
+
+      <ul class="pdp__trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg> {{ section.settings.trust_1 | default: '2 års garanti' }}</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg> {{ section.settings.trust_2 | default: 'Fri leverans inom EU (DDP)' }}</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg> {{ section.settings.trust_3 | default: 'Registreringshjälp ingår' }}</li>
+      </ul>
+    </div>
+  </div>
+
+  {%- if product.description != blank -%}
+    <div class="container pdp__body">
+      <div class="pdp__prose rte">{{ product.description }}</div>
+    </div>
+  {%- endif -%}
+</section>
+
+<script type="application/json" data-pdp-variants>
+{{ product.variants | json }}
+</script>
+
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.money_format = {{ shop.money_format | json }};
+  window.EMOTO_STR = {
+    add: {{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' | json }},
+    soldout: {{ 'product.sold_out' | t: default: 'Slutsåld' | json }},
+    unavailable: {{ 'product.unavailable' | t: default: 'Ej tillgänglig' | json }}
+  };
+</script>
+<script src="{{ 'product.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Product — main",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "trust_1", "label": "Trust 1", "default": "2 års garanti" },
+    { "type": "text", "id": "trust_2", "label": "Trust 2", "default": "Fri leverans inom EU (DDP)" },
+    { "type": "text", "id": "trust_3", "label": "Trust 3", "default": "Registreringshjälp ingår" }
+  ]
+}
+{% endschema %}

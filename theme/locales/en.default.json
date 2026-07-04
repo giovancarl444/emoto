@@ -1,6 +1,11 @@
 {
   "general": {
-    "cart": "Cart"
+    "cart": "Cart",
+    "search": "Search",
+    "menu": "Menu",
+    "close": "Close",
+    "password_prompt": "Enter password",
+    "enter": "Enter"
   },
   "showroom": {
     "from": "From",
@@ -9,5 +14,48 @@
     "configure": "Configure",
     "prev": "Previous",
     "next": "Next"
+  },
+  "product": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "or": "or",
+    "month": "mo",
+    "incl_vat": "incl. VAT",
+    "media": "Image",
+    "from": "From",
+    "view": "View model",
+    "on_sale": "Sale",
+    "new": "New"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "update": "Update",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "taxes_note": "Shipping and taxes calculated at checkout."
+  },
+  "collection": {
+    "all": "All models",
+    "empty": "No products found.",
+    "items": "products"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search the store",
+    "results": "Results for",
+    "no_results": "No results found."
+  },
+  "footer": {
+    "newsletter": "Stay in the loop"
+  },
+  "404": {
+    "title": "Page not found",
+    "body": "The page you were looking for doesn't exist.",
+    "home": "Back to home"
   }
 }

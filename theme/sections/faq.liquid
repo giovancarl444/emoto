@@ -1,0 +1,73 @@
+{%- comment -%} EMOTO — FAQ accordion + FAQPage structured data {%- endcomment -%}
+<section class="faq">
+  <div class="container faq__inner">
+    <header class="faq__head">
+      <span class="eyebrow">{{ section.settings.eyebrow | default: 'Vanliga frågor' }}</span>
+      <h2 class="faq__title">{{ section.settings.heading | default: 'Bra att veta' }}</h2>
+    </header>
+
+    <div class="faq__list">
+      {%- for block in section.blocks -%}
+        <details class="faq__item" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
+          <summary class="faq__q">
+            {{ block.settings.question }}
+            <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a rte">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- if section.blocks.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+    {
+      "@type": "Question",
+      "name": {{ block.settings.question | json }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Vanliga frågor" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Bra att veta" }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Q&A",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Är motorcykeln gaturegistrerad?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Våra L1e- och L3e-versioner är godkända för väg. Off-road-versionerna är avsedda för privat mark och bana.</p>" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "qa", "settings": { "question": "Är motorcykeln gaturegistrerad?", "answer": "<p>Våra L1e- och L3e-versioner är godkända för väg i Sverige. Off-road-versionerna är avsedda för privat mark och bana.</p>" } },
+        { "type": "qa", "settings": { "question": "Hjälper ni med registrering?", "answer": "<p>Ja. Registreringshjälp ingår — vi förbereder allt pappersarbete så att du snabbt kan få din maskin vägklar.</p>" } },
+        { "type": "qa", "settings": { "question": "Kan jag delbetala?", "answer": "<p>Absolut. Välj Klarna eller Qliro i kassan — betala senare eller dela upp i upp till 36 månader.</p>" } },
+        { "type": "qa", "settings": { "question": "Hur lång är leveranstiden?", "answer": "<p>Lagervaror skickas inom 3–5 arbetsdagar med fri leverans inom EU. Beställningsvaror anges per modell.</p>" } },
+        { "type": "qa", "settings": { "question": "Vilken garanti gäller?", "answer": "<p>2 års garanti på alla nya maskiner, plus tillgång till service och reservdelar via vårt nätverk.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

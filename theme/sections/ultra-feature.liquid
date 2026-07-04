@@ -4,7 +4,7 @@
   {%- if section.settings.image != blank -%}
     <div class="feature__bike" aria-hidden="true">{{ section.settings.image | image_url: width: 1400 | image_tag: alt: '' }}</div>
   {%- else -%}
-    <div class="feature__bike" aria-hidden="true"><img src="{{ 'ultra-bee.png' | asset_url }}" alt=""></div>
+    <div class="feature__bike" aria-hidden="true"><img src="{{ 'ultra-bee.png' | asset_url }}" alt="" width="803" height="429"></div>
   {%- endif -%}
   <div class="feature__scrim" aria-hidden="true"></div>
 
@@ -39,7 +39,7 @@
       {%- if section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: 1200 | image_tag: alt: section.settings.heading }}
       {%- else -%}
-        <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ section.settings.heading }}">
+        <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ section.settings.heading }}" width="803" height="429">
       {%- endif -%}
     </div>
   </div>
