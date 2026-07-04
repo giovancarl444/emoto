@@ -25,6 +25,7 @@
     "month": "mån",
     "incl_vat": "inkl. moms",
     "media": "Bild",
+    "klarna": "Klarna",
     "from": "Från",
     "view": "Se modellen",
     "on_sale": "Kampanj",
@@ -52,6 +53,9 @@
     "placeholder": "Sök i butiken",
     "results": "Resultat för",
     "no_results": "Inga resultat hittades."
+  },
+  "reviews": {
+    "count": "recensioner"
   },
   "footer": {
     "newsletter": "Håll dig uppdaterad",

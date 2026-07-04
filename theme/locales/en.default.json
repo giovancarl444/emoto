@@ -25,6 +25,7 @@
     "month": "mo",
     "incl_vat": "incl. VAT",
     "media": "Image",
+    "klarna": "Klarna",
     "from": "From",
     "view": "View model",
     "on_sale": "Sale",
@@ -52,6 +53,9 @@
     "placeholder": "Search the store",
     "results": "Results for",
     "no_results": "No results found."
+  },
+  "reviews": {
+    "count": "reviews"
   },
   "footer": {
     "newsletter": "Stay in the loop",

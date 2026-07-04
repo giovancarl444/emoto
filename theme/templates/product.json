@@ -6,7 +6,13 @@
         "trust_1": "2 års garanti",
         "trust_2": "Fri leverans inom EU (DDP)",
         "trust_3": "Registreringshjälp ingår"
-      }
+      },
+      "blocks": {
+        "h1": { "type": "highlight", "settings": { "value": "≈21 kW", "label": "Toppeffekt" } },
+        "h2": { "type": "highlight", "settings": { "value": "140 km", "label": "Räckvidd" } },
+        "h3": { "type": "highlight", "settings": { "value": "≈90 km/h", "label": "Toppfart" } }
+      },
+      "block_order": ["h1", "h2", "h3"]
     },
     "specs": {
       "type": "product-specs",
@@ -26,6 +32,15 @@
       },
       "block_order": ["g1", "r1", "r2", "r3", "g2", "r4", "r5", "r6", "g3", "r7", "r8", "r9"]
     },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "rv1": { "type": "review", "settings": { "rating": 5, "quote": "Bästa köpet på år. Leveransen var smidig och registreringshjälpen sparade mig timmar av pappersarbete.", "name": "Johan L.", "detail": "Ultra Bee · Stockholm" } },
+        "rv2": { "type": "review", "settings": { "rating": 5, "quote": "Känns som en premiumprodukt hela vägen — från sajten till maskinen. Delbetalningen via Klarna gjorde det enkelt.", "name": "Amir K.", "detail": "Storm Bee · Göteborg" } },
+        "rv3": { "type": "review", "settings": { "rating": 5, "quote": "Perfekt första elmotorcykel. Personlig rådgivning och snabb support. Rekommenderar starkt.", "name": "Elin S.", "detail": "Light Bee X · Malmö" } }
+      },
+      "block_order": ["rv1", "rv2", "rv3"]
+    },
     "related": {
       "type": "related-products",
       "settings": {
@@ -33,5 +48,5 @@
       }
     }
   },
-  "order": ["main", "specs", "related"]
+  "order": ["main", "specs", "reviews", "related"]
 }
