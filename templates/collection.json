@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "eyebrow": "Modeller",
+        "show_description": true
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -47,7 +47,7 @@
         {%- if block.settings.image != blank -%}
           {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: block.settings.name }}
         {%- else -%}
-          <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ block.settings.name }}" width="1200">
+          <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ block.settings.name }}" width="803" height="429">
         {%- endif -%}
         <span class="showroom__bike-label">{{ block.settings.name }}</span>
       </button>

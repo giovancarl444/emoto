@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>{{ shop.name }} — presentkort</title>
+    {% render 'fonts' %}
+    {{ 'emoto.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body class="tpl-giftcard">
+    <main class="giftcard">
+      <div class="giftcard__card">
+        <div class="giftcard__brand">
+          <span class="giftcard__mark">{% render 'bee-mark' %}</span>
+          <span class="giftcard__word">{{ shop.name }}</span>
+        </div>
+        <p class="giftcard__label">Presentkort</p>
+        <p class="giftcard__value">{{ gift_card.balance | money }}</p>
+        <div class="giftcard__code">{{ gift_card.code | format_code }}</div>
+        <a class="btn-signal giftcard__cta" href="{{ shop.url }}">Handla nu</a>
+        {%- if gift_card.pass_url -%}
+          <a class="giftcard__wallet" href="{{ gift_card.pass_url }}">Lägg till i Apple Wallet</a>
+        {%- endif -%}
+      </div>
+    </main>
+    {{ content_for_layout }}
+  </body>
+</html>

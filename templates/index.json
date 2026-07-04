@@ -36,6 +36,16 @@
       },
       "block_order": ["light", "ultra", "storm"]
     },
+    "trust": {
+      "type": "trust-strip",
+      "blocks": {
+        "t1": { "type": "item", "settings": { "icon": "truck", "title": "Fri leverans", "subtitle": "Inom hela EU (DDP)" } },
+        "t2": { "type": "item", "settings": { "icon": "shield", "title": "2 års garanti", "subtitle": "Fabriks- & servicegaranti" } },
+        "t3": { "type": "item", "settings": { "icon": "doc", "title": "Registreringshjälp", "subtitle": "Vi ordnar pappersarbetet" } },
+        "t4": { "type": "item", "settings": { "icon": "card", "title": "Delbetalning", "subtitle": "Från 0 % ränta via Klarna" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"]
+    },
     "feature": {
       "type": "ultra-feature",
       "blocks": {
@@ -45,7 +55,56 @@
         "s4": { "type": "spec", "settings": { "value": "≈90 km/h", "label": "Toppfart" } }
       },
       "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "lineup": {
+      "type": "model-lineup",
+      "blocks": {
+        "m1": { "type": "model", "settings": { "name": "Light Bee X", "marque": "Sur-Ron", "tagline": "Ren elektrisk enduro. Runt 50 kg.", "badge": "Lättast", "price": 54900 } },
+        "m2": { "type": "model", "settings": { "name": "Ultra Bee", "marque": "Sur-Ron", "tagline": "Stadsgodkänd. Terrängfödd.", "badge": "Mest mångsidig", "price": 64900 } },
+        "m3": { "type": "model", "settings": { "name": "Storm Bee", "marque": "Sur-Ron", "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.", "badge": "Starkast", "price": 99900 } }
+      },
+      "block_order": ["m1", "m2", "m3"]
+    },
+    "financing": {
+      "type": "value-band",
+      "settings": {
+        "eyebrow": "Delbetalning",
+        "heading": "Kör nu. Betala i din takt.",
+        "body": "Dela upp betalningen med Klarna eller Qliro — direkt i kassan. Välj mellan att betala senare eller upp till 36 månaders delbetalning."
+      },
+      "blocks": {
+        "p1": { "type": "point", "settings": { "title": "Från 0 % ränta", "body": "Kampanjperioder via Klarna" } },
+        "p2": { "type": "point", "settings": { "title": "Upp till 36 mån", "body": "Sprid ut kostnaden" } },
+        "p3": { "type": "point", "settings": { "title": "Direkt besked", "body": "Ansök i kassan på sekunder" } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+    "concierge": {
+      "type": "value-band",
+      "settings": {
+        "dark": true,
+        "eyebrow": "Vägklar utan krångel",
+        "heading": "Vi tar hand om pappersarbetet.",
+        "body": "Från registrering till försäkringsunderlag — vår concierge gör din maskin vägklar. Du kör, vi sköter byråkratin."
+      },
+      "blocks": {
+        "c1": { "type": "point", "settings": { "title": "Registreringshjälp ingår", "body": "L1e/L3e-versioner" } },
+        "c2": { "type": "point", "settings": { "title": "Försäkringsunderlag", "body": "Allt du behöver, förberett" } },
+        "c3": { "type": "point", "settings": { "title": "Personlig kontakt", "body": "En dedikerad rådgivare" } }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "question": "Är motorcykeln gaturegistrerad?", "answer": "<p>Våra L1e- och L3e-versioner är godkända för väg i Sverige. Off-road-versionerna är avsedda för privat mark och bana.</p>" } },
+        "q2": { "type": "qa", "settings": { "question": "Hjälper ni med registrering?", "answer": "<p>Ja. Registreringshjälp ingår — vi förbereder allt pappersarbete så att du snabbt kan få din maskin vägklar.</p>" } },
+        "q3": { "type": "qa", "settings": { "question": "Kan jag delbetala?", "answer": "<p>Absolut. Välj Klarna eller Qliro i kassan — betala senare eller dela upp i upp till 36 månader.</p>" } },
+        "q4": { "type": "qa", "settings": { "question": "Hur lång är leveranstiden?", "answer": "<p>Lagervaror skickas inom 3–5 arbetsdagar med fri leverans inom EU. Beställningsvaror anges per modell.</p>" } },
+        "q5": { "type": "qa", "settings": { "question": "Vilken garanti gäller?", "answer": "<p>2 års garanti på alla nya maskiner, plus tillgång till service och reservdelar via vårt nätverk.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"]
     }
   },
-  "order": ["showroom", "feature"]
+  "order": ["showroom", "trust", "feature", "lineup", "financing", "concierge", "faq"]
 }
