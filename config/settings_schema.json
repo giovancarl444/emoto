@@ -1,0 +1,17 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "EMOTO",
+    "theme_version": "0.1.0",
+    "theme_author": "EMOTO",
+    "theme_documentation_url": "https://emoto.se",
+    "theme_support_url": "https://emoto.se"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "signal", "label": "Signal (bee yellow)", "default": "#f5c518" },
+      { "type": "color", "id": "ink", "label": "Ink (black)", "default": "#0b0c0e" }
+    ]
+  }
+]

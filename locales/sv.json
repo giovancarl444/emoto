@@ -1,0 +1,13 @@
+{
+  "general": {
+    "cart": "Varukorg"
+  },
+  "showroom": {
+    "from": "Från",
+    "or": "eller",
+    "month": "mån",
+    "configure": "Konfigurera",
+    "prev": "Föregående",
+    "next": "Nästa"
+  }
+}

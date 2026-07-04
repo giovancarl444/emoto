@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "showroom": {
+      "type": "showroom-hero",
+      "blocks": {
+        "light": {
+          "type": "model",
+          "settings": {
+            "name": "Light Bee X",
+            "marque": "Sur-Ron",
+            "tagline": "Ren elektrisk enduro. Runt 50 kg.",
+            "badge": "Lättast",
+            "price": 54900
+          }
+        },
+        "ultra": {
+          "type": "model",
+          "settings": {
+            "name": "Ultra Bee",
+            "marque": "Sur-Ron",
+            "tagline": "Stadsgodkänd. Terrängfödd.",
+            "badge": "Mest mångsidig",
+            "price": 64900
+          }
+        },
+        "storm": {
+          "type": "model",
+          "settings": {
+            "name": "Storm Bee",
+            "marque": "Sur-Ron",
+            "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.",
+            "badge": "Starkast",
+            "price": 99900
+          }
+        }
+      },
+      "block_order": ["light", "ultra", "storm"]
+    }
+  },
+  "order": ["showroom"]
+}
