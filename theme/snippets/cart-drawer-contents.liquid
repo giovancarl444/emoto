@@ -1,0 +1,42 @@
+{%- comment -%} EMOTO — cart drawer inner contents (re-rendered on change) {%- endcomment -%}
+{%- if cart.item_count > 0 -%}
+  <ul class="cart-drawer__items">
+    {%- for item in cart.items -%}
+      <li class="cart-drawer__item" data-cart-line="{{ forloop.index }}">
+        <a href="{{ item.url }}" class="cart-drawer__thumb">
+          {%- if item.image -%}{{ item.image | image_url: width: 160 | image_tag: alt: item.title, loading: 'lazy', widths: '80, 160' }}{%- endif -%}
+        </a>
+        <div class="cart-drawer__meta">
+          <a href="{{ item.url }}" class="cart-drawer__name">{{ item.product.title }}</a>
+          {%- unless item.variant.title contains 'Default' -%}<span class="cart-drawer__variant">{{ item.variant.title }}</span>{%- endunless -%}
+          <div class="cart-drawer__controls">
+            <div class="cart-drawer__qty">
+              <button type="button" data-cart-minus="{{ forloop.index }}" aria-label="−">−</button>
+              <span data-cart-qty>{{ item.quantity }}</span>
+              <button type="button" data-cart-plus="{{ forloop.index }}" aria-label="+">+</button>
+            </div>
+            <span class="cart-drawer__price">{{ item.final_line_price | money }}</span>
+          </div>
+          <button type="button" class="cart-drawer__remove" data-cart-remove="{{ forloop.index }}">{{ 'cart.remove' | t: default: 'Ta bort' }}</button>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+  <footer class="cart-drawer__foot">
+    <div class="cart-drawer__subtotal">
+      <span>{{ 'cart.subtotal' | t: default: 'Delsumma' }}</span>
+      <strong>{{ cart.total_price | money }}</strong>
+    </div>
+    <p class="cart-drawer__financing">{{ 'product.or' | t: default: 'eller' }} {{ cart.total_price | divided_by: 36 | money }}/{{ 'product.month' | t: default: 'mån' }} · {{ 'cart.klarna' | t: default: 'via Klarna' }}</p>
+    <p class="cart-drawer__note">{{ 'cart.taxes_note' | t: default: 'Frakt och moms beräknas i kassan.' }}</p>
+    <a href="{{ routes.cart_url }}/checkout" class="btn-action cart-drawer__checkout">{{ 'cart.checkout' | t: default: 'Till kassan' }}</a>
+    <a href="{{ routes.all_products_collection_url }}" class="cart-drawer__continue" data-cart-close>{{ 'cart.continue' | t: default: 'Fortsätt handla' }}</a>
+  </footer>
+{%- else -%}
+  <div class="cart-drawer__empty">
+    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    <p>{{ 'cart.empty' | t: default: 'Din varukorg är tom.' }}</p>
+    <a class="btn-signal" href="{{ routes.all_products_collection_url }}" data-cart-close>{{ 'cart.continue' | t: default: 'Fortsätt handla' }}</a>
+  </div>
+{%- endif -%}

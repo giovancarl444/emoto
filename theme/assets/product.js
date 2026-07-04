@@ -11,12 +11,13 @@
 
   var form = root.querySelector('[data-product-section] form, .pdp__form') || root.querySelector('form');
   var idInput = root.querySelector('[data-pdp-variant-id]');
-  var priceEl = root.querySelector('[data-pdp-price]');
+  var priceEls = root.querySelectorAll('[data-pdp-price]');
   var compareEl = root.querySelector('[data-pdp-compare]');
   var monthlyEl = root.querySelector('[data-pdp-monthly]');
-  var atc = root.querySelector('[data-pdp-atc]');
-  var atcText = root.querySelector('[data-pdp-atc-text]');
+  var atcEls = root.querySelectorAll('[data-pdp-atc]');
+  var atcTextEls = root.querySelectorAll('[data-pdp-atc-text]');
   var moneyFormat = (window.Shopify && window.Shopify.money_format) || '{{amount}} kr';
+  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
 
   /* Current selection: option position (1-based) → value */
   var selected = {};
@@ -79,13 +80,13 @@
     });
 
     if (!v) {
-      if (atc) { atc.disabled = true; }
-      if (atcText) { atcText.textContent = window.EMOTO_STR ? window.EMOTO_STR.unavailable : 'Ej tillgänglig'; }
+      each(atcEls, function (b) { b.disabled = true; });
+      each(atcTextEls, function (t) { t.textContent = window.EMOTO_STR ? window.EMOTO_STR.unavailable : 'Ej tillgänglig'; });
       return;
     }
 
     if (idInput) idInput.value = v.id;
-    if (priceEl) priceEl.textContent = formatMoney(v.price);
+    each(priceEls, function (el) { el.textContent = formatMoney(v.price); });
     if (compareEl) {
       if (v.compare_at_price && v.compare_at_price > v.price) {
         compareEl.textContent = formatMoney(v.compare_at_price);
@@ -96,12 +97,12 @@
     }
     if (monthlyEl) monthlyEl.textContent = formatMoney(Math.round(v.price / 36));
 
-    if (atc) atc.disabled = !v.available;
-    if (atcText) {
-      atcText.textContent = v.available
+    each(atcEls, function (b) { b.disabled = !v.available; });
+    each(atcTextEls, function (t) {
+      t.textContent = v.available
         ? (window.EMOTO_STR ? window.EMOTO_STR.add : 'Lägg i varukorg')
         : (window.EMOTO_STR ? window.EMOTO_STR.soldout : 'Slutsåld');
-    }
+    });
 
     /* Reflect variant image in the gallery if it has one */
     if (v.featured_media && typeof v.featured_media.position === 'number') {

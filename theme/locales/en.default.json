@@ -5,7 +5,9 @@
     "menu": "Menu",
     "close": "Close",
     "password_prompt": "Enter password",
-    "enter": "Enter"
+    "enter": "Enter",
+    "announcement": "Announcements",
+    "skip_to_content": "Skip to content"
   },
   "showroom": {
     "from": "From",
@@ -37,6 +39,7 @@
     "update": "Update",
     "remove": "Remove",
     "quantity": "Quantity",
+    "klarna": "via Klarna",
     "taxes_note": "Shipping and taxes calculated at checkout."
   },
   "collection": {
@@ -51,7 +54,17 @@
     "no_results": "No results found."
   },
   "footer": {
-    "newsletter": "Stay in the loop"
+    "newsletter": "Stay in the loop",
+    "models": "Models",
+    "company": "Company",
+    "support": "Support",
+    "about": "About EMOTO",
+    "journal": "Journal",
+    "contact": "Contact",
+    "delivery": "Delivery",
+    "financing": "Financing",
+    "payments": "Payment methods",
+    "independent": "Independent retailer. Sur-Ron is a trademark of its respective owner."
   },
   "404": {
     "title": "Page not found",
