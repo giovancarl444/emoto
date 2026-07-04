@@ -25,7 +25,7 @@ export function SectionHeading({
       {link && (
         <Link
           href={link.href}
-          className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-text-muted transition-colors hover:text-signal"
+          className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-text-muted transition-colors hover:text-signal-ink"
         >
           {link.label}
           <Icon name="arrow-right" size={16} />

@@ -35,7 +35,7 @@ export default async function TrackOrderPage({
         {order ? (
           <>
             <OrderTracker order={order} locale={locale} />
-            <a href={`/${locale}/spar-order`} className="mt-8 inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-signal">
+            <a href={`/${locale}/spar-order`} className="mt-8 inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-signal-ink">
               <Icon name="arrow-right" size={16} className="rotate-180" />
               {sv ? 'Spåra en annan order' : 'Track another order'}
             </a>

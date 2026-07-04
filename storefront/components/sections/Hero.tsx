@@ -45,7 +45,9 @@ export function Hero({ locale }: { locale: Locale }) {
           <h1 className="reveal mt-4 font-display text-4xl font-black uppercase leading-[0.92] tracking-tight text-text-strong sm:text-display">
             {L(COPY.headline1, locale)}
             <br />
-            <span className="text-signal">{L(COPY.headline2, locale)}</span>
+            <span className="box-decoration-clone bg-signal px-2 text-text-strong">
+              {L(COPY.headline2, locale)}
+            </span>
           </h1>
           <p className="reveal mt-6 max-w-xl text-md text-text-muted">{L(COPY.sub, locale)}</p>
 

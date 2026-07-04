@@ -12,19 +12,18 @@ const base =
   'active:translate-y-px disabled:pointer-events-none disabled:opacity-45'
 
 const variants: Record<Variant, string> = {
-  // Primary CTA — ember signal, dark text (passes AA), lifts on hover
+  // Primary CTA — black workhorse button, white text
   signal:
-    'bg-signal text-on-signal hover:bg-signal-hover hover:shadow-signal ' +
-    'active:bg-signal-press border border-transparent',
-  // High-contrast neutral
+    'bg-action text-action-text hover:bg-action-hover active:bg-action-press border border-transparent',
+  // Accent CTA — the bee sting (yellow), black text
   solid:
-    'bg-bone-50 text-ink-950 hover:bg-white border border-transparent',
-  // Outline on dark
+    'bg-signal text-on-signal hover:bg-signal-hover hover:shadow-signal border border-transparent',
+  // Outline — black hairline on light
   outline:
-    'bg-transparent text-text-strong border border-border-strong hover:border-bone-100 hover:bg-surface',
+    'bg-transparent text-text-strong border border-ink-950 hover:bg-grey-50',
   // Quiet
   ghost:
-    'bg-transparent text-text border border-transparent hover:bg-surface hover:text-text-strong',
+    'bg-transparent text-text border border-transparent hover:bg-grey-50 hover:text-text-strong',
 }
 
 const sizes: Record<Size, string> = {

@@ -64,7 +64,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <ol className="mt-6 flex flex-col gap-3">
               {regSteps.map((s, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-signal/40 bg-signal-tint font-mono text-2xs text-signal">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-signal/40 bg-signal-tint font-mono text-2xs text-signal-ink">
                     {i + 1}
                   </span>
                   <span className="text-sm text-text">{s[locale]}</span>
@@ -114,7 +114,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="border-t border-border">
         <div className="container-eldr flex flex-col items-start gap-6 py-14 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <Icon name="bolt" size={28} className="text-signal" />
+            <Icon name="bolt" size={28} className="text-signal-ink" />
             <h2 className="font-display text-xl font-black uppercase tracking-tight text-text-strong sm:text-2xl">
               {locale === 'sv' ? 'Redo att köra?' : 'Ready to ride?'}
             </h2>

@@ -64,7 +64,7 @@ export default async function ComparePage({ params }: { params: Promise<{ locale
                       <Media src={m.hero.src} alt={L(m.hero.alt, locale)} fill sizes="220px" className="object-cover transition-transform duration-3 group-hover:scale-105" />
                     </span>
                     <span className="eyebrow">{m.marque}</span>
-                    <span className="font-display text-lg font-black uppercase leading-none tracking-tight text-text-strong group-hover:text-signal">
+                    <span className="font-display text-lg font-black uppercase leading-none tracking-tight text-text-strong group-hover:text-signal-ink">
                       {m.name}
                     </span>
                   </Link>

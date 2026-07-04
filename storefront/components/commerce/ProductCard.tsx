@@ -59,7 +59,7 @@ export function ProductCard({
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex flex-col gap-1">
           <span className="eyebrow">{model.marque}</span>
-          <h3 className="font-display text-xl font-black uppercase leading-none tracking-tight text-text-strong transition-colors group-hover:text-signal">
+          <h3 className="font-display text-xl font-black uppercase leading-none tracking-tight text-text-strong transition-colors group-hover:text-signal-ink">
             {model.name}
           </h3>
           <p className="text-sm text-text-muted">{L(model.tagline, locale)}</p>
@@ -76,7 +76,7 @@ export function ProductCard({
               {locale === 'sv' ? 'mån' : 'mo'}
             </span>
           </div>
-          <span className="inline-flex items-center gap-1 text-sm text-text-muted transition-transform duration-2 group-hover:translate-x-0.5 group-hover:text-signal">
+          <span className="inline-flex items-center gap-1 text-sm text-text-muted transition-transform duration-2 group-hover:translate-x-0.5 group-hover:text-signal-ink">
             {t('cta.configure', locale)}
             <Icon name="arrow-right" size={16} />
           </span>

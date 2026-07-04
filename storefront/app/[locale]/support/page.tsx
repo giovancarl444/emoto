@@ -61,7 +61,7 @@ export default async function Page({
             href={q.href}
             className="group flex items-center gap-3 rounded-md border border-border bg-surface p-4 transition-colors hover:border-border-strong"
           >
-            <Icon name={q.icon} size={20} className="shrink-0 text-signal" />
+            <Icon name={q.icon} size={20} className="shrink-0 text-signal-ink" />
             <span className="text-sm font-medium text-text-strong">{L(q.label, l)}</span>
             <Icon name="chevron-right" size={16} className="ml-auto text-text-faint transition-transform group-hover:translate-x-0.5" />
           </Link>

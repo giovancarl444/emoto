@@ -158,7 +158,7 @@ export default async function RegistrationPage({ params }: { params: Promise<{ l
               <tr className="border-b border-border-strong text-left">
                 <th className="py-3 pr-4 font-mono text-2xs uppercase tracking-caps text-text-faint">{locale === 'sv' ? 'Egenskap' : 'Attribute'}</th>
                 <th className="py-3 pr-4 font-display text-base uppercase text-text-strong">L1e-B</th>
-                <th className="py-3 font-display text-base uppercase text-signal">L3e</th>
+                <th className="py-3 font-display text-base uppercase text-signal-ink">L3e</th>
               </tr>
             </thead>
             <tbody>
@@ -180,7 +180,7 @@ export default async function RegistrationPage({ params }: { params: Promise<{ l
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <li key={i} className="flex flex-col gap-3 rounded-md border border-border bg-surface p-5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/40 bg-signal-tint font-display text-lg font-bold text-signal">
+              <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/40 bg-signal-tint font-display text-lg font-bold text-signal-ink">
                 {i + 1}
               </span>
               <h3 className="text-sm font-semibold text-text-strong">{L(s.t, locale)}</h3>

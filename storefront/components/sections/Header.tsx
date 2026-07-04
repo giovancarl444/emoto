@@ -90,7 +90,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
                           className="group flex flex-col gap-0.5 rounded-sm p-3 transition-colors hover:bg-surface-hover"
                         >
                           <span className="eyebrow">{m.marque}</span>
-                          <span className="font-display text-base font-bold uppercase tracking-tight text-text-strong group-hover:text-signal">
+                          <span className="font-display text-base font-bold uppercase tracking-tight text-text-strong group-hover:text-signal-ink">
                             {m.name}
                           </span>
                           <span className="text-xs text-text-faint">{m.tagline}</span>

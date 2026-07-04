@@ -33,7 +33,7 @@ export function SpecTable({ groups, locale }: { groups: SpecGroup[]; locale: Loc
                 <dd
                   className={[
                     'font-mono text-sm',
-                    s.highlight ? 'text-signal' : 'text-text-strong',
+                    s.highlight ? 'text-signal-ink' : 'text-text-strong',
                   ].join(' ')}
                 >
                   {L(s.value, locale)}

@@ -160,7 +160,7 @@ export function ProductConfigurator({
       {/* Plain-language consequences — the anxiety killer */}
       <div className="rounded-md border border-border bg-surface p-4">
         <div className="mb-3 flex items-center gap-2">
-          <Icon name="info" size={16} className="text-signal" />
+          <Icon name="info" size={16} className="text-signal-ink" />
           <span className="eyebrow eyebrow--signal">
             {isStreet
               ? locale === 'sv'
@@ -197,7 +197,7 @@ export function ProductConfigurator({
           <span className="flex flex-1 flex-col gap-0.5">
             <span className="flex items-center justify-between gap-2">
               <span className="text-sm font-semibold text-text-strong">{regService.name}</span>
-              <span className="font-mono text-sm text-signal">+ {formatSEK(regService.priceSek, locale)}</span>
+              <span className="font-mono text-sm text-signal-ink">+ {formatSEK(regService.priceSek, locale)}</span>
             </span>
             <span className="text-xs text-text-muted">
               {locale === 'sv'
@@ -239,7 +239,7 @@ export function ProductConfigurator({
           ] as const
         ).map((it) => (
           <li key={it.label.en} className="flex items-center gap-2 text-2xs text-text-muted">
-            <Icon name={it.icon} size={15} className="shrink-0 text-signal" />
+            <Icon name={it.icon} size={15} className="shrink-0 text-signal-ink" />
             {it.label[locale]}
           </li>
         ))}

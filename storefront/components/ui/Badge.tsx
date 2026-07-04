@@ -6,12 +6,13 @@ import { t } from '@/lib/i18n'
 type Tone = 'neutral' | 'signal' | 'success' | 'warning' | 'danger' | 'info'
 
 const tones: Record<Tone, string> = {
-  neutral: 'border-border text-text-muted bg-surface',
-  signal: 'border-signal/40 text-signal bg-signal-tint',
-  success: 'border-success/40 text-success bg-success/10',
-  warning: 'border-warning/40 text-warning bg-warning/10',
-  danger: 'border-danger/40 text-danger bg-danger/10',
-  info: 'border-ion-400/40 text-ion-300 bg-ion-400/10',
+  // Solid status chips + outline neutral (the bee palette)
+  neutral: 'border-border text-text-muted bg-grey-50',
+  signal: 'border-transparent text-on-signal bg-signal',
+  success: 'border-transparent text-white bg-success',
+  warning: 'border-transparent text-white bg-warning',
+  danger: 'border-transparent text-white bg-danger',
+  info: 'border-ink-300 text-text-strong bg-white',
 }
 
 export function Badge({

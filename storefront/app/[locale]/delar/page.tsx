@@ -39,7 +39,7 @@ export default async function PartsPage({
     <Link
       href={href}
       className={`inline-flex min-h-9 items-center rounded-pill border px-3.5 text-sm transition-colors ${
-        active ? 'border-signal bg-signal-tint text-signal' : 'border-border bg-surface text-text-muted hover:text-text-strong'
+        active ? 'border-signal bg-signal-tint text-signal-ink' : 'border-border bg-surface text-text-muted hover:text-text-strong'
       }`}
     >
       {label}

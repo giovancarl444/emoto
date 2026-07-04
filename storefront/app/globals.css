@@ -37,12 +37,6 @@
     font-weight: var(--weight-regular);
     min-height: 100dvh;
     text-underline-offset: 0.18em;
-    /* subtle forged grain via layered gradients — not a "tech gradient" cliché,
-       just barely-there depth on the matte base */
-    background-image:
-      radial-gradient(1200px 600px at 78% -8%, rgba(255, 90, 31, 0.05), transparent 60%),
-      radial-gradient(900px 500px at 8% 108%, rgba(63, 125, 148, 0.045), transparent 55%);
-    background-attachment: fixed;
   }
 
   h1,
@@ -74,7 +68,7 @@
   }
 
   ::selection {
-    background: var(--ember-500);
+    background: var(--signal);
     color: var(--ink-950);
   }
 
@@ -124,7 +118,7 @@
   }
 
   .eyebrow--signal {
-    color: var(--signal);
+    color: var(--signal-ink);
   }
 
   /* Hairline divider */

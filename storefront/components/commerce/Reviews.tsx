@@ -27,7 +27,7 @@ function Stars({ rating }: { rating: number }) {
           key={i}
           name="star"
           size={15}
-          className={i <= rating ? 'fill-signal text-signal' : 'text-border-strong'}
+          className={i <= rating ? 'fill-review text-review' : 'text-border-strong'}
         />
       ))}
     </div>

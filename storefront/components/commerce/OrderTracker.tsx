@@ -43,7 +43,7 @@ export function OrderTracker({ order, locale }: { order: Order; locale: Locale }
                     done
                       ? 'border-success bg-success/15 text-success'
                       : active
-                        ? 'border-signal bg-signal-tint text-signal'
+                        ? 'border-signal bg-signal-tint text-signal-ink'
                         : 'border-border bg-surface text-text-faint'
                   }`}
                 >
@@ -55,7 +55,7 @@ export function OrderTracker({ order, locale }: { order: Order; locale: Locale }
               </div>
               {/* content */}
               <div className={`flex flex-col gap-0.5 ${i < stages.length - 1 ? 'pb-6' : ''}`}>
-                <span className={`text-sm font-semibold ${active ? 'text-signal' : done ? 'text-text-strong' : 'text-text-faint'}`}>
+                <span className={`text-sm font-semibold ${active ? 'text-signal-ink' : done ? 'text-text-strong' : 'text-text-faint'}`}>
                   {L(STAGE_LABEL[s], locale)}
                 </span>
                 {ev?.date && <span className="font-mono text-2xs text-text-faint">{ev.date}</span>}

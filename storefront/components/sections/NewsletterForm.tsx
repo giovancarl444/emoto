@@ -61,7 +61,7 @@ export function NewsletterForm({ locale }: { locale: Locale }) {
           />
           <button
             type="submit"
-            className="inline-flex h-11 items-center rounded-sm bg-bone-50 px-4 text-sm font-medium text-ink-950 transition-colors hover:bg-white"
+            className="inline-flex h-11 items-center rounded-sm bg-action px-4 text-sm font-medium text-action-text transition-colors hover:bg-action-hover"
           >
             {COPY.cta[locale]}
           </button>

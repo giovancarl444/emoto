@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <html lang="sv" className={fontVariables}>
       <body className="flex min-h-dvh flex-col items-center justify-center gap-6 bg-bg text-center antialiased">
-        <p className="font-mono text-2xs uppercase tracking-caps text-signal">404</p>
+        <p className="font-mono text-2xs uppercase tracking-caps text-signal-ink">404</p>
         <h1 className="font-display text-3xl font-black uppercase tracking-tight text-text-strong">
           Sidan finns inte
         </h1>

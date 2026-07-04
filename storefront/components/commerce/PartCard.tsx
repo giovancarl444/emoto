@@ -44,7 +44,7 @@ export function PartCard({ part, locale }: { part: Part; locale: Locale }) {
       <div className="flex flex-1 flex-col gap-2 p-4">
         <span className="eyebrow">{L(CATEGORY_LABEL[part.category], locale)}</span>
         <Link href={href}>
-          <h3 className="text-sm font-semibold leading-snug text-text-strong transition-colors group-hover:text-signal">
+          <h3 className="text-sm font-semibold leading-snug text-text-strong transition-colors group-hover:text-signal-ink">
             {L(part.name, locale)}
           </h3>
         </Link>

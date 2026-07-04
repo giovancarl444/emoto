@@ -104,7 +104,7 @@ export function CartDrawer({ locale }: { locale: Locale }) {
                     )}
                   </Link>
                   <div className="flex flex-1 flex-col">
-                    <Link href={i.href} onClick={close} className="text-sm font-semibold text-text-strong hover:text-signal">
+                    <Link href={i.href} onClick={close} className="text-sm font-semibold text-text-strong hover:text-signal-ink">
                       {i.title}
                     </Link>
                     {i.subtitle && <span className="text-xs text-text-faint">{i.subtitle}</span>}

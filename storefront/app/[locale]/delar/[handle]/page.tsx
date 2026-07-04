@@ -96,7 +96,7 @@ export default async function PartPDP({
 
           {part.upgradeReason && (
             <div className="flex items-start gap-2.5 rounded-md border border-border bg-surface p-4">
-              <Icon name="info" size={18} className="mt-0.5 shrink-0 text-signal" />
+              <Icon name="info" size={18} className="mt-0.5 shrink-0 text-signal-ink" />
               <p className="text-sm text-text-muted">
                 <span className="font-semibold text-text-strong">{locale === 'sv' ? 'Varför uppgradera: ' : 'Why upgrade: '}</span>
                 {L(part.upgradeReason, locale)}

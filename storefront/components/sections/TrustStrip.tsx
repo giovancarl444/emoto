@@ -20,7 +20,7 @@ export function TrustStrip({ locale, compact = false }: { locale: Locale; compac
       >
         {ITEMS.map((it) => (
           <div key={it.key} className="flex items-center gap-2.5">
-            <Icon name={it.icon} size={20} className="shrink-0 text-signal" />
+            <Icon name={it.icon} size={20} className="shrink-0 text-signal-ink" />
             <span className="text-xs text-text-muted">{t(it.key, locale)}</span>
           </div>
         ))}

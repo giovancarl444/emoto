@@ -114,7 +114,7 @@ export default async function PDP({
         <section className="section-tight grid gap-8 border-t border-border md:grid-cols-2">
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <Icon name="shield" size={18} className="text-signal" />
+              <Icon name="shield" size={18} className="text-signal-ink" />
               <span className="eyebrow eyebrow--signal">{t('label.warranty', locale)}</span>
             </div>
             <ul className="flex flex-col gap-2">
@@ -128,7 +128,7 @@ export default async function PDP({
           </div>
           <div>
             <div className="mb-3 flex items-center gap-2">
-              <Icon name="truck" size={18} className="text-signal" />
+              <Icon name="truck" size={18} className="text-signal-ink" />
               <span className="eyebrow eyebrow--signal">{t('label.delivery', locale)}</span>
             </div>
             <ul className="flex flex-col gap-2 text-sm text-text-muted">

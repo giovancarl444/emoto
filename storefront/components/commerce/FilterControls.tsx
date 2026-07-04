@@ -55,7 +55,7 @@ function ChipRow({
               aria-pressed={selected}
               className={`inline-flex min-h-9 items-center rounded-pill border px-3.5 text-sm transition-colors ${
                 selected
-                  ? 'border-signal bg-signal-tint text-signal'
+                  ? 'border-signal bg-signal-tint text-signal-ink'
                   : 'border-border bg-surface text-text-muted hover:border-border-strong hover:text-text-strong'
               }`}
             >

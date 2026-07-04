@@ -1,25 +1,16 @@
-import { Archivo, Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
 
 /**
- * Fonts are self-hosted at build time by next/font (no runtime request → no
- * layout shift, CWV-safe). `display: swap` + fallback metrics avoid FOIT.
- * Exposed as CSS variables consumed by styles/tokens.css.
- *   Display  → Archivo (industrial grotesk, uppercase headlines)
- *   UI/body  → Hanken Grotesk (legible workhorse)
- *   Mono     → JetBrains Mono (spec readouts, badges, eyebrows)
+ * Type system — "modern premium" (the bee identity).
+ * Display + UI  → Plus Jakarta Sans (clean, geometric-humanist, high-quality feel)
+ * Mono          → JetBrains Mono (technical labels, eyebrows, spec readouts, badges)
+ * Self-hosted at build by next/font (no runtime request → no layout shift).
  */
 
-export const archivo = Archivo({
+export const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['500', '600', '700', '800', '900'],
-  variable: '--font-archivo',
-  display: 'swap',
-})
-
-export const hanken = Hanken_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-hanken',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-jakarta',
   display: 'swap',
 })
 
@@ -30,4 +21,4 @@ export const jetbrains = JetBrains_Mono({
   display: 'swap',
 })
 
-export const fontVariables = `${archivo.variable} ${hanken.variable} ${jetbrains.variable}`
+export const fontVariables = `${jakarta.variable} ${jetbrains.variable}`
