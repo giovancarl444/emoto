@@ -15,7 +15,7 @@ export function Analytics() {
 
   useEffect(() => {
     try {
-      if (localStorage.getItem('eldr_consent_v1') === 'granted') setGranted(true)
+      if (localStorage.getItem('emoto_consent_v1') === 'granted') setGranted(true)
     } catch {
       /* ignore */
     }
@@ -23,8 +23,8 @@ export function Analytics() {
       const detail = (e as CustomEvent).detail
       if (detail === 'granted') setGranted(true)
     }
-    window.addEventListener('eldr-consent', onConsent)
-    return () => window.removeEventListener('eldr-consent', onConsent)
+    window.addEventListener('emoto-consent', onConsent)
+    return () => window.removeEventListener('emoto-consent', onConsent)
   }, [])
 
   if (!GA_ID || !granted) return null

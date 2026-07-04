@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     <PageShell
       title={sv ? 'Leverans & returer' : 'Delivery & returns'}
       lead={sv ? 'Tydliga leveransvillkor och en ärlig returprocess för högvärdiga fordon.' : 'Clear delivery terms and an honest returns process for high-value vehicles.'}
-      breadcrumbs={[{ name: 'ELDR', href: `/${l}` }, { name: sv ? 'Leverans' : 'Delivery' }]}
+      breadcrumbs={[{ name: 'EMOTO', href: `/${l}` }, { name: sv ? 'Leverans' : 'Delivery' }]}
     >
       <Prose>
         <h2>{sv ? 'Lager vs beställning' : 'In-stock vs build-to-order'}</h2>

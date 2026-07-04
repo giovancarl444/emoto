@@ -9,7 +9,7 @@ export default async function CheckoutPage({ params }: { params: Promise<{ local
   const { locale: raw } = await params
   const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE
   return (
-    <div className="container-eldr section">
+    <div className="container-emoto section">
       <CheckoutSummary locale={locale} />
     </div>
   )

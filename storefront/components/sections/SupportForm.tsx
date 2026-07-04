@@ -99,7 +99,7 @@ export function SupportForm({ locale, initialTopic = 'general' }: { locale: Loca
       </div>
       <div className="flex flex-col gap-1.5">
         <label htmlFor="s-order" className="eyebrow">{C.order[locale]}</label>
-        <input id="s-order" name="orderId" placeholder="ELDR-2026-…" className={field} />
+        <input id="s-order" name="orderId" placeholder="EMOTO-2026-…" className={field} />
       </div>
       <div className="flex flex-col gap-1.5">
         <label htmlFor="s-msg" className="eyebrow">{C.message[locale]}</label>

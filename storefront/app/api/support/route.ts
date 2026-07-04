@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * Support/returns request intake. In production this creates a helpdesk ticket
- * (e.g. Gorgias/Zendesk/Front) and/or emails support@eldr.se. Here it validates
+ * (e.g. Gorgias/Zendesk/Front) and/or emails support@emoto.se. Here it validates
  * and acknowledges so the flow is demonstrable offline.
  */
 const TOPICS = ['order', 'registration', 'warranty', 'returns', 'general']

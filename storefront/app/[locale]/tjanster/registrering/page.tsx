@@ -101,10 +101,10 @@ export default async function RegistrationPage({ params }: { params: Promise<{ l
   ]
 
   return (
-    <div className="container-eldr section">
+    <div className="container-emoto section">
       <Breadcrumbs
         items={[
-          { name: 'ELDR', href: `/${locale}` },
+          { name: 'EMOTO', href: `/${locale}` },
           { name: locale === 'sv' ? 'Registreringshjälp' : 'Registration help' },
         ]}
       />

@@ -31,7 +31,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <TrustStrip locale={locale} />
 
       {/* Model lineup */}
-      <section className="section container-eldr">
+      <section className="section container-emoto">
         <SectionHeading
           eyebrow={locale === 'sv' ? 'Modellserien' : 'The lineup'}
           title={locale === 'sv' ? 'Tre plattformar. Off-road eller vägregistrerat.' : 'Three platforms. Off-road or road-legal.'}
@@ -50,7 +50,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Registration concierge — the wedge */}
       <section className="border-y border-border bg-bg-sunken">
-        <div className="container-eldr grid items-center gap-10 py-14 lg:grid-cols-2 lg:py-20">
+        <div className="container-emoto grid items-center gap-10 py-14 lg:grid-cols-2 lg:py-20">
           <div>
             <span className="eyebrow eyebrow--signal">{locale === 'sv' ? 'Registreringshjälp' : 'Registration concierge'}</span>
             <h2 className="mt-2 font-display text-2xl font-black uppercase leading-none tracking-tight text-text-strong sm:text-3xl">
@@ -84,7 +84,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Parts / attach */}
-      <section className="section container-eldr">
+      <section className="section container-emoto">
         <SectionHeading
           eyebrow={locale === 'sv' ? 'Uppgraderingar' : 'Upgrades'}
           title={locale === 'sv' ? 'Delar som fixar de kända svagheterna.' : 'Parts that fix the known weak points.'}
@@ -102,7 +102,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Proof */}
-      <section className="section container-eldr">
+      <section className="section container-emoto">
         <SectionHeading
           eyebrow={locale === 'sv' ? 'Omdömen' : 'Reviews'}
           title={locale === 'sv' ? 'Byggt på förtroende, inte rabattteater.' : 'Built on trust, not discount theatre.'}
@@ -112,7 +112,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* CTA band */}
       <section className="border-t border-border">
-        <div className="container-eldr flex flex-col items-start gap-6 py-14 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-emoto flex flex-col items-start gap-6 py-14 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
             <Icon name="bolt" size={28} className="text-signal-ink" />
             <h2 className="font-display text-xl font-black uppercase tracking-tight text-text-strong sm:text-2xl">

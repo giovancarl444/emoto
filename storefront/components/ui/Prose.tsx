@@ -14,7 +14,7 @@ export function PageShell({
   children: ReactNode
 }) {
   return (
-    <div className="container-eldr section">
+    <div className="container-emoto section">
       <Breadcrumbs items={breadcrumbs} />
       <header className="mb-10 max-w-2xl">
         <h1 className="font-display text-3xl font-black uppercase leading-none tracking-tight text-text-strong sm:text-4xl">
@@ -22,7 +22,7 @@ export function PageShell({
         </h1>
         {lead && <p className="mt-4 text-md text-text-muted">{lead}</p>}
       </header>
-      <div className="prose-eldr max-w-2xl">{children}</div>
+      <div className="prose-emoto max-w-2xl">{children}</div>
     </div>
   )
 }

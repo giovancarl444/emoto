@@ -45,10 +45,10 @@ export default async function PartPDP({
   const fitModels = part.fitment.map((id) => getModelById(id)).filter(Boolean)
 
   return (
-    <div className="container-eldr section">
+    <div className="container-emoto section">
       <Breadcrumbs
         items={[
-          { name: 'ELDR', href: `/${locale}` },
+          { name: 'EMOTO', href: `/${locale}` },
           { name: locale === 'sv' ? 'Delar' : 'Parts', href: `/${locale}/delar` },
           { name: L(part.name, locale) },
         ]}
@@ -57,7 +57,7 @@ export default async function PartPDP({
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="relative aspect-square overflow-hidden rounded-md border border-border bg-bg-sunken">
           <Media
-            src={part.images[0]?.src ?? '/brand/eldr-mark.svg'}
+            src={part.images[0]?.src ?? '/brand/emoto-mark.svg'}
             alt={part.images[0] ? L(part.images[0].alt, locale) : L(part.name, locale)}
             fill
             priority

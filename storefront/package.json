@@ -1,8 +1,8 @@
 {
-  "name": "eldr-storefront",
+  "name": "emoto-storefront",
   "version": "0.1.0",
   "private": true,
-  "description": "ELDR — premium independent retailer of high-performance electric off-road & street-legal motorcycles. Sweden-first, Nordics next.",
+  "description": "EMOTO — premium independent retailer of high-performance electric off-road & street-legal motorcycles. Sweden-first, Nordics next.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

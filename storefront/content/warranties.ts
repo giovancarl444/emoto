@@ -3,7 +3,7 @@ import type { Warranty } from '@/lib/types'
 /**
  * Warranty terms. Built HONEST and on top of Swedish law: Konsumentköplagen
  * (2022:260) gives a 3-year reklamationsrätt with a 2-year reversed burden of
- * proof that overrides any shorter manufacturer term — so ELDR's stated cover
+ * proof that overrides any shorter manufacturer term — so EMOTO's stated cover
  * sits alongside statutory rights, never below them. Sur-Ron's own baseline is
  * ~12 months (18 at some dealers); we lead with the stronger legal floor.
  * Figures [VERIFY] against the general agent (Adoy AB) terms before launch.
@@ -11,14 +11,14 @@ import type { Warranty } from '@/lib/types'
 export const warranties: Warranty[] = [
   {
     id: 'w-vehicle',
-    title: { sv: 'ELDR fordonsgaranti', en: 'ELDR vehicle warranty' },
-    vehicleMonths: 24, // ELDR-backed, above Sur-Ron's 12-mo baseline [VERIFY]
+    title: { sv: 'EMOTO fordonsgaranti', en: 'EMOTO vehicle warranty' },
+    vehicleMonths: 24, // EMOTO-backed, above Sur-Ron's 12-mo baseline [VERIFY]
     batteryMonths: 24,
     vehicleKmCap: 32000, // battery ~20,000 mi cap per manufacturer [VERIFY]
     terms: [
       {
-        sv: 'Ram, svingarm, motor och styrenhet: 24 månaders ELDR-garanti mot fabrikationsfel.',
-        en: 'Frame, swingarm, motor and controller: 24-month ELDR warranty against manufacturing defects.',
+        sv: 'Ram, svingarm, motor och styrenhet: 24 månaders EMOTO-garanti mot fabrikationsfel.',
+        en: 'Frame, swingarm, motor and controller: 24-month EMOTO warranty against manufacturing defects.',
       },
       {
         sv: 'Batteri: 24 månader eller 32 000 km, det som inträffar först.',

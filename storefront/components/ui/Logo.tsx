@@ -1,7 +1,7 @@
 import { BRAND } from '@/lib/brand'
 
 /**
- * The ELDR winged-E — a stylized bee whose body is a bold "E", set inside a
+ * The EMOTO winged-E — a stylized bee whose body is a bold "E", set inside a
  * honeycomb hexagon: antennae + arced wings + stinger read as a bee, the E
  * reads as the brand. Token-driven (fill-signal = bee yellow, fill-text-strong
  * = ink) so the same mark inverts for black-hex placements.
@@ -46,7 +46,7 @@ interface LogoProps {
   wordmarkClassName?: string
 }
 
-/** Black ELDR wordmark with a yellow sting-dot, paired with the winged-E bee. */
+/** Black EMOTO wordmark with a yellow sting-dot, paired with the winged-E bee. */
 export function Logo({ variant = 'full', className, wordmarkClassName }: LogoProps) {
   return (
     <span className={['inline-flex items-center gap-2', className].filter(Boolean).join(' ')}>

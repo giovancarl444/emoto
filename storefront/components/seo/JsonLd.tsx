@@ -22,7 +22,7 @@ export function OrganizationJsonLd({ locale }: { locale: Locale }) {
         name: BRAND.name,
         legalName: BRAND.legalName,
         url: `${BRAND.siteUrl}/${locale}`,
-        logo: `${BRAND.siteUrl}/brand/eldr-mark.svg`,
+        logo: `${BRAND.siteUrl}/brand/emoto-mark.svg`,
         description: L(BRAND.proposition, locale),
         email: BRAND.email.hello,
         sameAs: [BRAND.social.instagram, BRAND.social.youtube, BRAND.social.tiktok],

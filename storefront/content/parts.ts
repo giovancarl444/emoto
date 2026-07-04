@@ -22,7 +22,7 @@ export const parts: Part[] = [
     ],
     fitment: ['light-bee-x', 'ultra-bee', 'storm-bee'],
     availability: { state: 'in_stock', stockQty: 12 },
-    sku: 'ELDR-RIM-01',
+    sku: 'EMOTO-RIM-01',
     upgradeReason: { sv: 'Originaldäcken får ofta kritik för svagt fäste.', en: 'Stock tyres are frequently criticised for weak grip.' },
     verify: true,
   },
@@ -37,7 +37,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Dämpar det hackiga on/off-beteendet i originalgasen för mer precis lågfartskontroll.', en: 'Tames the abrupt on/off feel of the stock throttle for more precise low-speed control.' }],
     fitment: ['light-bee-x', 'ultra-bee'],
     availability: { state: 'in_stock', stockQty: 20 },
-    sku: 'ELDR-THR-01',
+    sku: 'EMOTO-THR-01',
     upgradeReason: { sv: 'Originalgasen upplevs ofta som hackig.', en: 'The stock throttle is often felt to be abrupt.' },
   },
   {
@@ -52,7 +52,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Originalgafflarna (KKE/DNM) bottnar lätt vid hårdare körning. KKE-uppgraderingen ger bättre dämpning och kontroll.', en: 'The stock forks (KKE/DNM) bottom out easily under harder riding. The KKE upgrade adds damping and control.' }],
     fitment: ['light-bee-x'],
     availability: { state: 'build_to_order', leadTimeDays: [10, 21] },
-    sku: 'ELDR-FRK-KKE',
+    sku: 'EMOTO-FRK-KKE',
     upgradeReason: { sv: 'Svaga originalgafflar är en av de vanligaste klagomålen.', en: 'Weak stock forks are one of the most common complaints.' },
   },
   {
@@ -66,7 +66,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Barmonterad design gör att styret sitter kvar vid ett fall — inget vridande som med enklare klämmor.', en: 'Bar-mounted design keeps the bars put in a crash — no twisting like simpler clamps.' }],
     fitment: ['light-bee-x', 'ultra-bee', 'storm-bee'],
     availability: { state: 'in_stock', stockQty: 30 },
-    sku: 'ELDR-BAR-01',
+    sku: 'EMOTO-BAR-01',
   },
   {
     id: 'p-footpegs',
@@ -79,7 +79,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Större plattform och vassare pigg ger säkrare fotfäste i terräng än originalpinnarna.', en: 'A larger platform and sharper teeth give more secure footing off-road than the stock pegs.' }],
     fitment: ['light-bee-x', 'ultra-bee', 'storm-bee'],
     availability: { state: 'in_stock', stockQty: 24 },
-    sku: 'ELDR-PEG-01',
+    sku: 'EMOTO-PEG-01',
   },
   {
     id: 'p-brake-kit',
@@ -92,7 +92,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Originalbromsarna är MTB-dimensionerade (~203 mm). Uppgradering till 250 mm ger mer bromskraft för tyngre/snabbare körning.', en: 'The stock brakes are MTB-sized (~203 mm). Upgrading to 250 mm adds stopping power for heavier/faster riding.' }],
     fitment: ['light-bee-x', 'ultra-bee'],
     availability: { state: 'in_stock', stockQty: 10 },
-    sku: 'ELDR-BRK-250',
+    sku: 'EMOTO-BRK-250',
     upgradeReason: { sv: 'Underdimensionerade originalbromsar är ett känt problem.', en: 'Undersized stock brakes are a known issue.' },
   },
   {
@@ -106,7 +106,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Originalcontrollern är strömbegränsad. Sportcontrollern ger mer effekt — endast för privat mark/bana, påverkar homologering och garanti.', en: 'The stock controller is current-limited. The sport controller adds power — private land/track only; it affects homologation and warranty.' }],
     fitment: ['light-bee-x'],
     availability: { state: 'in_stock', stockQty: 8 },
-    sku: 'ELDR-CTRL-01',
+    sku: 'EMOTO-CTRL-01',
     upgradeReason: { sv: 'Den låsta originalcontrollern är den vanligaste effektuppgraderingen.', en: 'The locked stock controller is the most common power upgrade.' },
   },
   {
@@ -120,7 +120,7 @@ export const parts: Part[] = [
     description: [{ sv: 'Smälta batterikontakter är ett vanligt fel. Uppgraderingen tål högre ström och håller vatten ute.', en: 'Melted battery connectors are a common failure. This upgrade handles higher current and keeps water out.' }],
     fitment: ['light-bee-x', 'ultra-bee', 'storm-bee'],
     availability: { state: 'in_stock', stockQty: 40 },
-    sku: 'ELDR-CON-01',
+    sku: 'EMOTO-CON-01',
     upgradeReason: { sv: 'Smälta originalkontakter rapporteras ofta av ägare.', en: 'Melted stock connectors are frequently reported by owners.' },
   },
 ]

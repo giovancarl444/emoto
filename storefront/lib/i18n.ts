@@ -33,7 +33,7 @@ export const T: Dict = {
   'nav.parts': { sv: 'Delar & tillbehör', en: 'Parts & accessories' },
   'nav.registration': { sv: 'Registrering', en: 'Registration' },
   'nav.compare': { sv: 'Jämför', en: 'Compare' },
-  'nav.about': { sv: 'Om ELDR', en: 'About' },
+  'nav.about': { sv: 'Om EMOTO', en: 'About' },
   'nav.support': { sv: 'Support', en: 'Support' },
   'nav.journal': { sv: 'Journal', en: 'Journal' },
 
@@ -99,8 +99,8 @@ export const T: Dict = {
 
   'footer.rights': { sv: 'Alla rättigheter förbehållna.', en: 'All rights reserved.' },
   'footer.independent': {
-    sv: 'ELDR är en oberoende återförsäljare. Sur-Ron® är ett varumärke som tillhör sin ägare.',
-    en: 'ELDR is an independent retailer. Sur-Ron® is a trademark of its owner.',
+    sv: 'EMOTO är en oberoende återförsäljare. Sur-Ron® är ett varumärke som tillhör sin ägare.',
+    en: 'EMOTO is an independent retailer. Sur-Ron® is a trademark of its owner.',
   },
 }
 

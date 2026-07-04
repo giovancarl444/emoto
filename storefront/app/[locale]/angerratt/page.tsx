@@ -35,8 +35,8 @@ const SECTIONS: { h: Localized; body: Localized[] }[] = [
     h: { sv: 'Så ångrar du', en: 'How to withdraw' },
     body: [
       {
-        sv: 'Meddela oss tydligt att du vill ångra köpet, till hej@eldr.se. Du kan använda Konsumentverkets standardformulär för ångerrätt. Från 19 juni 2026 finns även en ångerknapp direkt i det gränssnitt där köpet gjordes. [VERIFY ikraftträdande.]',
-        en: 'Notify us clearly that you wish to withdraw, at hej@eldr.se. You may use Konsumentverket’s standard withdrawal form. From 19 June 2026 a withdrawal button is also available directly in the interface where the purchase was made. [VERIFY effective date.]',
+        sv: 'Meddela oss tydligt att du vill ångra köpet, till hej@emoto.se. Du kan använda Konsumentverkets standardformulär för ångerrätt. Från 19 juni 2026 finns även en ångerknapp direkt i det gränssnitt där köpet gjordes. [VERIFY ikraftträdande.]',
+        en: 'Notify us clearly that you wish to withdraw, at hej@emoto.se. You may use Konsumentverket’s standard withdrawal form. From 19 June 2026 a withdrawal button is also available directly in the interface where the purchase was made. [VERIFY effective date.]',
       },
     ],
   },
@@ -85,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     <PageShell
       title={l === 'sv' ? 'Ångerrätt' : 'Right of withdrawal'}
       lead={l === 'sv' ? 'Dina rättigheter vid distansköp — klart och utan finstilt.' : 'Your rights when buying at a distance — clear, no fine print.'}
-      breadcrumbs={[{ name: 'ELDR', href: `/${l}` }, { name: l === 'sv' ? 'Ångerrätt' : 'Right of withdrawal' }]}
+      breadcrumbs={[{ name: 'EMOTO', href: `/${l}` }, { name: l === 'sv' ? 'Ångerrätt' : 'Right of withdrawal' }]}
     >
       <Prose>
         {SECTIONS.map((s, i) => (

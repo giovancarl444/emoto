@@ -45,10 +45,10 @@ export default async function ModelsPage({
   const models = filterModels(getAllModels(), filter)
 
   return (
-    <div className="container-eldr section">
+    <div className="container-emoto section">
       <Breadcrumbs
         items={[
-          { name: 'ELDR', href: `/${locale}` },
+          { name: 'EMOTO', href: `/${locale}` },
           { name: locale === 'sv' ? 'Motorcyklar' : 'Motorcycles' },
         ]}
       />
@@ -81,7 +81,7 @@ export default async function ModelsPage({
 
       <BreadcrumbJsonLd
         items={[
-          { name: 'ELDR', url: `${BRAND.siteUrl}/${locale}` },
+          { name: 'EMOTO', url: `${BRAND.siteUrl}/${locale}` },
           { name: 'Motorcyklar', url: `${BRAND.siteUrl}/${locale}/motorcyklar` },
         ]}
       />

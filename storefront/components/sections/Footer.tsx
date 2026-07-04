@@ -26,7 +26,7 @@ export function Footer({ locale }: { locale: Locale }) {
     {
       title: { sv: 'Företag', en: 'Company' },
       links: [
-        { href: `/${locale}/om`, label: { sv: 'Om ELDR', en: 'About ELDR' } },
+        { href: `/${locale}/om`, label: { sv: 'Om EMOTO', en: 'About EMOTO' } },
         { href: `/${locale}/aterforsaljare`, label: { sv: 'Återförsäljare', en: 'Resellers' } },
         { href: `/${locale}/spar-order`, label: { sv: 'Spåra order', en: 'Track order' } },
         { href: `/${locale}/kontakt`, label: { sv: 'Kontakt', en: 'Contact' } },
@@ -44,7 +44,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
   return (
     <footer className="mt-auto border-t border-border bg-bg-sunken">
-      <div className="container-eldr grid gap-10 py-14 md:grid-cols-[1.4fr_2fr]">
+      <div className="container-emoto grid gap-10 py-14 md:grid-cols-[1.4fr_2fr]">
         <div className="flex max-w-sm flex-col gap-4">
           <Logo />
           <p className="text-sm text-text-muted">{L(BRAND.proposition, locale)}</p>
@@ -73,7 +73,7 @@ export function Footer({ locale }: { locale: Locale }) {
       </div>
 
       <div className="border-t border-border">
-        <div className="container-eldr flex flex-col gap-3 py-6 text-2xs text-text-faint sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-emoto flex flex-col gap-3 py-6 text-2xs text-text-faint sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-xl">{t('footer.independent', locale)}</p>
           <div className="flex items-center gap-3 font-mono uppercase tracking-caps">
             <span>Klarna</span>
@@ -82,7 +82,7 @@ export function Footer({ locale }: { locale: Locale }) {
             <span>PayPal</span>
           </div>
         </div>
-        <div className="container-eldr pb-8 text-2xs text-text-faint">
+        <div className="container-emoto pb-8 text-2xs text-text-faint">
           © {new Date().getFullYear()} {BRAND.legalName}. {t('footer.rights', locale)} · {BRAND.domain}
         </div>
       </div>

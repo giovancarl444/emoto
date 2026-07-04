@@ -30,7 +30,7 @@ export function PartCard({ part, locale }: { part: Part; locale: Locale }) {
     <div className="group flex flex-col overflow-hidden rounded-md border border-border bg-surface transition-colors duration-2 hover:border-border-strong">
       <Link href={href} className="relative aspect-square overflow-hidden bg-bg-sunken">
         <Media
-          src={part.images[0]?.src ?? '/brand/eldr-mark.svg'}
+          src={part.images[0]?.src ?? '/brand/emoto-mark.svg'}
           alt={part.images[0] ? L(part.images[0].alt, locale) : L(part.name, locale)}
           fill
           sizes="(max-width: 640px) 50vw, 25vw"

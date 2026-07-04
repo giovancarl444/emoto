@@ -15,7 +15,7 @@ const COPY = {
   policy: { sv: 'Läs mer', en: 'Learn more' },
 }
 
-const KEY = 'eldr_consent_v1'
+const KEY = 'emoto_consent_v1'
 
 /** Broadcast consent so Analytics (consent-mode) can react without a reload. */
 function setConsent(value: 'granted' | 'denied') {
@@ -24,7 +24,7 @@ function setConsent(value: 'granted' | 'denied') {
   } catch {
     /* ignore */
   }
-  window.dispatchEvent(new CustomEvent('eldr-consent', { detail: value }))
+  window.dispatchEvent(new CustomEvent('emoto-consent', { detail: value }))
   // Google consent mode v2 update
   ;(window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('consent', 'update', {
     analytics_storage: value,
@@ -47,7 +47,7 @@ export function CookieBanner({ locale }: { locale: Locale }) {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-toast p-3 sm:p-4" role="dialog" aria-label={COPY.title[locale]}>
-      <div className="container-eldr flex flex-col gap-3 rounded-md border border-border bg-surface/95 p-4 shadow-lg backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
+      <div className="container-emoto flex flex-col gap-3 rounded-md border border-border bg-surface/95 p-4 shadow-lg backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold text-text-strong">{COPY.title[locale]}</p>
           <p className="mt-0.5 text-xs text-text-muted">

@@ -57,8 +57,8 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
           : 'border-transparent bg-transparent'
       }`}
     >
-      <div className="container-eldr flex h-16 items-center justify-between gap-4">
-        <Link href={`/${locale}`} aria-label="ELDR home" className="shrink-0">
+      <div className="container-emoto flex h-16 items-center justify-between gap-4">
+        <Link href={`/${locale}`} aria-label="EMOTO home" className="shrink-0">
           <Logo />
         </Link>
 
@@ -137,7 +137,7 @@ export function Header({ locale, models }: { locale: Locale; models: NavModel[] 
       {/* Mobile menu */}
       {menuOpen && (
         <nav className="border-t border-border bg-bg lg:hidden" aria-label="Mobile">
-          <div className="container-eldr flex flex-col py-2">
+          <div className="container-emoto flex flex-col py-2">
             {links.map((l) => (
               <Link
                 key={l.href}

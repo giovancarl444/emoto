@@ -6,13 +6,13 @@ import type { Order } from '@/lib/fulfillment'
  * /spar-order flow work offline. Look up by order id + email.
  *
  * Try in the UI:
- *   ELDR-2026-0042 · erik@example.com   (build-to-order L3e, registration, in transit)
- *   ELDR-2026-0031 · sara@example.com   (in-stock parts, delivered)
- *   ELDR-2026-0048 · johan@example.com  (Storm Bee preorder, building)
+ *   EMOTO-2026-0042 · erik@example.com   (build-to-order L3e, registration, in transit)
+ *   EMOTO-2026-0031 · sara@example.com   (in-stock parts, delivered)
+ *   EMOTO-2026-0048 · johan@example.com  (Storm Bee preorder, building)
  */
 export const orders: Order[] = [
   {
-    id: 'ELDR-2026-0042',
+    id: 'EMOTO-2026-0042',
     email: 'erik@example.com',
     placedAt: '2026-06-18',
     lines: [
@@ -32,7 +32,7 @@ export const orders: Order[] = [
     ],
   },
   {
-    id: 'ELDR-2026-0031',
+    id: 'EMOTO-2026-0031',
     email: 'sara@example.com',
     placedAt: '2026-06-28',
     lines: [
@@ -51,7 +51,7 @@ export const orders: Order[] = [
     ],
   },
   {
-    id: 'ELDR-2026-0048',
+    id: 'EMOTO-2026-0048',
     email: 'johan@example.com',
     placedAt: '2026-07-01',
     lines: [{ title: 'Sur-Ron Storm Bee — F · Street L3e', qty: 1, kind: 'vehicle' }],

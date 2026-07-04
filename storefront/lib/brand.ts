@@ -4,13 +4,13 @@
  * Values marked [VERIFY] are placeholders to confirm before going live.
  */
 export const BRAND = {
-  name: 'ELDR',
-  // "eld" (Swedish: fire) / "eldr" (Old Norse: fire, forge) + the EL- electric reading
-  legalName: 'ELDR Moto AB', // [VERIFY] — register company + reserve name at Bolagsverket
+  name: 'EMOTO',
+  // EMOTO = electric + moto(rcycle) — the category name, owned as a brand
+  legalName: 'EMOTO AB', // [VERIFY] — register company + reserve name at Bolagsverket
   orgNumber: '000000-0000', // [VERIFY]
   vatNumber: 'SE000000000001', // [VERIFY]
-  domain: 'eldr.se', // [VERIFY availability — .se via IIS, .com]
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://eldr.se',
+  domain: 'emoto.se', // [VERIFY availability — .se via IIS, .com]
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://emoto.se',
 
   descriptor: {
     sv: 'Oberoende återförsäljare av Sur-Ron®',
@@ -18,7 +18,7 @@ export const BRAND = {
   },
   tagline: {
     sv: 'Elektrisk terräng.',
-    en: 'Electric terrain, forged.',
+    en: 'Electric terrain.',
   },
   proposition: {
     sv: 'Högpresterande elektriska off-road- och gaturegistrerade motorcyklar — levererade, registrerade och garanterade i Sverige.',
@@ -26,9 +26,9 @@ export const BRAND = {
   },
 
   email: {
-    hello: 'hej@eldr.se',
-    support: 'support@eldr.se',
-    press: 'press@eldr.se',
+    hello: 'hej@emoto.se',
+    support: 'support@emoto.se',
+    press: 'press@emoto.se',
   },
   phone: '+46 8 000 00 00', // [VERIFY]
   address: {
@@ -38,9 +38,9 @@ export const BRAND = {
     country: 'SE',
   },
   social: {
-    instagram: 'https://instagram.com/eldr.moto',
-    youtube: 'https://youtube.com/@eldr.moto',
-    tiktok: 'https://tiktok.com/@eldr.moto',
+    instagram: 'https://instagram.com/emoto',
+    youtube: 'https://youtube.com/@emoto',
+    tiktok: 'https://tiktok.com/@emoto',
   },
 } as const
 

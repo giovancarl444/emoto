@@ -251,7 +251,7 @@ export function ProductConfigurator({
           showSticky ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
-        <div className="container-eldr flex items-center gap-4 px-4 py-3">
+        <div className="container-emoto flex items-center gap-4 px-4 py-3">
           <div className="hidden shrink-0 sm:block">
             <span className="eyebrow">{model.marque}</span>
             <p className="font-display text-base font-black uppercase leading-none tracking-tight text-text-strong">

@@ -28,8 +28,8 @@ export default async function TrackOrderPage({
   const searched = Boolean(id && email)
 
   return (
-    <div className="container-eldr section">
-      <Breadcrumbs items={[{ name: 'ELDR', href: `/${locale}` }, { name: sv ? 'Spåra order' : 'Track order' }]} />
+    <div className="container-emoto section">
+      <Breadcrumbs items={[{ name: 'EMOTO', href: `/${locale}` }, { name: sv ? 'Spåra order' : 'Track order' }]} />
 
       <div className="mx-auto max-w-xl">
         {order ? (
@@ -63,7 +63,7 @@ export default async function TrackOrderPage({
                   name="id"
                   required
                   defaultValue={id ?? ''}
-                  placeholder="ELDR-2026-0042"
+                  placeholder="EMOTO-2026-0042"
                   className="h-11 rounded-sm border border-border bg-bg px-3 text-sm text-text-strong placeholder:text-text-faint focus-visible:border-signal"
                 />
               </div>
@@ -101,7 +101,7 @@ export default async function TrackOrderPage({
 
             <p className="mt-4 text-2xs text-text-faint">
               {sv ? 'Demo: prova ' : 'Demo: try '}
-              <code className="text-text-muted">ELDR-2026-0042</code> ·{' '}
+              <code className="text-text-muted">EMOTO-2026-0042</code> ·{' '}
               <code className="text-text-muted">erik@example.com</code>
             </p>
           </>

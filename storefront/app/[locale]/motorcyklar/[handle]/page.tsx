@@ -60,10 +60,10 @@ export default async function PDP({
   const warranty = getWarranty(model.warrantyId)
 
   return (
-    <div className="container-eldr pb-24 pt-6 lg:pb-16">
+    <div className="container-emoto pb-24 pt-6 lg:pb-16">
       <Breadcrumbs
         items={[
-          { name: 'ELDR', href: `/${locale}` },
+          { name: 'EMOTO', href: `/${locale}` },
           { name: locale === 'sv' ? 'Motorcyklar' : 'Motorcycles', href: `/${locale}/motorcyklar` },
           { name: model.name },
         ]}
@@ -183,7 +183,7 @@ export default async function PDP({
       <ProductJsonLd model={model} locale={locale} />
       <BreadcrumbJsonLd
         items={[
-          { name: 'ELDR', url: `${BRAND.siteUrl}/${locale}` },
+          { name: 'EMOTO', url: `${BRAND.siteUrl}/${locale}` },
           { name: 'Motorcyklar', url: `${BRAND.siteUrl}/${locale}/motorcyklar` },
           { name: model.name, url: `${BRAND.siteUrl}/${locale}/motorcyklar/${model.handle}` },
         ]}

@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     <PageShell
       title={sv ? 'Integritetspolicy' : 'Privacy policy'}
       lead={sv ? 'Hur vi behandlar dina personuppgifter enligt GDPR.' : 'How we process your personal data under the GDPR.'}
-      breadcrumbs={[{ name: 'ELDR', href: `/${l}` }, { name: sv ? 'Integritet' : 'Privacy' }]}
+      breadcrumbs={[{ name: 'EMOTO', href: `/${l}` }, { name: sv ? 'Integritet' : 'Privacy' }]}
     >
       <Prose>
         <p>{sv ? `Personuppgiftsansvarig är ${BRAND.legalName} (org.nr ${BRAND.orgNumber}). Kontakt: ${BRAND.email.hello}. [VERIFY uppgifter]` : `The data controller is ${BRAND.legalName} (reg. no. ${BRAND.orgNumber}). Contact: ${BRAND.email.hello}. [VERIFY details]`}</p>

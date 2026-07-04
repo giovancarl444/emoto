@@ -1,5 +1,5 @@
 /* ============================================================================
-   ELDR — DESIGN TOKENS (single source of truth)
+   EMOTO — DESIGN TOKENS (single source of truth)
    Theme: "the bee" — white / black / yellow / grey, green for trust.
    A re-skin is a change to THIS file. Tailwind maps every utility back here.
    Components read semantic tokens (--surface, --text, --action, --signal…),

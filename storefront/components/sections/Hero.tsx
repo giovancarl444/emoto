@@ -39,7 +39,7 @@ export function Hero({ locale }: { locale: Locale }) {
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 to-bg/30" />
       </div>
 
-      <div className="container-eldr flex min-h-[88vh] flex-col justify-end gap-8 pb-14 pt-28 sm:min-h-[92vh] lg:pb-20">
+      <div className="container-emoto flex min-h-[88vh] flex-col justify-end gap-8 pb-14 pt-28 sm:min-h-[92vh] lg:pb-20">
         <div className="max-w-3xl">
           <span className="eyebrow eyebrow--signal reveal">{L(COPY.eyebrow, locale)}</span>
           <h1 className="reveal mt-4 font-display text-4xl font-black uppercase leading-[0.92] tracking-tight text-text-strong sm:text-display">

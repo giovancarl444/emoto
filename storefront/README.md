@@ -1,6 +1,6 @@
-# ELDR Storefront
+# EMOTO Storefront
 
-Production-grade, mobile-first commerce front end for ELDR. Next.js 15 (App Router) · TypeScript · Tailwind (token-driven) · Shopify Storefront API, with a zero-credential mock fallback so it runs out of the box.
+Production-grade, mobile-first commerce front end for EMOTO. Next.js 15 (App Router) · TypeScript · Tailwind (token-driven) · Shopify Storefront API, with a zero-credential mock fallback so it runs out of the box.
 
 ## Quick start
 
@@ -50,7 +50,7 @@ middleware.ts          # locale routing (/ → /sv, prefixing, Accept-Language)
 - **SEO/perf/a11y** built in: per-page metadata, JSON-LD, sitemap/robots, self-hosted fonts, `next/image`, static/SSG, consent-gated GA4, WCAG 2.1 AA. See [`../docs/compliance-and-optimization.md`](../docs/compliance-and-optimization.md).
 
 ## Placeholder assets
-No real product photography exists yet, so the catalogue ships branded **SVG placeholders** (`public/models`, `public/parts`, `public/editorial`) generated to the ELDR art direction. Real raster photography drops in via the content layer and is optimized through `next/image`. `next.config.mjs` allows SVG through the image pipeline for the placeholders only.
+No real product photography exists yet, so the catalogue ships branded **SVG placeholders** (`public/models`, `public/parts`, `public/editorial`) generated to the EMOTO art direction. Real raster photography drops in via the content layer and is optimized through `next/image`. `next.config.mjs` allows SVG through the image pipeline for the placeholders only.
 
 ## Environment
 See [`.env.example`](.env.example). All keys optional for local dev.

@@ -41,8 +41,8 @@ export default async function ComparePage({ params }: { params: Promise<{ locale
   }
 
   return (
-    <div className="container-eldr section">
-      <Breadcrumbs items={[{ name: 'ELDR', href: `/${locale}` }, { name: locale === 'sv' ? 'Jämför' : 'Compare' }]} />
+    <div className="container-emoto section">
+      <Breadcrumbs items={[{ name: 'EMOTO', href: `/${locale}` }, { name: locale === 'sv' ? 'Jämför' : 'Compare' }]} />
       <header className="mb-8 max-w-2xl">
         <h1 className="font-display text-3xl font-black uppercase leading-none tracking-tight text-text-strong sm:text-4xl">
           {locale === 'sv' ? 'Jämför modeller' : 'Compare models'}

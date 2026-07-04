@@ -40,8 +40,8 @@ export default async function Page({
   ]
 
   return (
-    <div className="container-eldr section">
-      <Breadcrumbs items={[{ name: 'ELDR', href: `/${l}` }, { name: 'Support' }]} />
+    <div className="container-emoto section">
+      <Breadcrumbs items={[{ name: 'EMOTO', href: `/${l}` }, { name: 'Support' }]} />
       <header className="mb-10 max-w-2xl">
         <h1 className="font-display text-3xl font-black uppercase leading-none tracking-tight text-text-strong sm:text-4xl">
           {sv ? 'Support & garanti' : 'Support & warranty'}

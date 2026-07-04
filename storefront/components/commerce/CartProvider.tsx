@@ -33,7 +33,7 @@ interface CartState {
 }
 
 const CartCtx = createContext<CartState | null>(null)
-const STORAGE_KEY = 'eldr_cart_v1'
+const STORAGE_KEY = 'emoto_cart_v1'
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])

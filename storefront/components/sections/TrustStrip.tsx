@@ -14,7 +14,7 @@ export function TrustStrip({ locale, compact = false }: { locale: Locale; compac
   return (
     <div className={compact ? '' : 'border-y border-border bg-bg-sunken'}>
       <div
-        className={`container-eldr grid gap-x-6 gap-y-4 ${
+        className={`container-emoto grid gap-x-6 gap-y-4 ${
           compact ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5' : 'py-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'
         }`}
       >

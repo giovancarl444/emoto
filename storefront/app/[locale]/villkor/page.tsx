@@ -18,8 +18,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   return (
     <PageShell
       title={sv ? 'Köpvillkor' : 'Terms of sale'}
-      lead={sv ? 'Villkoren för köp hos ELDR. Skrivna för att vara begripliga.' : 'The terms for buying from ELDR. Written to be understood.'}
-      breadcrumbs={[{ name: 'ELDR', href: `/${l}` }, { name: sv ? 'Köpvillkor' : 'Terms' }]}
+      lead={sv ? 'Villkoren för köp hos EMOTO. Skrivna för att vara begripliga.' : 'The terms for buying from EMOTO. Written to be understood.'}
+      breadcrumbs={[{ name: 'EMOTO', href: `/${l}` }, { name: sv ? 'Köpvillkor' : 'Terms' }]}
     >
       <Prose>
         <p>{sv ? `Säljare: ${BRAND.legalName}, org.nr ${BRAND.orgNumber}, ${BRAND.address.city}. [VERIFY]` : `Seller: ${BRAND.legalName}, reg. no. ${BRAND.orgNumber}, ${BRAND.address.city}. [VERIFY]`}</p>
@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <h2>{sv ? 'Ångerrätt' : 'Right of withdrawal'}</h2>
         <p>{sv ? 'Vid distansköp gäller 14 dagars ångerrätt. Se ' : 'For distance purchases a 14-day right of withdrawal applies. See '}<Link href={`/${l}/angerratt`}>{sv ? 'Ångerrätt' : 'Right of withdrawal'}</Link>.</p>
         <h2>{sv ? 'Garanti och reklamation' : 'Warranty and complaints'}</h2>
-        <p>{sv ? 'ELDR-garanti gäller på fordon och batteri. Utöver garantin har du 3 års reklamationsrätt enligt konsumentköplagen (2022:260), med omvänd bevisbörda de första 2 åren.' : 'The ELDR warranty covers vehicle and battery. On top of it you have a 3-year statutory complaint right under the Consumer Purchase Act (2022:260), with reversed burden of proof for the first 2 years.'}</p>
+        <p>{sv ? 'EMOTO-garanti gäller på fordon och batteri. Utöver garantin har du 3 års reklamationsrätt enligt konsumentköplagen (2022:260), med omvänd bevisbörda de första 2 åren.' : 'The EMOTO warranty covers vehicle and battery. On top of it you have a 3-year statutory complaint right under the Consumer Purchase Act (2022:260), with reversed burden of proof for the first 2 years.'}</p>
         <h2>{sv ? 'Registrering och vägbruk' : 'Registration and road use'}</h2>
         <p>{sv ? 'Off-road-fordon får endast köras på privat mark. Vägregistrerade versioner (L1e/L3e) kräver registrering, körkort, hjälm och trafikförsäkring. Homologering bekräftas mot CoC per fordon.' : 'Off-road vehicles may only be ridden on private land. Road-legal versions (L1e/L3e) require registration, a licence, helmet and traffic insurance. Homologation is confirmed against the CoC per vehicle.'}</p>
         <h2>{sv ? 'Tvist' : 'Disputes'}</h2>
