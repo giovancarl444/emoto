@@ -3,10 +3,12 @@
   Params: rating (default settings), count, tone ('light' on dark bg / 'dark' on light bg), compact (bool)
 {%- endcomment -%}
 {%- liquid
-  assign r = rating | default: settings.trustpilot_rating | default: 4.8
-  assign c = count | default: settings.trustpilot_count | default: 127
+  assign r = rating | default: settings.trustpilot_rating
+  assign c = count | default: settings.trustpilot_count
   assign full = r | floor
 -%}
+{%- comment -%} Renders only when a real rating is configured — never a fabricated score. {%- endcomment -%}
+{%- if r != blank -%}
 <a class="tpilot tpilot--{{ tone | default: 'light' }}{% if compact %} tpilot--compact{% endif %}"
    href="{{ settings.trustpilot_url | default: '#' }}"{% if settings.trustpilot_url != blank %} target="_blank" rel="noopener"{% endif %}
    aria-label="Trustpilot {{ r }} av 5, {{ c }} recensioner">
@@ -22,3 +24,4 @@
     <span class="tpilot__score">{{ r }} · {{ c }} {{ 'reviews.count' | t: default: 'recensioner' }}</span>
   </span>
 </a>
+{%- endif -%}
