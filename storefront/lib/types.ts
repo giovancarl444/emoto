@@ -95,10 +95,17 @@ export interface FaqItem {
   a: Localized
 }
 
+export interface ModelVideo {
+  src: string
+  poster: string
+}
+
 export interface Model {
   id: string
   handle: string
   marque: string // e.g. "Sur-Ron" — the vehicle brand (NOT the retailer brand)
+  /** Optional product video, shown as the lead gallery slide when present. */
+  video?: ModelVideo
   name: string // model name, kept as a proper noun (not localized)
   tagline: Localized
   category: ModelCategory

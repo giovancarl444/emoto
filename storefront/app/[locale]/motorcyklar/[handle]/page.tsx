@@ -71,7 +71,7 @@ export default async function PDP({
 
       {/* Gallery + configurator */}
       <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
-        <MediaGallery media={model.gallery} locale={locale} />
+        <MediaGallery media={model.gallery} locale={locale} video={model.video} />
         <ProductConfigurator
           model={model}
           locale={locale}

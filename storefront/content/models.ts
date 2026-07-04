@@ -156,6 +156,7 @@ export const models: Model[] = [
     handle: 'ultra-bee',
     marque: 'Sur-Ron',
     name: 'Ultra Bee',
+    video: { src: '/models/ultra-bee/ultra-bee.mp4', poster: '/models/ultra-bee-hero.svg' },
     tagline: { sv: 'Mellanviktaren med 440 Nm vid hjulet.', en: 'The mid-weight with 440 Nm at the wheel.' },
     category: 'midsize',
     useCases: ['trail', 'commute', 'track'],
