@@ -3,7 +3,7 @@ import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
 import { getAllModels, getAllParts } from '@/lib/content'
-import { ShowcaseHero } from '@/components/sections/ShowcaseHero'
+import { ShowroomHero } from '@/components/sections/ShowroomHero'
 import { UltraBeeFeature } from '@/components/sections/UltraBeeFeature'
 import { TrustStrip } from '@/components/sections/TrustStrip'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -28,7 +28,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <ShowcaseHero locale={locale} />
+      <ShowroomHero locale={locale} />
       <UltraBeeFeature locale={locale} />
       <TrustStrip locale={locale} />
 
