@@ -1,0 +1,19 @@
+{%- comment -%} EMOTO — slide-out cart drawer (AJAX, Section Rendering API) {%- endcomment -%}
+<div class="cart-drawer" data-cart-drawer aria-hidden="true">
+  <button class="cart-drawer__scrim" type="button" data-cart-close aria-label="{{ 'general.close' | t: default: 'Close' }}"></button>
+  <aside class="cart-drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'cart.title' | t: default: 'Din varukorg' }}">
+    <header class="cart-drawer__head">
+      <h2 class="cart-drawer__title">{{ 'cart.title' | t: default: 'Din varukorg' }} <span data-cart-count-label>({{ cart.item_count }})</span></h2>
+      <button class="cart-drawer__close" type="button" data-cart-close aria-label="{{ 'general.close' | t: default: 'Close' }}">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="cart-drawer__body" data-cart-body>
+      {%- render 'cart-drawer-contents' -%}
+    </div>
+  </aside>
+</div>
+
+{% schema %}
+{ "name": "Cart drawer", "settings": [] }
+{% endschema %}

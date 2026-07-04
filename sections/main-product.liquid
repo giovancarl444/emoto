@@ -77,6 +77,7 @@
             {%- if variant.available -%}{{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' }}{%- else -%}{{ 'product.sold_out' | t: default: 'Slutsåld' }}{%- endif -%}
           </span>
         </button>
+        <p class="pdp__atc-error" data-atc-error hidden role="alert"></p>
       {%- endform -%}
 
       <ul class="pdp__trust">
@@ -92,6 +93,17 @@
       <div class="pdp__prose rte">{{ product.description }}</div>
     </div>
   {%- endif -%}
+
+  {%- comment -%} Sticky mobile add-to-cart {%- endcomment -%}
+  <div class="pdp-sticky" data-pdp-sticky>
+    <div class="pdp-sticky__info">
+      <span class="pdp-sticky__title">{{ product.title }}</span>
+      <span class="pdp-sticky__price" data-pdp-price>{{ variant.price | money }}</span>
+    </div>
+    <button type="submit" form="product-form" name="add" class="btn-action pdp-sticky__btn" data-pdp-atc {% unless variant.available %}disabled{% endunless %}>
+      <span data-pdp-atc-text>{%- if variant.available -%}{{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' }}{%- else -%}{{ 'product.sold_out' | t: default: 'Slutsåld' }}{%- endif -%}</span>
+    </button>
+  </div>
 </section>
 
 <script type="application/json" data-pdp-variants>

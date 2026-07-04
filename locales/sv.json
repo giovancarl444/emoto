@@ -5,7 +5,9 @@
     "menu": "Meny",
     "close": "Stäng",
     "password_prompt": "Ange lösenord",
-    "enter": "Gå in"
+    "enter": "Gå in",
+    "announcement": "Meddelanden",
+    "skip_to_content": "Hoppa till innehåll"
   },
   "showroom": {
     "from": "Från",
@@ -37,6 +39,7 @@
     "update": "Uppdatera",
     "remove": "Ta bort",
     "quantity": "Antal",
+    "klarna": "via Klarna",
     "taxes_note": "Frakt och moms beräknas i kassan."
   },
   "collection": {
@@ -51,7 +54,17 @@
     "no_results": "Inga resultat hittades."
   },
   "footer": {
-    "newsletter": "Håll dig uppdaterad"
+    "newsletter": "Håll dig uppdaterad",
+    "models": "Modeller",
+    "company": "Företag",
+    "support": "Kundservice",
+    "about": "Om EMOTO",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "delivery": "Leverans",
+    "financing": "Delbetalning",
+    "payments": "Betalsätt",
+    "independent": "Oberoende återförsäljare. Sur-Ron är ett varumärke som tillhör respektive ägare."
   },
   "404": {
     "title": "Sidan hittades inte",

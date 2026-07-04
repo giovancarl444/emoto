@@ -16,11 +16,15 @@
     {% render 'structured-data' %}
   </head>
   <body>
+    <a class="skip-link" href="#main">{{ 'general.skip_to_content' | t: default: 'Hoppa till innehåll' }}</a>
+    {% section 'announcement' %}
     {% section 'header' %}
     <main id="main">
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
+    {% section 'cart-drawer' %}
     <script src="{{ 'showroom.js' | asset_url }}" defer></script>
+    <script src="{{ 'cart.js' | asset_url }}" defer></script>
   </body>
 </html>

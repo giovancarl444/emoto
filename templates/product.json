@@ -25,7 +25,13 @@
         "r9": { "type": "row", "settings": { "label": "Bromsar", "value": "hydrauliska skivbromsar" } }
       },
       "block_order": ["g1", "r1", "r2", "r3", "g2", "r4", "r5", "r6", "g3", "r7", "r8", "r9"]
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {
+        "collection": "modeller"
+      }
     }
   },
-  "order": ["main", "specs"]
+  "order": ["main", "specs", "related"]
 }
