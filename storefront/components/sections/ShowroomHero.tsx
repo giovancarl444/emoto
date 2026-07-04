@@ -60,7 +60,7 @@ export function ShowroomHero({ locale }: { locale: Locale }) {
   const go = (dir: number) => setActive((a) => (a + dir + MODELS.length) % MODELS.length)
 
   return (
-    <section className="relative -mt-16 flex min-h-screen flex-col overflow-hidden bg-ink-950 text-paper">
+    <section id="lineup" aria-roledescription="carousel" className="relative -mt-16 flex min-h-screen flex-col overflow-hidden bg-ink-950 text-paper">
       {/* atmosphere */}
       <div className="pointer-events-none absolute inset-0 -z-20">
         <div className="absolute inset-0 bg-[radial-gradient(120%_82%_at_50%_42%,#1a1c24_0%,#0b0c0e_60%)]" />
