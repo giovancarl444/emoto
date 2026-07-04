@@ -106,9 +106,9 @@ export function ShowroomHero({ locale }: { locale: Locale }) {
                 'transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
                 isCenter ? 'cursor-default' : 'cursor-pointer hover:opacity-60',
               ].join(' ')}
-              style={{ transform: `translate(${l.x}, -50%) scale(${l.scale})`, opacity: l.op, zIndex: l.z }}
+              style={{ transform: `translate(${l.x}, -50%) scale(${l.scale})`, zIndex: l.z }}
             >
-              <div className="relative aspect-[803/429] w-full">
+              <div className="relative aspect-[803/429] w-full" style={{ opacity: l.op }}>
                 <Media
                   src={m.img}
                   alt={m.name}
@@ -119,6 +119,11 @@ export function ShowroomHero({ locale }: { locale: Locale }) {
                   className="object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.65)]"
                 />
               </div>
+              {!isCenter && (
+                <div className="mt-1 text-center font-display text-2xl font-bold uppercase tracking-tight text-paper/70">
+                  {m.name}
+                </div>
+              )}
             </button>
           )
         })}
