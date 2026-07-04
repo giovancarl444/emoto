@@ -1,0 +1,13 @@
+{
+  "general": {
+    "cart": "Cart"
+  },
+  "showroom": {
+    "from": "From",
+    "or": "or",
+    "month": "mo",
+    "configure": "Configure",
+    "prev": "Previous",
+    "next": "Next"
+  }
+}

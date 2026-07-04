@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="container site-footer__row">
+    <a href="{{ routes.root_url }}" class="brand">
+      {%- render 'bee-mark' -%}
+      <span class="brand__word">{{ shop.name | default: 'EMOTO' }}<span class="brand__dot">.</span></span>
+    </a>
+    <p class="site-footer__note">© {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.note }}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer{background:var(--bg-sunken); border-top:1px solid var(--border)}
+  .site-footer__row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding-block:2.5rem}
+  .site-footer__note{font-size:.8rem; color:var(--text-muted)}
+</style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "note", "label": "Note", "default": "Oberoende återförsäljare av Sur-Ron®." }
+  ]
+}
+{% endschema %}
