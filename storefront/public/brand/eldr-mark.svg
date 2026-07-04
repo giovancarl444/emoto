@@ -1,8 +1,1 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ELDR mark">
-  <title>ELDR</title>
-  <!-- Three ascending angular blades: forward motion + terrain ridge + flame licks.
-       Tallest blade tipped in ember (the ELDR signal). -->
-  <path d="M6 40 L12 40 L20 18 L14 18 Z" fill="#E9E8E2"/>
-  <path d="M17 40 L23 40 L31 12 L25 12 Z" fill="#E9E8E2"/>
-  <path d="M28 40 L34 40 L42 6 L36 6 Z" fill="#FF5A1F"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 165" width="160" height="165" role="img" aria-label="ELDR hornet mark"><polygon points="80.0,16.0 140.6,51.0 140.6,121.0 80.0,156.0 19.4,121.0 19.4,51.0" fill="#F5C518" stroke="#0B0C0E" stroke-width="6" stroke-linejoin="round"/><path d="M64,46 C52,32 46,24 38,20" fill="none" stroke="#0B0C0E" stroke-width="5.5" stroke-linecap="round"/><path d="M96,46 C108,32 114,24 122,20" fill="none" stroke="#0B0C0E" stroke-width="5.5" stroke-linecap="round"/><circle cx="36" cy="19" r="4.5" fill="#0B0C0E"/><circle cx="124" cy="19" r="4.5" fill="#0B0C0E"/><polygon points="40,52 120,52 114,62 46,62" fill="#0B0C0E"/><polygon points="42,66 70,74 66,90 42,84" fill="#0B0C0E"/><polygon points="118,66 90,74 94,90 118,84" fill="#0B0C0E"/><polygon points="48,72 60,75 58,80 48,78" fill="#F5C518" opacity="0.85"/><polygon points="112,72 100,75 102,80 112,78" fill="#F5C518" opacity="0.85"/><polygon points="56,92 104,92 96,116 80,126 64,116" fill="#0B0C0E"/><polygon points="68,98 92,98 80,108" fill="#F5C518"/><polygon points="70,120 64,136 76,124" fill="#0B0C0E"/><polygon points="90,120 96,136 84,124" fill="#0B0C0E"/></svg>
