@@ -282,6 +282,26 @@ h1,h2,h3,p{margin:0}
 .pdp__highlights strong{font-family:var(--font-display); font-weight:800; font-size:1.05rem; color:#fff; line-height:1}
 .pdp__highlights span{margin-top:.2rem; font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(245,197,24,.85)}
 
+/* Financing block (delbetalning) */
+.pdp-fin{margin-top:1.5rem; padding:1.15rem 1.25rem; border:1px solid rgba(245,197,24,.28); border-radius:14px;
+  background:rgba(245,197,24,.05); position:relative}
+.pdp-fin__main{display:flex; flex-direction:column}
+.pdp-fin__label{font-family:var(--font-mono); font-size:.66rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--signal)}
+.pdp-fin__amount{margin-top:.15rem; font-family:var(--font-display); font-weight:800; font-size:1.4rem; letter-spacing:-.01em; color:#fff}
+.pdp-fin__amount strong{color:var(--signal); font-weight:800}
+.pdp-fin__terms{margin-top:.15rem; font-size:.82rem; color:rgba(255,255,255,.6)}
+.pdp-fin__brands{display:flex; gap:.4rem; margin-top:.75rem}
+.pdp-fin__note{margin-top:.7rem; font-size:.7rem; color:rgba(255,255,255,.4); line-height:1.45; max-width:44ch}
+.pdp-fin__link{display:inline-block; margin-top:.5rem; font-size:.82rem; font-weight:700; color:var(--signal)}
+.pdp-fin__link:hover{color:var(--bee-400)}
+@media(min-width:480px){
+  .pdp-fin{display:grid; grid-template-columns:1fr auto; grid-template-areas:"main brands" "note note" "link link"; column-gap:1rem}
+  .pdp-fin__main{grid-area:main}
+  .pdp-fin__brands{grid-area:brands; margin-top:0; align-self:start}
+  .pdp-fin__note{grid-area:note}
+  .pdp-fin__link{grid-area:link}
+}
+
 /* Configurator */
 .pdp__form{margin-top:1.75rem; display:flex; flex-direction:column; gap:1.5rem}
 .pdp__opt-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:.6rem}

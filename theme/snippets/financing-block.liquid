@@ -1,0 +1,24 @@
+{%- comment -%}
+  EMOTO — PDP financing block (delbetalning presentation).
+  Params: price (cents), months (int). Klarna/Qliro on-site messaging placeholder;
+  real provider widget drops in once Klarna is connected in Shopify Payments.
+{%- endcomment -%}
+{%- assign months = months | default: 36 -%}
+<div class="pdp-fin" data-financing>
+  <div class="pdp-fin__main">
+    <span class="pdp-fin__label">{{ 'product.finance_label' | t: default: 'Delbetala' }}</span>
+    <p class="pdp-fin__amount">
+      {{ 'product.finance_from' | t: default: 'från' }}
+      <strong data-pdp-monthly data-months="{{ months }}">{{ price | divided_by: months | money }}</strong>{{ 'product.month_short' | t: default: '/mån' }}
+    </p>
+    <p class="pdp-fin__terms">{{ 'product.finance_up_to' | t: default: 'i upp till' }} {{ months }} {{ 'product.finance_via' | t: default: 'månader via Klarna & Qliro' }}</p>
+  </div>
+  <div class="pdp-fin__brands" aria-hidden="true">
+    <span class="pay-badge">Klarna</span>
+    <span class="pay-badge">Qliro</span>
+  </div>
+  <p class="pdp-fin__note">{{ 'product.finance_note' | t: default: 'Representativt exempel och villkor visas i kassan. Kreditbeslut sker hos långivaren.' }}</p>
+  {%- if pages['delbetalning'] != blank -%}
+    <a class="pdp-fin__link" href="{{ pages['delbetalning'].url }}">{{ 'product.finance_link' | t: default: 'Läs om delbetalning' }} →</a>
+  {%- endif -%}
+</div>
