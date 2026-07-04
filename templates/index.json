@@ -35,7 +35,17 @@
         }
       },
       "block_order": ["light", "ultra", "storm"]
+    },
+    "feature": {
+      "type": "ultra-feature",
+      "blocks": {
+        "s1": { "type": "spec", "settings": { "value": "≈21 kW", "label": "Toppeffekt" } },
+        "s2": { "type": "spec", "settings": { "value": "140 km", "label": "Räckvidd" } },
+        "s3": { "type": "spec", "settings": { "value": "74V · 55Ah", "label": "Batteri" } },
+        "s4": { "type": "spec", "settings": { "value": "≈90 km/h", "label": "Toppfart" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
     }
   },
-  "order": ["showroom"]
+  "order": ["showroom", "feature"]
 }
