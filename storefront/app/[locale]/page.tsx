@@ -4,6 +4,7 @@ import type { Locale } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
 import { getAllModels, getAllParts } from '@/lib/content'
 import { ShowcaseHero } from '@/components/sections/ShowcaseHero'
+import { UltraBeeFeature } from '@/components/sections/UltraBeeFeature'
 import { TrustStrip } from '@/components/sections/TrustStrip'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ProductCard } from '@/components/commerce/ProductCard'
@@ -28,6 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       <ShowcaseHero locale={locale} />
+      <UltraBeeFeature locale={locale} />
       <TrustStrip locale={locale} />
 
       {/* Model lineup */}

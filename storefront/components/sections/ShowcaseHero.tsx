@@ -74,7 +74,7 @@ export function ShowcaseHero({ locale }: { locale: Locale }) {
 
       {/* the bike — centered hero, layered above the wordmark */}
       <div className="pointer-events-none absolute left-1/2 top-[54%] z-0 w-full max-w-[64rem] -translate-x-1/2 -translate-y-1/2 px-6">
-        <div className="relative aspect-[803/429] w-full">
+        <div className="showcase-bike relative aspect-[803/429] w-full">
           <Media
             src="/models/ultra-bee-master.png"
             alt={`Sur-Ron Ultra Bee — ${L(variant.name, locale)}`}
@@ -90,7 +90,7 @@ export function ShowcaseHero({ locale }: { locale: Locale }) {
       {/* content layers */}
       <div className="container-emoto relative z-10 flex flex-1 flex-col pb-6 pt-28 sm:pt-32">
         {/* tagline — refined, over the top of the bike */}
-        <div className="text-center">
+        <div className="reveal text-center">
           <span className="eyebrow text-signal/90">{L(COPY.eyebrow, locale)}</span>
           <h1 className="mt-3 font-display text-3xl font-black uppercase leading-[0.95] tracking-tight text-paper sm:text-5xl">
             <span>{L(COPY.line1, locale)}</span>{' '}

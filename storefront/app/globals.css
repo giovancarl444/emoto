@@ -198,8 +198,24 @@
   /* Showcase hero — ghosted oversized wordmark (outline only) */
   .showcase-ghost {
     font-size: clamp(5rem, 27vw, 23rem);
-    color: rgba(245, 197, 24, 0.03);
-    -webkit-text-stroke: 2px rgba(245, 197, 24, 0.2);
+    color: rgba(245, 197, 24, 0.05);
+    -webkit-text-stroke: 2px rgba(245, 197, 24, 0.32);
+  }
+
+  /* Showcase hero entrance — transform-only, CWV-safe */
+  .showcase-bike {
+    animation: showcase-rise 1000ms var(--ease-out) 80ms both;
+    will-change: transform;
+  }
+  @keyframes showcase-rise {
+    from {
+      opacity: 0;
+      transform: translateY(26px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   /* Seamless honeycomb texture (Hero Patterns "Hexagons", tinted signal) */
@@ -223,6 +239,9 @@
       animation: none;
     }
     .hero-media {
+      animation: none;
+    }
+    .showcase-bike {
       animation: none;
     }
   }
