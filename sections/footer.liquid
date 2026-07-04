@@ -48,17 +48,21 @@
         <a href="{{ routes.root_url }}products/storm-bee">Storm Bee</a>
       </nav>
 
+      {%- comment -%} Links render only when the target page/blog exists — no dead links. {%- endcomment -%}
       <nav class="site-footer__col" aria-label="{{ 'footer.company' | t: default: 'Company' }}">
         <h3 class="site-footer__heading">{{ 'footer.company' | t: default: 'Företag' }}</h3>
-        {%- if section.settings.about_page != blank -%}<a href="{{ section.settings.about_page.url }}">{{ section.settings.about_page.title }}</a>{%- else -%}<a href="{{ routes.root_url }}pages/om-oss">{{ 'footer.about' | t: default: 'Om EMOTO' }}</a>{%- endif -%}
-        <a href="{{ routes.root_url }}blogs/journal">{{ 'footer.journal' | t: default: 'Journal' }}</a>
-        <a href="{{ routes.root_url }}pages/kontakt">{{ 'footer.contact' | t: default: 'Kontakt' }}</a>
+        {%- assign about = section.settings.about_page | default: pages['om-oss'] -%}
+        {%- if about != blank -%}<a href="{{ about.url }}">{{ 'footer.about' | t: default: 'Om EMOTO' }}</a>{%- endif -%}
+        {%- assign journal = blogs['journal'] | default: blogs['news'] -%}
+        {%- if journal != blank -%}<a href="{{ journal.url }}">{{ 'footer.journal' | t: default: 'Journal' }}</a>{%- endif -%}
+        {%- assign contact = pages['kontakt'] | default: pages['contact'] -%}
+        {%- if contact != blank -%}<a href="{{ contact.url }}">{{ 'footer.contact' | t: default: 'Kontakt' }}</a>{%- endif -%}
       </nav>
 
       <nav class="site-footer__col" aria-label="{{ 'footer.support' | t: default: 'Support' }}">
         <h3 class="site-footer__heading">{{ 'footer.support' | t: default: 'Kundservice' }}</h3>
-        <a href="{{ routes.root_url }}pages/leverans">{{ 'footer.delivery' | t: default: 'Leverans' }}</a>
-        <a href="{{ routes.root_url }}pages/delbetalning">{{ 'footer.financing' | t: default: 'Delbetalning' }}</a>
+        {%- if pages['leverans'] != blank -%}<a href="{{ pages['leverans'].url }}">{{ 'footer.delivery' | t: default: 'Leverans' }}</a>{%- endif -%}
+        {%- if pages['delbetalning'] != blank -%}<a href="{{ pages['delbetalning'].url }}">{{ 'footer.financing' | t: default: 'Delbetalning' }}</a>{%- endif -%}
         {%- if shop.privacy_policy != blank -%}<a href="{{ shop.privacy_policy.url }}">{{ shop.privacy_policy.title }}</a>{%- endif -%}
         {%- if shop.refund_policy != blank -%}<a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a>{%- endif -%}
         {%- if shop.terms_of_service != blank -%}<a href="{{ shop.terms_of_service.url }}">{{ shop.terms_of_service.title }}</a>{%- endif -%}

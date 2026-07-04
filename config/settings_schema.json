@@ -18,8 +18,9 @@
     "name": "Reviews",
     "settings": [
       { "type": "header", "content": "Trustpilot" },
-      { "type": "text", "id": "trustpilot_rating", "label": "Rating (0–5)", "default": "4.8" },
-      { "type": "text", "id": "trustpilot_count", "label": "Review count", "default": "127" },
+      { "type": "paragraph", "content": "Leave blank until you have real reviews — the badge stays hidden. Never enter a rating you can't back up (EU/Swedish law prohibits fake reviews)." },
+      { "type": "text", "id": "trustpilot_rating", "label": "Rating (0–5)", "info": "e.g. 4.8" },
+      { "type": "text", "id": "trustpilot_count", "label": "Review count" },
       { "type": "url", "id": "trustpilot_url", "label": "Trustpilot profile URL" }
     ]
   },
