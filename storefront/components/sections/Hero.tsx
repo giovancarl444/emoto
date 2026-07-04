@@ -25,15 +25,17 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 grid-etch" aria-hidden />
-      <div className="absolute inset-0 -z-10">
-        <Media
-          src="/editorial/hero-terrain.svg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-60"
-        />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="hero-media absolute inset-0">
+          <Media
+            src="/editorial/hero-terrain.svg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-60"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 to-bg/30" />
       </div>
 

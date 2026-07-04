@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Locale } from '@/lib/brand'
 import type { Model } from '@/lib/types'
 import { L, t } from '@/lib/i18n'
@@ -36,6 +36,23 @@ export function ProductConfigurator({
 
   const variant = model.variants.find((v) => v.id === variantId)!
   const isStreet = variant.roadClass !== 'offroad'
+  const lowStock =
+    variant.availability.state === 'in_stock' &&
+    typeof variant.availability.stockQty === 'number' &&
+    variant.availability.stockQty <= 5
+
+  // Scroll-aware sticky ATC: show once the inline CTA scrolls out of view.
+  const ctaRef = useRef<HTMLDivElement>(null)
+  const [showSticky, setShowSticky] = useState(false)
+  useEffect(() => {
+    const el = ctaRef.current
+    if (!el) return
+    const io = new IntersectionObserver(([entry]) => setShowSticky(!entry.isIntersecting), {
+      rootMargin: '0px 0px -40px 0px',
+    })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
 
   const keySpecs = useMemo(() => {
     const all = model.specGroups.flatMap((g) => g.items)
@@ -117,7 +134,7 @@ export function ProductConfigurator({
 
       {/* Price + availability */}
       <div className="flex flex-col gap-3 border-y border-border py-5">
-        <Price money={variant.price} locale={locale} size="lg" showVat showEur />
+        <Price money={variant.price} locale={locale} size="lg" showVat showEur showFinancing />
         <div className="flex flex-wrap items-center gap-3">
           <StockBadge availability={variant.availability} locale={locale} />
           <span className="text-xs text-text-faint">
@@ -126,6 +143,14 @@ export function ProductConfigurator({
               : t('stock.chinaBuild', locale)}
           </span>
         </div>
+        {lowStock && (
+          <p className="flex items-center gap-1.5 text-xs font-medium text-warning">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-warning" aria-hidden />
+            {locale === 'sv'
+              ? `Endast ${variant.availability.stockQty} kvar i lager`
+              : `Only ${variant.availability.stockQty} left in stock`}
+          </p>
+        )}
         <div className="flex items-center gap-2 text-xs text-text-muted">
           <Icon name="truck" size={15} className="text-text-faint" />
           <span suppressHydrationWarning>{deliveryEstimate(variant.availability, locale)}</span>
@@ -194,7 +219,7 @@ export function ProductConfigurator({
       </dl>
 
       {/* CTAs (desktop / inline) */}
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <div ref={ctaRef} className="flex flex-col gap-2 sm:flex-row">
         <Button variant="signal" size="lg" fullWidth iconRight="cart" onClick={() => addToCart(false)}>
           {t('cta.addToCart', locale)}
         </Button>
@@ -203,10 +228,37 @@ export function ProductConfigurator({
         </Button>
       </div>
 
-      {/* Sticky ATC — mobile only, thumb-reachable */}
-      <div className="fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-bg/95 px-4 py-3 backdrop-blur-md lg:hidden">
-        <div className="flex items-center gap-3">
-          <div className="flex flex-col">
+      {/* Trust row — reassurance at the decision point */}
+      <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-border pt-4 sm:grid-cols-4">
+        {(
+          [
+            { icon: 'bolt', label: { sv: 'Säker kassa', en: 'Secure checkout' } },
+            { icon: 'shield', label: { sv: 'Fordonsgaranti', en: 'Vehicle warranty' } },
+            { icon: 'truck', label: { sv: 'DDP inom EU', en: 'DDP within EU' } },
+            { icon: 'file-check', label: { sv: '14 dagars ånger', en: '14-day returns' } },
+          ] as const
+        ).map((it) => (
+          <li key={it.label.en} className="flex items-center gap-2 text-2xs text-text-muted">
+            <Icon name={it.icon} size={15} className="shrink-0 text-signal" />
+            {it.label[locale]}
+          </li>
+        ))}
+      </ul>
+
+      {/* Scroll-aware sticky ATC — appears once the inline CTA leaves view (all breakpoints) */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-bg/95 backdrop-blur-md transition-transform duration-3 ease-out ${
+          showSticky ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <div className="container-eldr flex items-center gap-4 px-4 py-3">
+          <div className="hidden shrink-0 sm:block">
+            <span className="eyebrow">{model.marque}</span>
+            <p className="font-display text-base font-black uppercase leading-none tracking-tight text-text-strong">
+              {model.name}
+            </p>
+          </div>
+          <div className="flex flex-col leading-tight">
             <span className="text-2xs text-text-faint">{L(variant.name, locale)}</span>
             <span className="font-display text-base font-bold text-text-strong">
               {formatSEK(variant.price.sek, locale)}
@@ -215,9 +267,8 @@ export function ProductConfigurator({
           <Button
             variant="signal"
             size="md"
-            fullWidth
             iconRight="cart"
-            className="flex-1"
+            className="ml-auto flex-1 sm:flex-none sm:px-8"
             onClick={() => addToCart(false)}
           >
             {t('cta.addToCart', locale)}

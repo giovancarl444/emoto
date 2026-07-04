@@ -68,6 +68,11 @@ export const T: Dict = {
   'label.insurance': { sv: 'Försäkring', en: 'Insurance' },
   'label.helmet': { sv: 'Hjälm', en: 'Helmet' },
 
+  'finance.from': { sv: 'Delbetala från', en: 'From' },
+  'finance.perMonth': { sv: 'kr/mån', en: 'kr/mo' },
+  'finance.with': { sv: 'med Klarna', en: 'with Klarna' },
+  'stock.onlyLeft': { sv: 'kvar i lager', en: 'left in stock' },
+
   'stock.in_stock': { sv: 'I lager', en: 'In stock' },
   'stock.build_to_order': { sv: 'Byggs på beställning', en: 'Built to order' },
   'stock.preorder': { sv: 'Förbeställning', en: 'Pre-order' },

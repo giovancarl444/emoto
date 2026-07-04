@@ -48,3 +48,15 @@ export function formatPrice(money: Money, locale: Locale = 'sv') {
 export function formatNumber(value: number, locale: Locale = 'sv'): string {
   return new Intl.NumberFormat(localeTag[locale]).format(value)
 }
+
+/**
+ * Indicative monthly instalment for the "delbetala från …" CRO framing on
+ * high-ticket items. Simple linear estimate over FINANCE_MONTHS — a real Klarna
+ * quote (with APR) is shown at checkout. Rounded to the nearest 10 kr.
+ * [VERIFY] partner terms before presenting as a firm offer.
+ */
+export const FINANCE_MONTHS = 36
+
+export function monthlyFinancing(sek: number, months = FINANCE_MONTHS): number {
+  return Math.round(sek / months / 10) * 10
+}

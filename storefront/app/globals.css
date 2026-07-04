@@ -172,6 +172,20 @@
     }
   }
 
+  /* Hero media entrance — slow scale-in, transform-only (CWV-safe) */
+  .hero-media {
+    animation: hero-scale 1100ms var(--ease-out) both;
+    will-change: transform;
+  }
+  @keyframes hero-scale {
+    from {
+      transform: scale(1.07);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
   .hairline-top {
     box-shadow: var(--hairline-top);
   }
@@ -191,6 +205,9 @@
     .reveal {
       opacity: 1;
       transform: none;
+      animation: none;
+    }
+    .hero-media {
       animation: none;
     }
   }

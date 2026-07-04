@@ -3,7 +3,7 @@ import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import type { Model } from '@/lib/types'
 import { L, t } from '@/lib/i18n'
-import { formatPrice } from '@/lib/format'
+import { formatPrice, formatSEK, monthlyFinancing } from '@/lib/format'
 import { StockBadge, RoadClassBadge } from '@/components/ui/Badge'
 import { Icon } from '@/components/ui/Icon'
 
@@ -70,6 +70,10 @@ export function ProductCard({
             <span className="eyebrow">{t('label.from', locale)}</span>
             <span className="font-display text-lg font-bold tracking-tight text-text-strong">
               {price.primary}
+            </span>
+            <span className="mt-0.5 text-2xs text-text-faint">
+              {t('finance.from', locale)} {formatSEK(monthlyFinancing(model.priceFrom.sek), locale)}/
+              {locale === 'sv' ? 'mån' : 'mo'}
             </span>
           </div>
           <span className="inline-flex items-center gap-1 text-sm text-text-muted transition-transform duration-2 group-hover:translate-x-0.5 group-hover:text-signal">

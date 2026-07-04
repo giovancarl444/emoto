@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/brand'
 import type { Money } from '@/lib/types'
-import { formatPrice, vatBreakdown, formatSEK } from '@/lib/format'
+import { formatPrice, vatBreakdown, formatSEK, monthlyFinancing, FINANCE_MONTHS } from '@/lib/format'
 import { t } from '@/lib/i18n'
 
 export function Price({
@@ -10,6 +10,7 @@ export function Price({
   showFrom = false,
   showVat = false,
   showEur = true,
+  showFinancing = false,
 }: {
   money: Money
   locale: Locale
@@ -17,9 +18,11 @@ export function Price({
   showFrom?: boolean
   showVat?: boolean
   showEur?: boolean
+  showFinancing?: boolean
 }) {
   const p = formatPrice(money, locale)
   const vat = vatBreakdown(money.sek)
+  const monthly = monthlyFinancing(money.sek)
   const primarySize =
     size === 'lg' ? 'text-2xl' : size === 'sm' ? 'text-base' : 'text-lg'
 
@@ -43,6 +46,17 @@ export function Price({
           </span>
         )}
       </div>
+      {showFinancing && (
+        <p className="mt-1 text-xs text-text-muted">
+          {t('finance.from', locale)}{' '}
+          <span className="font-mono text-text-strong">
+            {formatSEK(monthly, locale)}/{locale === 'sv' ? 'mån' : 'mo'}
+          </span>{' '}
+          <span className="text-text-faint">
+            · {FINANCE_MONTHS} {locale === 'sv' ? 'mån' : 'mo'} {t('finance.with', locale)}
+          </span>
+        </p>
+      )}
     </div>
   )
 }
