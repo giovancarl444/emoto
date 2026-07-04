@@ -6,6 +6,7 @@
         "light": {
           "type": "model",
           "settings": {
+            "product": "light-bee-x",
             "name": "Light Bee X",
             "marque": "Sur-Ron",
             "tagline": "Ren elektrisk enduro. Runt 50 kg.",
@@ -16,6 +17,7 @@
         "ultra": {
           "type": "model",
           "settings": {
+            "product": "ultra-bee",
             "name": "Ultra Bee",
             "marque": "Sur-Ron",
             "tagline": "Stadsgodkänd. Terrängfödd.",
@@ -26,6 +28,7 @@
         "storm": {
           "type": "model",
           "settings": {
+            "product": "storm-bee",
             "name": "Storm Bee",
             "marque": "Sur-Ron",
             "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.",
@@ -48,6 +51,10 @@
     },
     "feature": {
       "type": "ultra-feature",
+      "settings": {
+        "product": "ultra-bee",
+        "cta_label": "Utforska Ultra Bee"
+      },
       "blocks": {
         "s1": { "type": "spec", "settings": { "value": "≈21 kW", "label": "Toppeffekt" } },
         "s2": { "type": "spec", "settings": { "value": "140 km", "label": "Räckvidd" } },
@@ -59,9 +66,9 @@
     "lineup": {
       "type": "model-lineup",
       "blocks": {
-        "m1": { "type": "model", "settings": { "name": "Light Bee X", "marque": "Sur-Ron", "tagline": "Ren elektrisk enduro. Runt 50 kg.", "badge": "Lättast", "price": 54900 } },
-        "m2": { "type": "model", "settings": { "name": "Ultra Bee", "marque": "Sur-Ron", "tagline": "Stadsgodkänd. Terrängfödd.", "badge": "Mest mångsidig", "price": 64900 } },
-        "m3": { "type": "model", "settings": { "name": "Storm Bee", "marque": "Sur-Ron", "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.", "badge": "Starkast", "price": 99900 } }
+        "m1": { "type": "model", "settings": { "product": "light-bee-x", "name": "Light Bee X", "marque": "Sur-Ron", "tagline": "Ren elektrisk enduro. Runt 50 kg.", "badge": "Lättast", "price": 54900 } },
+        "m2": { "type": "model", "settings": { "product": "ultra-bee", "name": "Ultra Bee", "marque": "Sur-Ron", "tagline": "Stadsgodkänd. Terrängfödd.", "badge": "Mest mångsidig", "price": 64900 } },
+        "m3": { "type": "model", "settings": { "product": "storm-bee", "name": "Storm Bee", "marque": "Sur-Ron", "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.", "badge": "Starkast", "price": 99900 } }
       },
       "block_order": ["m1", "m2", "m3"]
     },
