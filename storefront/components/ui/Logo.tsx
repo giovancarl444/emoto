@@ -1,9 +1,10 @@
 import { BRAND } from '@/lib/brand'
 
 /**
- * The ELDR hex-hornet — an aggressive stinging-hornet face inside a honeycomb
- * hexagon. The hexagon = honeycomb; the angular face = the sting. Yellow + black.
- * Token-driven (fill-signal = bee yellow, fill-text-strong = ink) so it adapts.
+ * The ELDR winged-E — a stylized bee whose body is a bold "E", set inside a
+ * honeycomb hexagon: antennae + arced wings + stinger read as a bee, the E
+ * reads as the brand. Token-driven (fill-signal = bee yellow, fill-text-strong
+ * = ink) so the same mark inverts for black-hex placements.
  */
 export function Mark({ className, title }: { className?: string; title?: string }) {
   return (
@@ -12,7 +13,7 @@ export function Mark({ className, title }: { className?: string; title?: string 
       className={className}
       fill="none"
       role="img"
-      aria-label={title ?? `${BRAND.name} hornet mark`}
+      aria-label={title ?? `${BRAND.name} bee mark`}
     >
       <polygon
         points="80,16 140.6,51 140.6,121 80,156 19.4,121 19.4,51"
@@ -20,24 +21,21 @@ export function Mark({ className, title }: { className?: string; title?: string 
         strokeWidth="6"
         strokeLinejoin="round"
       />
+      {/* wings */}
+      <path d="M74,62 C46,32 28,42 40,70 C50,84 68,78 74,70" className="stroke-text-strong" strokeWidth="4.5" strokeLinejoin="round" />
+      <path d="M86,62 C114,32 132,42 120,70 C110,84 92,78 86,70" className="stroke-text-strong" strokeWidth="4.5" strokeLinejoin="round" />
       {/* antennae */}
-      <path d="M64 46 C52 32 46 24 38 20" className="stroke-text-strong" strokeWidth="5.5" strokeLinecap="round" />
-      <path d="M96 46 C108 32 114 24 122 20" className="stroke-text-strong" strokeWidth="5.5" strokeLinecap="round" />
-      <circle cx="36" cy="19" r="4.5" className="fill-text-strong" />
-      <circle cx="124" cy="19" r="4.5" className="fill-text-strong" />
-      {/* brow */}
-      <polygon points="40,52 120,52 114,62 46,62" className="fill-text-strong" />
-      {/* angry eyes */}
-      <polygon points="42,66 70,74 66,90 42,84" className="fill-text-strong" />
-      <polygon points="118,66 90,74 94,90 118,84" className="fill-text-strong" />
-      <polygon points="48,72 60,75 58,80 48,78" className="fill-signal" opacity="0.85" />
-      <polygon points="112,72 100,75 102,80 112,78" className="fill-signal" opacity="0.85" />
-      {/* chin mask + bee-stripe chevron */}
-      <polygon points="56,92 104,92 96,116 80,126 64,116" className="fill-text-strong" />
-      <polygon points="68,98 92,98 80,108" className="fill-signal" />
-      {/* mandible fangs */}
-      <polygon points="70,120 64,136 76,124" className="fill-text-strong" />
-      <polygon points="90,120 96,136 84,124" className="fill-text-strong" />
+      <path d="M72,44 C62,28 56,22 50,18" className="stroke-text-strong" strokeWidth="5" strokeLinecap="round" />
+      <path d="M88,44 C98,28 104,22 110,18" className="stroke-text-strong" strokeWidth="5" strokeLinecap="round" />
+      <circle cx="49" cy="17" r="4.5" className="fill-text-strong" />
+      <circle cx="111" cy="17" r="4.5" className="fill-text-strong" />
+      {/* body = bold E */}
+      <rect x="60" y="52" width="15" height="80" rx="4" className="fill-text-strong" />
+      <rect x="60" y="52" width="46" height="15" rx="4" className="fill-text-strong" />
+      <rect x="60" y="84" width="36" height="15" rx="4" className="fill-text-strong" />
+      <rect x="60" y="117" width="46" height="15" rx="4" className="fill-text-strong" />
+      {/* stinger */}
+      <polygon points="61,131 74,131 67.5,148" className="fill-text-strong" />
     </svg>
   )
 }
@@ -48,7 +46,7 @@ interface LogoProps {
   wordmarkClassName?: string
 }
 
-/** Black ELDR wordmark with a yellow sting-dot, paired with the hex-hornet. */
+/** Black ELDR wordmark with a yellow sting-dot, paired with the winged-E bee. */
 export function Logo({ variant = 'full', className, wordmarkClassName }: LogoProps) {
   return (
     <span className={['inline-flex items-center gap-2', className].filter(Boolean).join(' ')}>
