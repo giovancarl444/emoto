@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { BRAND } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, L, t, alternates } from '@/lib/i18n'
@@ -61,7 +61,7 @@ export default async function ComparePage({ params }: { params: Promise<{ locale
                 <th key={m.id} className="p-4 text-left align-bottom">
                   <Link href={`/${locale}/motorcyklar/${m.handle}`} className="group flex flex-col gap-2">
                     <span className="relative aspect-[4/3] overflow-hidden rounded-sm border border-border bg-bg-sunken">
-                      <Image src={m.hero.src} alt={L(m.hero.alt, locale)} fill sizes="220px" className="object-cover transition-transform duration-3 group-hover:scale-105" />
+                      <Media src={m.hero.src} alt={L(m.hero.alt, locale)} fill sizes="220px" className="object-cover transition-transform duration-3 group-hover:scale-105" />
                     </span>
                     <span className="eyebrow">{m.marque}</span>
                     <span className="font-display text-lg font-black uppercase leading-none tracking-tight text-text-strong group-hover:text-signal">

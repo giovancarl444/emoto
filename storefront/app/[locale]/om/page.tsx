@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale } from '@/lib/i18n'
 import { PageShell, Prose } from '@/components/ui/Prose'
@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       breadcrumbs={[{ name: 'ELDR', href: `/${l}` }, { name: sv ? 'Om' : 'About' }]}
     >
       <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-md border border-border">
-        <Image src="/editorial/about-forge.svg" alt="" fill sizes="(max-width:768px) 100vw, 42rem" className="object-cover" />
+        <Media src="/editorial/about-forge.svg" alt="" fill sizes="(max-width:768px) 100vw, 42rem" className="object-cover" />
       </div>
       <Prose>
         <p>{sv ? 'ELDR är en oberoende, svenskgrundad återförsäljare av högpresterande elektriska off-road- och gaturegistrerade motorcyklar. Vi säljer Sur-Ron idag och är byggda för att bära fler märken imorgon.' : 'ELDR is an independent, Sweden-founded retailer of high-performance electric off-road and street-legal motorcycles. We sell Sur-Ron today and are built to carry more marques tomorrow.'}</p>

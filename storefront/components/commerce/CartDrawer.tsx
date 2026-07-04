@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { formatSEK } from '@/lib/format'
 import { t } from '@/lib/i18n'
@@ -100,7 +100,7 @@ export function CartDrawer({ locale }: { locale: Locale }) {
                     className="relative h-20 w-24 shrink-0 overflow-hidden rounded-sm border border-border bg-surface"
                   >
                     {i.image && (
-                      <Image src={i.image} alt={i.title} fill sizes="96px" className="object-cover" />
+                      <Media src={i.image} alt={i.title} fill sizes="96px" className="object-cover" />
                     )}
                   </Link>
                   <div className="flex flex-1 flex-col">

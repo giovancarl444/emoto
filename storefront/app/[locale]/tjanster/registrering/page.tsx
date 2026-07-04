@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { BRAND } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, L, t, alternates } from '@/lib/i18n'
@@ -138,7 +138,7 @@ export default async function RegistrationPage({ params }: { params: Promise<{ l
           </p>
         </div>
         <div className="relative order-first aspect-[4/3] overflow-hidden rounded-md border border-border lg:order-last">
-          <Image src="/editorial/registration.svg" alt="" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+          <Media src="/editorial/registration.svg" alt="" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
         </div>
       </div>
 

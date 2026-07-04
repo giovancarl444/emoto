@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import type { MediaAsset } from '@/lib/types'
 import { L } from '@/lib/i18n'
@@ -14,7 +14,7 @@ export function MediaGallery({ media, locale }: { media: MediaAsset[]; locale: L
   return (
     <div className="flex flex-col gap-3">
       <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-bg-sunken">
-        <Image
+        <Media
           src={current.src}
           alt={L(current.alt, locale)}
           fill
@@ -42,7 +42,7 @@ export function MediaGallery({ media, locale }: { media: MediaAsset[]; locale: L
                 i === active ? 'border-signal' : 'border-border hover:border-border-strong'
               }`}
             >
-              <Image src={m.src} alt="" fill sizes="80px" className="object-cover" />
+              <Media src={m.src} alt="" fill sizes="80px" className="object-cover" />
             </button>
           ))}
         </div>

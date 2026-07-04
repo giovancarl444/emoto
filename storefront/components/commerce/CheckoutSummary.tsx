@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { formatSEK, vatBreakdown } from '@/lib/format'
 import { t } from '@/lib/i18n'
@@ -67,7 +67,7 @@ export function CheckoutSummary({ locale }: { locale: Locale }) {
           {items.map((i) => (
             <li key={i.variantId} className="flex gap-4 py-4">
               <span className="relative h-16 w-20 shrink-0 overflow-hidden rounded-sm border border-border bg-surface">
-                {i.image && <Image src={i.image} alt={i.title} fill sizes="80px" className="object-cover" />}
+                {i.image && <Media src={i.image} alt={i.title} fill sizes="80px" className="object-cover" />}
               </span>
               <div className="flex flex-1 flex-col">
                 <Link href={i.href} className="text-sm font-semibold text-text-strong">

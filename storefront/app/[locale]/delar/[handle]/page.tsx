@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import Link from 'next/link'
 import type { Locale } from '@/lib/brand'
 import { BRAND } from '@/lib/brand'
@@ -56,7 +56,7 @@ export default async function PartPDP({
 
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="relative aspect-square overflow-hidden rounded-md border border-border bg-bg-sunken">
-          <Image
+          <Media
             src={part.images[0]?.src ?? '/brand/eldr-mark.svg'}
             alt={part.images[0] ? L(part.images[0].alt, locale) : L(part.name, locale)}
             fill

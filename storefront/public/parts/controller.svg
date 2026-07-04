@@ -1,22 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="SPORT CONTROLLER">
-  <defs>
-    <radialGradient id="g" cx="30%" cy="15%" r="90%">
-      <stop offset="0%" stop-color="#141619"/>
-      <stop offset="100%" stop-color="#0B0C0E"/>
-    </radialGradient>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" fill="none" stroke="#262A31" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="1000" height="1000" fill="url(#g)"/>
-  <rect width="1000" height="1000" fill="url(#grid)" opacity="0.35"/>
-  
-      <g opacity="0.9">
-        <path d="M620 780 L660 780 L720 420 L680 420 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M680 780 L720 780 L800 300 L760 300 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M740 780 L780 780 L880 180 L840 180 Z" fill="#FF5A1F" opacity="0.9"/>
-      </g>
-  <text x="40" y="916" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6B7280">ELDR · PART</text>
-  <text x="40" y="956" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="64" fill="#E9E8E2" letter-spacing="-1">SPORT CONTROLLER</text>
-  <text x="40" y="980" font-family="monospace" font-size="13" fill="#FF5A1F">De-restricted controller</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img">
+      <defs>
+      <radialGradient id="bg" cx="42%" cy="26%" r="90%"><stop offset="0%" stop-color="#14161A"/><stop offset="100%" stop-color="#0B0C0E"/></radialGradient>
+      <pattern id="gr" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#262A31" stroke-width="1"/></pattern>
+      <radialGradient id="fg" cx="50%" cy="82%" r="46%"><stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.16"/><stop offset="100%" stop-color="#FF5A1F" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="url(#bg)"/><rect width="1000" height="1000" fill="url(#gr)" opacity="0.35"/>
+    <ellipse cx="500" cy="860" rx="400" ry="50" fill="url(#fg)"/><rect x="300" y="300" width="400" height="320" rx="20" fill="#14161A" stroke="#E9E8E2" stroke-width="12"/><line x1="330" y1="320" x2="330" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="360" y1="320" x2="360" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="390" y1="320" x2="390" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="420" y1="320" x2="420" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="450" y1="320" x2="450" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="480" y1="320" x2="480" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="510" y1="320" x2="510" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="540" y1="320" x2="540" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="570" y1="320" x2="570" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="600" y1="320" x2="600" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="630" y1="320" x2="630" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><line x1="660" y1="320" x2="660" y2="600" stroke="#9098A2" stroke-width="6" opacity="0.5"/><circle cx="500" cy="460" r="46" fill="none" stroke="#FF5A1F" stroke-width="8"/><path d="M500 430 l-16 40 h20 l-8 30" fill="none" stroke="#FF5A1F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M300 560 q-70 0 -70 -70" fill="none" stroke="#9098A2" stroke-width="10"/><path d="M700 360 q70 0 70 70" fill="none" stroke="#FF5A1F" stroke-width="10"/>
+      <text x="52" y="944" font-family="monospace" font-size="20" letter-spacing="3" fill="#9098A2">DRIVLINA</text>
+      <text x="52" y="970" font-family="monospace" font-size="16" fill="#FF5A1F">Sport controller</text>
+    </svg>

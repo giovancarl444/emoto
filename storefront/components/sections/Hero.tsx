@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { BRAND } from '@/lib/brand'
 import { L, t } from '@/lib/i18n'
@@ -26,7 +26,7 @@ export function Hero({ locale }: { locale: Locale }) {
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 grid-etch" aria-hidden />
       <div className="absolute inset-0 -z-10">
-        <Image
+        <Media
           src="/editorial/hero-terrain.svg"
           alt=""
           fill

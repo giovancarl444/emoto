@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import type { Part } from '@/lib/types'
 import { L, t } from '@/lib/i18n'
@@ -29,7 +29,7 @@ export function PartCard({ part, locale }: { part: Part; locale: Locale }) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-md border border-border bg-surface transition-colors duration-2 hover:border-border-strong">
       <Link href={href} className="relative aspect-square overflow-hidden bg-bg-sunken">
-        <Image
+        <Media
           src={part.images[0]?.src ?? '/brand/eldr-mark.svg'}
           alt={part.images[0] ? L(part.images[0].alt, locale) : L(part.name, locale)}
           fill

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import type { Model } from '@/lib/types'
 import { L, t } from '@/lib/i18n'
@@ -38,7 +38,7 @@ export function ProductCard({
       className="group relative flex flex-col overflow-hidden rounded-md border border-border bg-surface transition-colors duration-2 hover:border-border-strong"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-bg-sunken">
-        <Image
+        <Media
           src={model.hero.src}
           alt={L(model.hero.alt, locale)}
           fill

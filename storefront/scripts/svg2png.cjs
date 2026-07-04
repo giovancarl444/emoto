@@ -1,0 +1,11 @@
+const { chromium } = require('playwright-core')
+const fs = require('fs')
+;(async () => {
+  const svg = fs.readFileSync(process.argv[2], 'utf8')
+  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args: ['--no-sandbox','--disable-gpu'] })
+  const p = await b.newPage({ viewport: { width: 1200, height: 800 }, deviceScaleFactor: 2 })
+  await p.setContent(`<body style="margin:0">${svg}</body>`)
+  await p.waitForTimeout(200)
+  await p.screenshot({ path: process.argv[3] })
+  await b.close(); console.log('rendered', process.argv[3])
+})()

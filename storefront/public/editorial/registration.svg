@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="PLATES">
-  <defs>
-    <radialGradient id="g" cx="30%" cy="15%" r="90%">
-      <stop offset="0%" stop-color="#141619"/>
-      <stop offset="100%" stop-color="#0B0C0E"/>
-    </radialGradient>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" fill="none" stroke="#262A31" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="1200" height="900" fill="url(#g)"/>
-  <rect width="1200" height="900" fill="url(#grid)" opacity="0.35"/>
-  
-      <g opacity="0.9">
-        <path d="M744 702 L792 702 L864 378 L816 378 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M816 702 L864 702 L960 270 L912 270 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M888 702 L936 702 L1056 162 L1008 162 Z" fill="#FF5A1F" opacity="0.9"/>
-      </g>
-  <text x="40" y="816" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6B7280">ELDR · SERVICE</text>
-  <text x="40" y="856" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="64" fill="#E9E8E2" letter-spacing="-1">PLATES</text>
-  <text x="40" y="880" font-family="monospace" font-size="13" fill="#FF5A1F">Registreringshjälp</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img"><defs>
+      <radialGradient id="bg" cx="42%" cy="26%" r="90%"><stop offset="0%" stop-color="#14161A"/><stop offset="100%" stop-color="#0B0C0E"/></radialGradient>
+      <pattern id="gr" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#262A31" stroke-width="1"/></pattern>
+      <radialGradient id="fg" cx="50%" cy="82%" r="46%"><stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.16"/><stop offset="100%" stop-color="#FF5A1F" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1200" height="900" fill="url(#bg)"/><rect width="1200" height="900" fill="url(#gr)" opacity="0.35"/>
+    <ellipse cx="600" cy="774" rx="480" ry="45" fill="url(#fg)"/>
+    <g transform="rotate(-4 600 450)">
+      <rect x="330" y="360" width="540" height="150" rx="14" fill="#ECEBE4" stroke="#E9E8E2" stroke-width="3"/>
+      <rect x="330" y="360" width="70" height="150" rx="14" fill="#0B2E7A"/>
+      <rect x="386" y="360" width="14" height="150" fill="#0B2E7A"/>
+      <circle cx="402" cy="370" r="3.4" fill="#F2C33A"/><circle cx="413" cy="373" r="3.4" fill="#F2C33A"/><circle cx="421" cy="381" r="3.4" fill="#F2C33A"/><circle cx="424" cy="392" r="3.4" fill="#F2C33A"/><circle cx="421" cy="403" r="3.4" fill="#F2C33A"/><circle cx="413" cy="411" r="3.4" fill="#F2C33A"/><circle cx="402" cy="414" r="3.4" fill="#F2C33A"/><circle cx="391" cy="411" r="3.4" fill="#F2C33A"/><circle cx="383" cy="403" r="3.4" fill="#F2C33A"/><circle cx="380" cy="392" r="3.4" fill="#F2C33A"/><circle cx="383" cy="381" r="3.4" fill="#F2C33A"/><circle cx="391" cy="373" r="3.4" fill="#F2C33A"/>
+      <text x="365" y="486" font-family="monospace" font-weight="bold" font-size="34" fill="#ECEBE4" text-anchor="middle">S</text>
+      <text x="640" y="472" font-family="monospace" font-weight="bold" font-size="96" letter-spacing="6" fill="#101216" text-anchor="middle">ELD 45R</text>
+      <circle cx="430" cy="384" r="6" fill="#B9BEC7"/><circle cx="820" cy="384" r="6" fill="#B9BEC7"/>
+      <circle cx="430" cy="486" r="6" fill="#B9BEC7"/><circle cx="820" cy="486" r="6" fill="#B9BEC7"/>
+    </g>
+    <g transform="rotate(-9 880 300)">
+      <rect x="742" y="250" width="276" height="88" rx="8" fill="none" stroke="#FF5A1F" stroke-width="5"/>
+      <path d="M770 296 l18 18 l34 -40" fill="none" stroke="#FF5A1F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="900" y="306" font-family="monospace" font-weight="bold" font-size="30" letter-spacing="2" fill="#FF5A1F" text-anchor="middle">REGISTRERAD</text>
+    </g><text x="52" y="860" font-family="monospace" font-size="18" letter-spacing="3" fill="#9098A2">ELDR · REGISTRERINGSHJÄLP</text></svg>

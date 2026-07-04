@@ -1,22 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="SMOOTH THROTTLE">
-  <defs>
-    <radialGradient id="g" cx="30%" cy="15%" r="90%">
-      <stop offset="0%" stop-color="#141619"/>
-      <stop offset="100%" stop-color="#0B0C0E"/>
-    </radialGradient>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" fill="none" stroke="#262A31" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="1000" height="1000" fill="url(#g)"/>
-  <rect width="1000" height="1000" fill="url(#grid)" opacity="0.35"/>
-  
-      <g opacity="0.9">
-        <path d="M620 780 L660 780 L720 420 L680 420 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M680 780 L720 780 L800 300 L760 300 Z" fill="#E9E8E2" opacity="0.14"/>
-        <path d="M740 780 L780 780 L880 180 L840 180 Z" fill="#FF5A1F" opacity="0.9"/>
-      </g>
-  <text x="40" y="916" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6B7280">ELDR · PART</text>
-  <text x="40" y="956" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="64" fill="#E9E8E2" letter-spacing="-1">SMOOTH THROTTLE</text>
-  <text x="40" y="980" font-family="monospace" font-size="13" fill="#FF5A1F">Aftermarket electronic throttle</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img">
+      <defs>
+      <radialGradient id="bg" cx="42%" cy="26%" r="90%"><stop offset="0%" stop-color="#14161A"/><stop offset="100%" stop-color="#0B0C0E"/></radialGradient>
+      <pattern id="gr" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#262A31" stroke-width="1"/></pattern>
+      <radialGradient id="fg" cx="50%" cy="82%" r="46%"><stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.16"/><stop offset="100%" stop-color="#FF5A1F" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="url(#bg)"/><rect width="1000" height="1000" fill="url(#gr)" opacity="0.35"/>
+    <ellipse cx="500" cy="860" rx="400" ry="50" fill="url(#fg)"/><rect x="240" y="420" width="360" height="90" rx="45" fill="#14161A" stroke="#E9E8E2" stroke-width="12"/><line x1="300" y1="425" x2="300" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="344" y1="425" x2="344" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="388" y1="425" x2="388" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="432" y1="425" x2="432" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="476" y1="425" x2="476" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="520" y1="425" x2="520" y2="505" stroke="#9098A2" stroke-width="6"/><line x1="564" y1="425" x2="564" y2="505" stroke="#9098A2" stroke-width="6"/><rect x="590" y="405" width="70" height="120" rx="14" fill="#14161A" stroke="#FF5A1F" stroke-width="10"/><path d="M660 465 q90 0 120 90" fill="none" stroke="#FF5A1F" stroke-width="10" stroke-linecap="round"/><circle cx="270" cy="465" r="26" fill="#0B0C0E" stroke="#9098A2" stroke-width="8"/>
+      <text x="52" y="944" font-family="monospace" font-size="20" letter-spacing="3" fill="#9098A2">REGLAGE</text>
+      <text x="52" y="970" font-family="monospace" font-size="16" fill="#FF5A1F">Smooth throttle</text>
+    </svg>

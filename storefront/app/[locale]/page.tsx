@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Media } from '@/components/ui/Media'
 import type { Locale } from '@/lib/brand'
 import { DEFAULT_LOCALE, isLocale, t } from '@/lib/i18n'
 import { getAllModels, getAllParts } from '@/lib/content'
@@ -78,7 +78,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
           <div className="relative order-first aspect-[4/3] overflow-hidden rounded-md border border-border lg:order-last">
-            <Image src="/editorial/registration.svg" alt="" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+            <Media src="/editorial/registration.svg" alt="" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
           </div>
         </div>
       </section>
