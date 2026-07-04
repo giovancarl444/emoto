@@ -4,7 +4,9 @@
   assign active = count | minus: 1 | divided_by: 2
   assign a = blocks[active]
 -%}
-<section class="showroom" data-showroom>
+<section class="showroom" data-showroom
+  data-fin-or="{{ 'showroom.or' | t: default: 'eller' | escape }}"
+  data-fin-month="{{ 'showroom.month' | t: default: 'mån' | escape }}">
   <div class="showroom__atmos" aria-hidden="true">
     <div class="showroom__grad"></div>
     <div class="showroom__comb"></div>
