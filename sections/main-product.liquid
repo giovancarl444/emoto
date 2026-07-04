@@ -3,6 +3,11 @@
   assign variant = product.selected_or_first_available_variant
 -%}
 <section class="pdp" data-product-section data-product-url="{{ product.url }}">
+  <div class="pdp__hero">
+  <div class="pdp__atmos" aria-hidden="true">
+    <div class="pdp__comb"></div>
+    <div class="pdp__glow"></div>
+  </div>
   <div class="container pdp__grid">
     {%- comment -%} ── Media gallery ── {%- endcomment -%}
     <div class="pdp__media">
@@ -40,11 +45,24 @@
         {%- endif -%}
       </div>
       <p class="pdp__fin" data-pdp-fin>
-        {{ 'product.or' | t: default: 'eller' }} <span data-pdp-monthly>{{ variant.price | divided_by: 36 | money }}</span>/{{ 'product.month' | t: default: 'mån' }} · {{ 'product.incl_vat' | t: default: 'inkl. moms' }}
+        {{ 'product.or' | t: default: 'eller' }} <span data-pdp-monthly>{{ variant.price | divided_by: 36 | money }}</span>/{{ 'product.month' | t: default: 'mån' }}
+        <span class="pdp__klarna">{{ 'product.klarna' | t: default: 'Klarna' }}</span>
+        · {{ 'product.incl_vat' | t: default: 'inkl. moms' }}
       </p>
+
+      <div class="pdp__rating">{% render 'trustpilot', tone: 'light', compact: true %}</div>
 
       {%- if product.description != blank -%}
         <div class="pdp__lead">{{ product.description | strip_html | truncatewords: 34 }}</div>
+      {%- endif -%}
+
+      {%- assign hi = section.blocks | where: 'type', 'highlight' -%}
+      {%- if hi.size > 0 -%}
+        <ul class="pdp__highlights">
+          {%- for block in hi -%}
+            <li {{ block.shopify_attributes }}><strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></li>
+          {%- endfor -%}
+        </ul>
       {%- endif -%}
 
       {%- form 'product', product, id: 'product-form', class: 'pdp__form' -%}
@@ -86,6 +104,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg> {{ section.settings.trust_3 | default: 'Registreringshjälp ingår' }}</li>
       </ul>
     </div>
+  </div>
   </div>
 
   {%- if product.description != blank -%}
@@ -129,6 +148,16 @@
     { "type": "text", "id": "trust_1", "label": "Trust 1", "default": "2 års garanti" },
     { "type": "text", "id": "trust_2", "label": "Trust 2", "default": "Fri leverans inom EU (DDP)" },
     { "type": "text", "id": "trust_3", "label": "Trust 3", "default": "Registreringshjälp ingår" }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight chip",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "≈21 kW" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Toppeffekt" }
+      ]
+    }
   ]
 }
 {% endschema %}

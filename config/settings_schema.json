@@ -15,6 +15,15 @@
     ]
   },
   {
+    "name": "Reviews",
+    "settings": [
+      { "type": "header", "content": "Trustpilot" },
+      { "type": "text", "id": "trustpilot_rating", "label": "Rating (0–5)", "default": "4.8" },
+      { "type": "text", "id": "trustpilot_count", "label": "Review count", "default": "127" },
+      { "type": "url", "id": "trustpilot_url", "label": "Trustpilot profile URL" }
+    ]
+  },
+  {
     "name": "Social & sharing",
     "settings": [
       { "type": "header", "content": "SEO / sharing" },
