@@ -73,15 +73,16 @@ export function ShowcaseHero({ locale }: { locale: Locale }) {
       </span>
 
       {/* the bike — centered hero, layered above the wordmark */}
-      <div className="pointer-events-none absolute left-1/2 top-[55%] z-0 w-full max-w-[62rem] -translate-x-1/2 -translate-y-1/2 px-6">
-        <div className="relative aspect-[1200/620] w-full">
+      <div className="pointer-events-none absolute left-1/2 top-[54%] z-0 w-full max-w-[64rem] -translate-x-1/2 -translate-y-1/2 px-6">
+        <div className="relative aspect-[803/429] w-full">
           <Media
-            src="/models/ultra-bee-side-dark.svg"
+            src="/models/ultra-bee-master.png"
             alt={`Sur-Ron Ultra Bee — ${L(variant.name, locale)}`}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 992px"
-            className="object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
+            unoptimized
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="object-contain drop-shadow-[0_36px_50px_rgba(0,0,0,0.7)]"
           />
         </div>
       </div>
