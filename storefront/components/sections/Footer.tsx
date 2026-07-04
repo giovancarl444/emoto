@@ -28,6 +28,7 @@ export function Footer({ locale }: { locale: Locale }) {
       links: [
         { href: `/${locale}/om`, label: { sv: 'Om ELDR', en: 'About ELDR' } },
         { href: `/${locale}/aterforsaljare`, label: { sv: 'Återförsäljare', en: 'Resellers' } },
+        { href: `/${locale}/spar-order`, label: { sv: 'Spåra order', en: 'Track order' } },
         { href: `/${locale}/kontakt`, label: { sv: 'Kontakt', en: 'Contact' } },
       ],
     },

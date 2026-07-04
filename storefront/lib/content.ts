@@ -3,6 +3,8 @@ import { models } from '@/content/models'
 import { parts } from '@/content/parts'
 import { warranties } from '@/content/warranties'
 import { services } from '@/content/services'
+import { orders } from '@/content/orders'
+import type { Order } from './fulfillment'
 import type { Model, Part, UseCase, Warranty, RoadClass } from './types'
 
 /**
@@ -70,6 +72,12 @@ export function getCompatibleParts(model: Model): Part[] {
 /* ── Warranty ───────────────────────────────────────────────────────────── */
 export function getWarranty(id: string): Warranty | undefined {
   return warranties.find((w) => w.id === id)
+}
+
+/* ── Orders (order-status tracker) ──────────────────────────────────────── */
+export function getOrder(id: string, email: string): Order | undefined {
+  const norm = (s: string) => s.trim().toLowerCase()
+  return orders.find((o) => norm(o.id) === norm(id) && norm(o.email) === norm(email))
 }
 
 /* ── Purchasable resolution (cart, mock mode) ───────────────────────────── */

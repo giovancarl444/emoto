@@ -19,6 +19,14 @@ This repository is the **Phase 1 foundation** — strategy, brand, design system
 | 5 | **Optimization + compliance report** | [`docs/compliance-and-optimization.md`](docs/compliance-and-optimization.md) |
 | — | **Grounding research dossier** (cited facts behind everything) | [`docs/research-dossier.md`](docs/research-dossier.md) |
 
+### Phase 2 — Operations & fulfillment
+| Deliverable | Location |
+|---|---|
+| **Operations playbook** (sourcing, inventory/lead-time, DDP/DAP, returns/warranty ops, registration SOP, order-status & support flows, SLAs) | [`docs/operations-playbook.md`](docs/operations-playbook.md) |
+| Delivery-ETA + lead-time engine | `storefront/lib/fulfillment.ts` (surfaced on PDP) |
+| Order-status tracker | `storefront/app/[locale]/spar-order/` + `components/commerce/OrderTracker.tsx` |
+| Support & returns flow (topic-routed request form, withdrawal intake) | `storefront/app/[locale]/support/` + `components/sections/SupportForm.tsx` + `app/api/support/` |
+
 ### Accuracy discipline
 Every factual claim about products, law, tax and vehicle classification is grounded in cited sources in the research dossier. Anything that could not be confirmed against a primary source in this pass is marked **[VERIFY]**. Vehicle specs live as editable content, not hardcoded strings, so corrections are a content change.
 

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import type { Locale } from '@/lib/brand'
 import type { Localized } from '@/lib/types'
+import Link from 'next/link'
 import { DEFAULT_LOCALE, isLocale, L } from '@/lib/i18n'
 import { PageShell, Prose } from '@/components/ui/Prose'
+import { Icon } from '@/components/ui/Icon'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -94,6 +96,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             ))}
           </section>
         ))}
+        <Link
+          href={`/${l}/support?topic=returns`}
+          className="inline-flex h-11 w-fit items-center gap-2 rounded-sm bg-signal px-5 text-sm font-medium text-on-signal no-underline transition-colors hover:bg-signal-hover"
+        >
+          {l === 'sv' ? 'Starta en ångeranmälan' : 'Start a withdrawal request'}
+          <Icon name="arrow-right" size={18} />
+        </Link>
         <p className="text-2xs text-text-faint">
           {l === 'sv'
             ? '[VERIFY] Denna sammanfattning bygger på distansavtalslagen (2005:59) och konsumentköplagen (2022:260). Vid avvikelse gäller lagtexten. Bekräfta paragrafer och belopp mot primärkällor före publicering.'

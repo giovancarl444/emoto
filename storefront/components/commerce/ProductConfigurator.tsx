@@ -5,6 +5,7 @@ import type { Locale } from '@/lib/brand'
 import type { Model } from '@/lib/types'
 import { L, t } from '@/lib/i18n'
 import { formatSEK } from '@/lib/format'
+import { deliveryEstimate } from '@/lib/fulfillment'
 import { useCart } from './CartProvider'
 import { Button } from '@/components/ui/Button'
 import { Price } from '@/components/ui/Price'
@@ -124,6 +125,10 @@ export function ProductConfigurator({
               ? t('stock.shipsFrom', locale)
               : t('stock.chinaBuild', locale)}
           </span>
+        </div>
+        <div className="flex items-center gap-2 text-xs text-text-muted">
+          <Icon name="truck" size={15} className="text-text-faint" />
+          <span suppressHydrationWarning>{deliveryEstimate(variant.availability, locale)}</span>
         </div>
       </div>
 
