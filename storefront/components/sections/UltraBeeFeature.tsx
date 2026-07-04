@@ -6,8 +6,9 @@ import { Icon } from '@/components/ui/Icon'
 
 /**
  * Dark feature spotlight for the flagship Ultra Bee — sits directly under the
- * showcase hero to extend the cinematic run before the page hands off to the
- * light content system. Spec highlights + a second look at the bike.
+ * showcase hero to extend the cinematic run. On desktop the bike goes large and
+ * bleeds off the right, its rear wheel tucking *behind* the headline; a scrim
+ * keeps the copy legible. On mobile it stacks cleanly.
  */
 
 const COPY = {
@@ -30,20 +31,37 @@ const SPECS = [
 export function UltraBeeFeature({ locale }: { locale: Locale }) {
   return (
     <section className="relative overflow-hidden bg-ink-950 text-paper">
-      <div className="showcase-comb pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden />
+      <div className="showcase-comb pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
+
+      {/* desktop: big bike bleeding right, rear wheel tucked behind the copy */}
       <div
-        className="pointer-events-none absolute right-0 top-1/2 h-[42vh] w-[52vw] max-w-3xl -translate-y-1/2 rounded-[50%] bg-[radial-gradient(closest-side,rgba(245,197,24,0.13),transparent)] blur-2xl"
+        className="pointer-events-none absolute right-[-7%] top-1/2 hidden aspect-[803/429] w-[88%] -translate-y-1/2 lg:block"
+        aria-hidden
+      >
+        <div className="absolute left-[52%] top-[48%] h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(closest-side,rgba(245,197,24,0.16),transparent)] blur-2xl" />
+        <Media
+          src="/models/ultra-bee-master.png"
+          alt=""
+          fill
+          unoptimized
+          sizes="90vw"
+          className="object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.7)]"
+        />
+      </div>
+      {/* legibility scrim over the rear wheel (desktop only) */}
+      <div
+        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-ink-950 via-ink-950/85 to-transparent lg:block"
         aria-hidden
       />
-      <div className="container-emoto relative grid items-center gap-10 py-16 lg:grid-cols-2 lg:py-24">
-        {/* text + specs */}
-        <div>
+
+      <div className="container-emoto relative z-10 py-16 lg:py-28">
+        <div className="max-w-md">
           <span className="eyebrow text-signal/90">{L(COPY.eyebrow, locale)}</span>
-          <h2 className="mt-3 max-w-md font-display text-3xl font-black uppercase leading-[0.98] tracking-tight text-paper sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-black uppercase leading-[0.98] tracking-tight text-paper sm:text-4xl">
             {L(COPY.title, locale)}
           </h2>
-          <p className="mt-5 max-w-md text-md text-paper/65">{L(COPY.body, locale)}</p>
-          <dl className="mt-8 grid max-w-md grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6">
+          <p className="mt-5 text-md text-paper/70">{L(COPY.body, locale)}</p>
+          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6">
             {SPECS.map((s) => (
               <div key={s.v}>
                 <dt className="font-display text-2xl font-bold tracking-tight text-paper">{s.v}</dt>
@@ -59,18 +77,17 @@ export function UltraBeeFeature({ locale }: { locale: Locale }) {
             <Icon name="arrow-right" className="h-4 w-4" />
           </Link>
         </div>
-        {/* bike */}
-        <div className="relative order-first lg:order-last">
-          <div className="relative aspect-[803/429] w-full">
-            <Media
-              src="/models/ultra-bee-master.png"
-              alt="Sur-Ron Ultra Bee"
-              fill
-              unoptimized
-              sizes="(max-width: 1024px) 100vw, 560px"
-              className="object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.6)]"
-            />
-          </div>
+
+        {/* mobile: bike stacks below */}
+        <div className="relative mt-10 aspect-[803/429] w-full lg:hidden">
+          <Media
+            src="/models/ultra-bee-master.png"
+            alt="Sur-Ron Ultra Bee"
+            fill
+            unoptimized
+            sizes="100vw"
+            className="object-contain"
+          />
         </div>
       </div>
     </section>
