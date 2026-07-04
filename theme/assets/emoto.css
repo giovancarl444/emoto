@@ -75,6 +75,30 @@ h1,h2,h3,p{margin:0}
 .site-nav a:hover{color:var(--text-strong)}
 .site-header[data-overlay] .site-nav a{color:rgba(255,255,255,.72)}
 .site-header[data-overlay] .site-nav a:hover{color:#fff}
+.site-header__cart{display:inline-flex; align-items:center; color:var(--text-strong)}
+.site-header[data-overlay] .site-header__cart{color:var(--paper)}
+.site-header__burger{display:inline-flex; align-items:center; justify-content:center; color:var(--text-strong); padding:.25rem}
+.site-header[data-overlay] .site-header__burger{color:var(--paper)}
+@media(min-width:1024px){.site-header__burger{display:none}}
+
+/* Mobile nav drawer */
+.mobile-nav{position:fixed; inset:0; z-index:60; visibility:hidden; pointer-events:none}
+.mobile-nav.is-open{visibility:visible; pointer-events:auto}
+.mobile-nav__scrim{position:absolute; inset:0; width:100%; height:100%; border:0; background:rgba(11,12,14,.5);
+  opacity:0; transition:opacity .3s var(--ease-out); cursor:pointer}
+.mobile-nav.is-open .mobile-nav__scrim{opacity:1}
+.mobile-nav__panel{position:absolute; top:0; left:0; height:100%; width:min(82vw, 20rem);
+  background:var(--surface); box-shadow:0 0 60px rgba(11,12,14,.25); padding:1.25rem;
+  display:flex; flex-direction:column; gap:1.5rem; transform:translateX(-100%); transition:transform .32s var(--ease-out)}
+.mobile-nav.is-open .mobile-nav__panel{transform:translateX(0)}
+.mobile-nav__top{display:flex; align-items:center; justify-content:space-between}
+.mobile-nav__top .brand__word{color:var(--text-strong); font-size:1.3rem}
+.mobile-nav__close{display:inline-flex; color:var(--text-strong); padding:.25rem}
+.mobile-nav__links{display:flex; flex-direction:column}
+.mobile-nav__links a{padding:.9rem 0; font-family:var(--font-display); font-weight:700; font-size:1.2rem;
+  color:var(--text-strong); border-bottom:1px solid var(--border)}
+.mobile-nav__cart{margin-top:auto; justify-content:center}
+@media(min-width:1024px){.mobile-nav{display:none}}
 
 /* ── Showroom hero (dark cinematic) ─────────────────────────────────────── */
 .showroom{
