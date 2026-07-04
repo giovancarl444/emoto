@@ -98,6 +98,8 @@
         <p class="pdp__atc-error" data-atc-error hidden role="alert"></p>
       {%- endform -%}
 
+      {% render 'financing-block', price: variant.price, months: section.settings.financing_months %}
+
       <ul class="pdp__trust">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg> {{ section.settings.trust_1 | default: '2 års garanti' }}</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg> {{ section.settings.trust_2 | default: 'Fri leverans inom EU (DDP)' }}</li>
@@ -145,6 +147,7 @@
   "name": "Product — main",
   "tag": "section",
   "settings": [
+    { "type": "range", "id": "financing_months", "min": 12, "max": 48, "step": 6, "unit": "mån", "label": "Financing months", "default": 36 },
     { "type": "text", "id": "trust_1", "label": "Trust 1", "default": "2 års garanti" },
     { "type": "text", "id": "trust_2", "label": "Trust 2", "default": "Fri leverans inom EU (DDP)" },
     { "type": "text", "id": "trust_3", "label": "Trust 3", "default": "Registreringshjälp ingår" }

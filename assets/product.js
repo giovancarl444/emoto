@@ -13,7 +13,7 @@
   var idInput = root.querySelector('[data-pdp-variant-id]');
   var priceEls = root.querySelectorAll('[data-pdp-price]');
   var compareEl = root.querySelector('[data-pdp-compare]');
-  var monthlyEl = root.querySelector('[data-pdp-monthly]');
+  var monthlyEls = root.querySelectorAll('[data-pdp-monthly]');
   var atcEls = root.querySelectorAll('[data-pdp-atc]');
   var atcTextEls = root.querySelectorAll('[data-pdp-atc-text]');
   var moneyFormat = (window.Shopify && window.Shopify.money_format) || '{{amount}} kr';
@@ -95,7 +95,10 @@
         compareEl.style.display = 'none';
       }
     }
-    if (monthlyEl) monthlyEl.textContent = formatMoney(Math.round(v.price / 36));
+    each(monthlyEls, function (el) {
+      var mo = parseInt(el.getAttribute('data-months'), 10) || 36;
+      el.textContent = formatMoney(Math.round(v.price / mo));
+    });
 
     each(atcEls, function (b) { b.disabled = !v.available; });
     each(atcTextEls, function (t) {
