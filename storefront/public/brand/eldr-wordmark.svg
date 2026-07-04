@@ -1,0 +1,27 @@
+<svg width="240" height="72" viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ELDR">
+  <title>ELDR</title>
+  <!-- Blocky industrial stencil letterforms. Bone white with a trailing ember
+       spark on the R leg (the ELDR signal). Vector-perfect for press/OG. -->
+  <g fill="#E9E8E2">
+    <!-- E -->
+    <rect x="0" y="0" width="11" height="64"/>
+    <rect x="0" y="0" width="46" height="11"/>
+    <rect x="0" y="26.5" width="38" height="11"/>
+    <rect x="0" y="53" width="46" height="11"/>
+    <!-- L -->
+    <rect x="64" y="0" width="11" height="64"/>
+    <rect x="64" y="53" width="46" height="11"/>
+    <!-- D -->
+    <rect x="128" y="0" width="11" height="64"/>
+    <rect x="128" y="0" width="46" height="11"/>
+    <rect x="128" y="53" width="46" height="11"/>
+    <rect x="163" y="0" width="11" height="64"/>
+    <!-- R (bowl) -->
+    <rect x="192" y="0" width="11" height="64"/>
+    <rect x="192" y="0" width="46" height="11"/>
+    <rect x="192" y="26.5" width="46" height="11"/>
+    <rect x="227" y="0" width="11" height="37.5"/>
+  </g>
+  <!-- R leg — ember spark -->
+  <polygon points="213,37.5 224,37.5 238,64 227,64" fill="#FF5A1F"/>
+</svg>

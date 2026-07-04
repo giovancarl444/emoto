@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ELDR">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="15%" r="90%">
+      <stop offset="0%" stop-color="#141619"/>
+      <stop offset="100%" stop-color="#0B0C0E"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#262A31" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.35"/>
+  
+      <g opacity="0.9">
+        <path d="M744 491 L792 491 L864 265 L816 265 Z" fill="#E9E8E2" opacity="0.14"/>
+        <path d="M816 491 L864 491 L960 189 L912 189 Z" fill="#E9E8E2" opacity="0.14"/>
+        <path d="M888 491 L936 491 L1056 113 L1008 113 Z" fill="#FF5A1F" opacity="0.9"/>
+      </g>
+  <text x="40" y="546" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6B7280">ELDR · BRAND</text>
+  <text x="40" y="586" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="64" fill="#E9E8E2" letter-spacing="-1">ELDR</text>
+  <text x="40" y="610" font-family="monospace" font-size="13" fill="#FF5A1F">Elektrisk terräng. Sur-Ron i Sverige.</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ELDR mark">
+  <title>ELDR</title>
+  <!-- Three ascending angular blades: forward motion + terrain ridge + flame licks.
+       Tallest blade tipped in ember (the ELDR signal). -->
+  <path d="M6 40 L12 40 L20 18 L14 18 Z" fill="#E9E8E2"/>
+  <path d="M17 40 L23 40 L31 12 L25 12 Z" fill="#E9E8E2"/>
+  <path d="M28 40 L34 40 L42 6 L36 6 Z" fill="#FF5A1F"/>
+</svg>

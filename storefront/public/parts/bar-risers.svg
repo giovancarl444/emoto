@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="BAR RISERS">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="15%" r="90%">
+      <stop offset="0%" stop-color="#141619"/>
+      <stop offset="100%" stop-color="#0B0C0E"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#262A31" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <rect width="1000" height="1000" fill="url(#grid)" opacity="0.35"/>
+  
+      <g opacity="0.9">
+        <path d="M620 780 L660 780 L720 420 L680 420 Z" fill="#E9E8E2" opacity="0.14"/>
+        <path d="M680 780 L720 780 L800 300 L760 300 Z" fill="#E9E8E2" opacity="0.14"/>
+        <path d="M740 780 L780 780 L880 180 L840 180 Z" fill="#FF5A1F" opacity="0.9"/>
+      </g>
+  <text x="40" y="916" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#6B7280">ELDR · PART</text>
+  <text x="40" y="956" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="64" fill="#E9E8E2" letter-spacing="-1">BAR RISERS</text>
+  <text x="40" y="980" font-family="monospace" font-size="13" fill="#FF5A1F">Handlebar clamp / riser mounts</text>
+</svg>
