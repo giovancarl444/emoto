@@ -60,9 +60,9 @@ Footer links now render only when the page exists — creating these auto-popula
 - [ ] **(you)** Set products **Active** (drafts aren't indexable) at go-live
 - [ ] **(you)** Connect **Google Search Console** + submit sitemap; **GA4** (consent-gated)
 - [x] **(me)** Keyword-driven **content articles** ✅ 5 published to /blogs/journal (Ultra Bee guide, "är elmotocross lagligt", delbetala-guide, modell-jämförelse, batteriunderhåll)
-- [ ] **(me)** Collection/category SEO copy; internal linking
+- [x] **(me)** Collection SEO copy (Modeller has description + SEO title/meta) + internal linking across articles/PDPs/collection ✅
 - [ ] **(you)** Custom domain **emoto.se** (DNS → Shopify); hreflang if EN added
-- [ ] **(me)** Image alt text + descriptive filenames across the store
+- [x] **(me)** Descriptive Swedish alt text on all 3 product images (Ultra Bee had it; Light Bee X + Storm Bee added) — SEO + a11y ✅
 
 ## 7. Go-live gate
 - [ ] All §4 placeholders real or removed
