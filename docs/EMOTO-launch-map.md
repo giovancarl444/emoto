@@ -53,7 +53,7 @@ Footer links now render only when the page exists — creating these auto-popula
 - [ ] **(you/me)** Cookie consent banner (GDPR) — Shopify's consent API or an app
 - [ ] **(me)** Road-class clarity on PDPs (off-road vs. L1e/L3e legal use) — partly done, expand
 - [ ] **(you)** WEEE/battery recycling + distance-selling (ångerrätt) notices
-- [ ] **(me)** `[VERIFY]` spec/law/tax markers in the dossier → confirm before publish
+- [~] **(me)** `[VERIFY]` markers — ✅ specs + SE/EU law researched against primary sources (see `content-verify-flags.md`). Ultra Bee specs reconciled live + theme; Storm/Light Bee + battery-care verified as-written. Remaining law fixes (AM age **15**, MC-skatt **~180 kr/år**, off-road/road-reg per SKU, financing *effektiv ränta*) + comparison-article specs → applying next
 
 ## 6. SEO & traffic  *(your #1 priority)*
 - [x] Meta/OG/Twitter, JSON-LD (Org, WebSite, Product, Breadcrumb, FAQ, BlogPosting), canonical, self-hosted fonts

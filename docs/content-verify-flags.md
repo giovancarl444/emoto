@@ -2,6 +2,34 @@
 
 127 claims the content agents flagged to confirm before publishing (specs, legal, prices). Each is a `[ ]` to check against a primary source. The content is live pre-launch; reconcile these before the store goes public.
 
+---
+
+## ✅ Verification status (updated 2026-07-05)
+
+Two authoritative research passes completed — **Swedish/EU vehicle law** (Transportstyrelsen, riksdagen, EU 168/2013) and **Sur-Ron specs** (manufacturer + reputable sources).
+
+**Applied so far**
+- **Ultra Bee specs reconciled to the Original (74V·55Ah) variant** — the copy had mixed in the pricier HP model's numbers. Fixed on the live product (description + `custom.highlights` + `custom.spec_groups`) and across the theme: 21→**12,5 kW**, 89→**87 kg**, 520→**440 Nm** at wheel, 200/230→**240/240 mm** travel, 3,5→**4 h** charge. *(Reversible to the HP set in one step if sourcing differs.)*
+- **Honest-trust** — fabricated testimonials removed; reviews + Trustpilot self-hide until real.
+
+**Verified as-written (no change needed)**
+- **Storm Bee:** 130 kg · 22,5 kW liquid-cooled · 110 km/h · ~100 km · 0–50 in 1,9 s — all confirmed.
+- **Light Bee X:** 60 V · removable battery · ~50 kg framing (no risky power figure stated) — consistent with the Classic (32Ah) bike.
+- **Battery care:** 20–80 % charging, avoid charging <0 °C, ~40–70 % winter storage, cold range loss 20–50 % — all sound.
+- **Core SE law:** L1e-B (45 km/h + 4 kW), L3e-A1 (11 kW · A1 · 16 yr), moped kl. II (25 km/h), elcykel (250 W/25 km/h), EU 168/2013, CoC/registreringsbesiktning, 14-day ångerrätt — all confirmed.
+
+**Law corrections still to APPLY to pages/articles (next)**
+- **AM / moped age is 15, not 16** (registreringshjälp page).
+- **MC fordonsskatt is a flat ~180 kr/år for ALL motorcycles incl. electric** (not "zero/electric-exempt"); mopeds pay 0.
+- **Don't imply "private land + permission = ride anywhere off-road"** — the terrängkörningslag barmark ban still applies; only enclosed tracks / designated areas.
+- **"Off-road Sur-Ron can be road-registered" is model-specific** — the standard off-road SKU has no CoC; only a homologated L1e/L3e variant can register. Make it per-SKU explicit.
+- **Financing copy** must show *effektiv ränta* in a "representativt exempel" wherever any rate/figure appears (Konsumentkreditlag 7–8 §).
+- **Comparison article** (`sur-ron-modeller-jamforelse`) still carries the old Ultra Bee 21 kW / 85 kg — align to 12,5 kW / 87 kg.
+
+**Still owner-only (business terms — cannot be web-verified):** 2-yr warranty scope, free EU DDP shipping, registration-help inclusions, Klarna/Qliro 36-mo terms, Swedish-warehouse claim, exact prices, phone/email/showroom, Sur-Ron® trademark usage.
+
+---
+
 ## delbetala-elmotorcykel-klarna-qliro
 - [ ] Bekräfta att delbetalning i EMOTOs kassa erbjuds via BÅDE Klarna och Qliro, och att längsta löptid faktiskt är upp till 36 månader.
 - [ ] 'Betala senare' anges löpa ca 14–30 dagar — bekräfta den faktiska uppskovsperioden hos EMOTOs betalpartner(s).
