@@ -8,7 +8,18 @@
       </div>
     {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
+    {%- comment -%} Prefer per-product spec data from a metafield; fall back to section blocks. {%- endcomment -%}
+    {%- assign spec_groups = product.metafields.custom.spec_groups.value -%}
+    {%- if spec_groups -%}
+      <dl class="specs__grid">
+        {%- for group in spec_groups -%}
+          <div class="specs__group">{{ group.group }}</div>
+          {%- for row in group.rows -%}
+            <div class="specs__row"><dt>{{ row.label }}</dt><dd>{{ row.value }}</dd></div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </dl>
+    {%- elsif section.blocks.size > 0 -%}
       <dl class="specs__grid">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
