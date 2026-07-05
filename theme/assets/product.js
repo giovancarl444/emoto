@@ -29,20 +29,11 @@
 
   /* ── Money formatting (mirrors Shopify's money filter, SEK-friendly) ── */
   function formatMoney(cents) {
-    var amount = (cents / 100);
-    var hasDecimals = /\{\{\s*amount\s*\}\}/.test(moneyFormat);
-    var value;
-    if (/amount_no_decimals/.test(moneyFormat)) {
-      value = String(Math.round(amount)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-    } else {
-      value = amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ').replace(/\.(\d\d)$/, ',$1');
-    }
-    return moneyFormat
-      .replace(/\{\{\s*amount_no_decimals_with_comma_separator\s*\}\}/g, value)
-      .replace(/\{\{\s*amount_no_decimals\s*\}\}/g, value)
-      .replace(/\{\{\s*amount_with_comma_separator\s*\}\}/g, value)
-      .replace(/\{\{\s*amount\s*\}\}/g, value);
-    void hasDecimals;
+    /* SEK prices are whole kronor — round and space-separate thousands. */
+    var value = String(Math.round(cents / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    /* Replace EVERY {{ amount… }} placeholder variant, incl. amount_with_space_separator
+       (the SEK format this shop uses). A catch-all avoids the "missing placeholder" bug. */
+    return moneyFormat.replace(/\{\{\s*amount[a-z0-9_]*\s*\}\}/g, value);
   }
 
   /* ── Find the variant matching the current selection ── */

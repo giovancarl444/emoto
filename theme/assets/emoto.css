@@ -281,6 +281,15 @@ h1,h2,h3,p{margin:0}
   background:rgba(245,197,24,.08); border:1px solid rgba(245,197,24,.22)}
 .pdp__highlights strong{font-family:var(--font-display); font-weight:800; font-size:1.05rem; color:#fff; line-height:1}
 .pdp__highlights span{margin-top:.2rem; font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(245,197,24,.85)}
+.pdp__highlights li{align-items:flex-start}
+.chip-ico{width:15px; height:15px; color:#F5C518; margin-bottom:.45rem; display:block}
+/* Trustpilot badge (above product title) */
+.pdp__tp{display:inline-flex; align-items:center; gap:.5rem; margin-bottom:.7rem}
+.pdp__tp-stars{display:inline-flex; gap:2px}
+.pdp__tp-star{width:17px; height:17px; background:#00B67A; border-radius:3px; display:inline-flex; align-items:center; justify-content:center}
+.pdp__tp-star svg{width:12px; height:12px; fill:#fff}
+.pdp__tp-brand{display:inline-flex; align-items:center; gap:.3rem; font-family:var(--font-display); font-weight:700; font-size:.85rem; color:var(--paper)}
+.pdp__tp-brand svg{width:15px; height:15px; fill:#00B67A}
 
 /* Financing block (delbetalning) */
 .pdp-fin{margin-top:1.5rem; padding:1.15rem 1.25rem; border:1px solid rgba(245,197,24,.28); border-radius:14px;
