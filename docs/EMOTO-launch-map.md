@@ -23,7 +23,7 @@ Footer links now render only when the page exists — creating these auto-popula
 - [x] **(me)** `Garanti & retur` (`garanti-och-retur`) — 2-year warranty, returns/ångerrätt (14 days), service ✅ live
 - [x] **(me)** `Registreringshjälp` (`registreringshjalp`) — the concierge/road-legal service ✅ live
 - [x] **(me)** `Kontakt` content (hours, response time, service booking) ✅ live
-- [ ] **(you)** Set store **policies** — only Privacy is set; add **Refund**, **Terms**, **Shipping** (Shopify → Settings → Policies; can auto-generate then edit)
+- [~] **(you/me)** Store **policies** — ✅ paste-ready Swedish drafts written (`docs/policies-sv.md`: Ångerrätt/retur, Köpvillkor, Frakt, Cookies/GDPR). You fill company details (org.nr/moms/adress) + jurist-review, then paste into Shopify → Settings → Policies and link in the footer
 - [x] **(me)** Rename blog `News` → `Journal` (brand) and seed 5 SEO articles ✅ done (see §6)
 
 ## 2. Products & photography
