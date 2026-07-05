@@ -8,8 +8,8 @@ Store: `emoto-9696.myshopify.com` · Theme auto-deploys from the `shopify-theme`
 ## 0. Legend of what's real vs. placeholder right now
 - ✅ **Real & live in theme:** homepage, PDP, all templates, cart drawer, footer, SEO scaffolding, Ultra Bee photo.
 - ⚠️ **Placeholder (must become real before publish):**
-  - Product photos for **Light Bee X** and **Storm Bee** (currently reuse the Ultra Bee cutout).
-  - **Reviews/testimonials** ("Johan L." etc.) — illustrative only. Trustpilot badge now auto-hides until a real rating is entered.
+  - ~~Product photos for **Light Bee X** and **Storm Bee**~~ ✅ each now has its own photo (one angle); more angles still wanted for the gallery.
+  - ~~**Reviews/testimonials** ("Johan L." etc.)~~ ✅ removed — reviews section self-hides until real reviews exist; Trustpilot badge auto-hides until a real rating is entered.
   - **Payment badges** in footer (Klarna/Qliro/…) — decorative until the providers are actually connected.
   - Spec numbers (kW, range, weight) — sourced from public figures, marked `[VERIFY]` in the dossier.
 
@@ -27,10 +27,10 @@ Footer links now render only when the page exists — creating these auto-popula
 - [x] **(me)** Rename blog `News` → `Journal` (brand) and seed 5 SEO articles ✅ done (see §6)
 
 ## 2. Products & photography
-- [ ] **(you)** Real cutout photos (transparent PNG, side profile) for **Light Bee X** + **Storm Bee** — and ideally 3–5 angles each for the gallery
+- [~] **(you)** Real cutout photos for **Light Bee X** + **Storm Bee** — ✅ one photo each is live (now shown on the homepage); still want 3–5 angles each (transparent side-profile ideal for the dark showroom)
 - [ ] **(you/me)** Additional Ultra Bee angles (detail shots: battery, brakes, display) for the gallery
 - [x] **(me)** Per-product long-form copy + spec tables (each model) ✅ live — descriptions, SEO, and per-product spec/highlight metafields set
-- [ ] **(me)** Wire each model's gallery once photos land (specs already per-product)
+- [x] **(me)** Homepage model surfaces (showroom hero, lineup, feature) now render each linked product's own photo; PDP gallery uses product media ✅ done — galleries auto-fill as more angles are added in Shopify
 - [ ] **(both)** Decide accessories/parts range (helmets, batteries, chargers) — future collection
 - [ ] **(you)** Confirm final **prices** per variant and stock/lead-time per model
 
