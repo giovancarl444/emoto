@@ -101,15 +101,6 @@
       },
       "block_order": ["c1", "c2", "c3"]
     },
-    "reviews": {
-      "type": "reviews",
-      "blocks": {
-        "rv1": { "type": "review", "settings": { "rating": 5, "quote": "Bästa köpet på år. Leveransen var smidig och registreringshjälpen sparade mig timmar av pappersarbete.", "name": "Johan L.", "detail": "Ultra Bee · Stockholm" } },
-        "rv2": { "type": "review", "settings": { "rating": 5, "quote": "Känns som en premiumprodukt hela vägen — från sajten till maskinen. Delbetalningen via Klarna gjorde det enkelt.", "name": "Amir K.", "detail": "Storm Bee · Göteborg" } },
-        "rv3": { "type": "review", "settings": { "rating": 5, "quote": "Perfekt första elmotorcykel. Personlig rådgivning och snabb support. Rekommenderar starkt.", "name": "Elin S.", "detail": "Light Bee X · Malmö" } }
-      },
-      "block_order": ["rv1", "rv2", "rv3"]
-    },
     "faq": {
       "type": "faq",
       "blocks": {

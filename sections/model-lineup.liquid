@@ -27,6 +27,8 @@
             <div class="pcard__media">
               {%- if block.settings.image != blank -%}
                 {{ block.settings.image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 540, 720', alt: block.settings.name, class: 'pcard__img' }}
+              {%- elsif block.settings.product != blank and block.settings.product.featured_media != blank -%}
+                {{ block.settings.product.featured_media | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 540, 720', alt: block.settings.product.featured_media.alt | default: block.settings.name, class: 'pcard__img' }}
               {%- else -%}
                 <img class="pcard__img" src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ block.settings.name }}" width="803" height="429" loading="lazy">
               {%- endif -%}
