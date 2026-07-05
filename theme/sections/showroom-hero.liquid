@@ -48,6 +48,8 @@
       >
         {%- if block.settings.image != blank -%}
           {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: block.settings.name }}
+        {%- elsif block.settings.product != blank and block.settings.product.featured_media != blank -%}
+          {{ block.settings.product.featured_media | image_url: width: 1200 | image_tag: loading: 'eager', alt: block.settings.product.featured_media.alt | default: block.settings.name }}
         {%- else -%}
           <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ block.settings.name }}" width="803" height="429">
         {%- endif -%}
