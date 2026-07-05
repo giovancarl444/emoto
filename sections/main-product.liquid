@@ -56,8 +56,14 @@
         <div class="pdp__lead">{{ product.description | strip_html | truncatewords: 34 }}</div>
       {%- endif -%}
 
+      {%- comment -%} Prefer per-product highlights from a metafield; fall back to section blocks. {%- endcomment -%}
+      {%- assign mf_hi = product.metafields.custom.highlights.value -%}
       {%- assign hi = section.blocks | where: 'type', 'highlight' -%}
-      {%- if hi.size > 0 -%}
+      {%- if mf_hi -%}
+        <ul class="pdp__highlights">
+          {%- for h in mf_hi -%}<li><strong>{{ h.value }}</strong><span>{{ h.label }}</span></li>{%- endfor -%}
+        </ul>
+      {%- elsif hi.size > 0 -%}
         <ul class="pdp__highlights">
           {%- for block in hi -%}
             <li {{ block.shopify_attributes }}><strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></li>
