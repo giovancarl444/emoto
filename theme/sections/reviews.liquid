@@ -1,4 +1,6 @@
 {%- comment -%} EMOTO — reviews / social proof (dark) {%- endcomment -%}
+{%- comment -%} Renders only when the merchant has added real review blocks — nothing fabricated ships by default. {%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
 <section class="reviews">
   <div class="reviews__comb" aria-hidden="true"></div>
   <div class="container reviews__inner">
@@ -8,7 +10,6 @@
       <div class="reviews__badge">{% render 'trustpilot', tone: 'light' %}</div>
     </header>
 
-    {%- if section.blocks.size > 0 -%}
       <div class="reviews__grid">
         {%- for block in section.blocks -%}
           <figure class="rcard" {{ block.shopify_attributes }}>
@@ -25,9 +26,9 @@
           </figure>
         {%- endfor -%}
       </div>
-    {%- endif -%}
   </div>
 </section>
+{%- endif -%}
 
 {% schema %}
 {
@@ -43,9 +44,9 @@
       "name": "Review",
       "settings": [
         { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Rating", "default": 5 },
-        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Bästa köpet på år. Leveransen var smidig och registreringshjälpen sparade mig timmar." },
-        { "type": "text", "id": "name", "label": "Name", "default": "Johan L." },
-        { "type": "text", "id": "detail", "label": "Detail", "default": "Ultra Bee · Stockholm" }
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Lägg till en verifierad kundrecension här." },
+        { "type": "text", "id": "name", "label": "Name", "default": "Förnamn E." },
+        { "type": "text", "id": "detail", "label": "Detail", "default": "Modell · Stad" }
       ]
     }
   ],
@@ -54,9 +55,7 @@
     {
       "name": "Reviews",
       "blocks": [
-        { "type": "review", "settings": { "rating": 5, "quote": "Bästa köpet på år. Leveransen var smidig och registreringshjälpen sparade mig timmar av pappersarbete.", "name": "Johan L.", "detail": "Ultra Bee · Stockholm" } },
-        { "type": "review", "settings": { "rating": 5, "quote": "Känns som en premiumprodukt hela vägen — från sajten till maskinen. Delbetalningen via Klarna gjorde det enkelt.", "name": "Amir K.", "detail": "Storm Bee · Göteborg" } },
-        { "type": "review", "settings": { "rating": 5, "quote": "Perfekt första elmotorcykel. Personlig rådgivning och snabb support. Rekommenderar starkt.", "name": "Elin S.", "detail": "Light Bee X · Malmö" } }
+        { "type": "review", "settings": { "rating": 5, "quote": "Lägg till en verifierad kundrecension här — ersätt platshållaren med ett riktigt omdöme.", "name": "Förnamn E.", "detail": "Modell · Stad" } }
       ]
     }
   ]

@@ -45,7 +45,7 @@ Footer links now render only when the page exists — creating these auto-popula
 ## 4. Trust & social proof  *(honest only)*
 - [ ] **(you)** Real **Trustpilot** profile URL + rating/count → I wire the live badge/widget
 - [ ] **(you)** Collect 3–5 genuine early reviews (or remove the section until you have them)
-- [ ] **(me)** Replace or remove placeholder testimonials before publish — **hard gate**
+- [x] **(me)** Placeholder testimonials removed from all templates; reviews section now self-hides until real review blocks exist (Trustpilot badge already auto-hides). Presets/defaults de-faked so nothing fabricated can slip back via the editor ✅ done
 - [ ] **(me)** Real trust signals that are true today: warranty, authorised-reseller status, Swedish support, secure checkout
 
 ## 5. Legal & compliance (Sweden/EU)
