@@ -8,7 +8,7 @@
         "trust_3": "Registreringshjälp ingår"
       },
       "blocks": {
-        "h1": { "type": "highlight", "settings": { "value": "≈21 kW", "label": "Toppeffekt" } },
+        "h1": { "type": "highlight", "settings": { "value": "≈12,5 kW", "label": "Toppeffekt" } },
         "h2": { "type": "highlight", "settings": { "value": "140 km", "label": "Räckvidd" } },
         "h3": { "type": "highlight", "settings": { "value": "≈90 km/h", "label": "Toppfart" } }
       },
@@ -18,16 +18,16 @@
       "type": "product-specs",
       "blocks": {
         "g1": { "type": "group", "settings": { "label": "Motor & prestanda" } },
-        "r1": { "type": "row", "settings": { "label": "Toppeffekt", "value": "≈21 kW" } },
+        "r1": { "type": "row", "settings": { "label": "Toppeffekt", "value": "≈12,5 kW" } },
         "r2": { "type": "row", "settings": { "label": "Toppfart", "value": "≈90 km/h" } },
-        "r3": { "type": "row", "settings": { "label": "Vridmoment", "value": "≈520 Nm (hjul)" } },
+        "r3": { "type": "row", "settings": { "label": "Vridmoment", "value": "≈440 Nm (hjul)" } },
         "g2": { "type": "group", "settings": { "label": "Batteri & räckvidd" } },
         "r4": { "type": "row", "settings": { "label": "Batteri", "value": "74 V · 55 Ah" } },
         "r5": { "type": "row", "settings": { "label": "Räckvidd", "value": "upp till 140 km" } },
-        "r6": { "type": "row", "settings": { "label": "Laddtid", "value": "≈3,5 h" } },
+        "r6": { "type": "row", "settings": { "label": "Laddtid", "value": "≈4 h" } },
         "g3": { "type": "group", "settings": { "label": "Chassi" } },
-        "r7": { "type": "row", "settings": { "label": "Vikt", "value": "≈89 kg" } },
-        "r8": { "type": "row", "settings": { "label": "Fjädringsväg", "value": "fram 200 mm / bak 230 mm" } },
+        "r7": { "type": "row", "settings": { "label": "Vikt", "value": "≈87 kg" } },
+        "r8": { "type": "row", "settings": { "label": "Fjädringsväg", "value": "fram 240 mm / bak 240 mm" } },
         "r9": { "type": "row", "settings": { "label": "Bromsar", "value": "hydrauliska skivbromsar" } }
       },
       "block_order": ["g1", "r1", "r2", "r3", "g2", "r4", "r5", "r6", "g3", "r7", "r8", "r9"]
