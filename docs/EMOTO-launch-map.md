@@ -17,29 +17,29 @@ Store: `emoto-9696.myshopify.com` · Theme auto-deploys from the `shopify-theme`
 
 ## 1. Content pages  *(fixes the footer/nav gaps)*
 Footer links now render only when the page exists — creating these auto-populates the footer.
-- [ ] **(me)** `Om EMOTO` (`om-oss`) — brand story, independent-retailer positioning, why electric
-- [ ] **(me)** `Leverans & frakt` (`leverans`) — free EU DDP, lead times, tracking, what's included
-- [ ] **(me)** `Delbetalning` (`delbetalning`) — how Klarna/Qliro installments work, examples, FAQ
-- [ ] **(me)** `Garanti & retur` — 2-year warranty terms, returns/ångerrätt (14 days), service network
-- [ ] **(me)** `Registreringshjälp` — the concierge/road-legal service explained (a signature EMOTO value)
-- [ ] **(me)** Expand `Kontakt` content (hours, response time, service booking)
+- [x] **(me)** `Om EMOTO` (`om-oss`) — brand story, independent-retailer positioning, why electric ✅ live
+- [x] **(me)** `Leverans & frakt` (`leverans`) — free EU DDP, lead times, tracking, what's included ✅ live
+- [x] **(me)** `Delbetalning` (`delbetalning`) — how Klarna/Qliro installments work, examples, FAQ ✅ live
+- [x] **(me)** `Garanti & retur` (`garanti-och-retur`) — 2-year warranty, returns/ångerrätt (14 days), service ✅ live
+- [x] **(me)** `Registreringshjälp` (`registreringshjalp`) — the concierge/road-legal service ✅ live
+- [x] **(me)** `Kontakt` content (hours, response time, service booking) ✅ live
 - [ ] **(you)** Set store **policies** — only Privacy is set; add **Refund**, **Terms**, **Shipping** (Shopify → Settings → Policies; can auto-generate then edit)
-- [ ] **(me)** Rename blog `News` → `Journal` (brand) and seed 3–5 SEO articles (see §6)
+- [x] **(me)** Rename blog `News` → `Journal` (brand) and seed 5 SEO articles ✅ done (see §6)
 
 ## 2. Products & photography
 - [ ] **(you)** Real cutout photos (transparent PNG, side profile) for **Light Bee X** + **Storm Bee** — and ideally 3–5 angles each for the gallery
 - [ ] **(you/me)** Additional Ultra Bee angles (detail shots: battery, brakes, display) for the gallery
-- [ ] **(me)** Per-product long-form copy + full spec tables (each model, per road-class variant)
-- [ ] **(me)** Wire each model's gallery + specs once photos land
+- [x] **(me)** Per-product long-form copy + spec tables (each model) ✅ live — descriptions, SEO, and per-product spec/highlight metafields set
+- [ ] **(me)** Wire each model's gallery once photos land (specs already per-product)
 - [ ] **(both)** Decide accessories/parts range (helmets, batteries, chargers) — future collection
 - [ ] **(you)** Confirm final **prices** per variant and stock/lead-time per model
 
 ## 3. Payments & financing  *(the profit engine)*
 - [ ] **(you)** Activate **Klarna** in Shopify Payments (installments up to 36 mo) — the whole delbetalning story depends on this
 - [ ] **(you)** Activate **Qliro** and/or **Swish** if desired (Nordic trust)
-- [ ] **(me)** PDP **financing block**: "Från X kr/mån i 36 mån" with a clean cost breakdown + Klarna on-site-messaging placement, on every product page
-- [ ] **(me)** Cart + drawer financing line (already stubbed) → wire to real monthly figure
-- [ ] **(me)** Financing explainer page (§1) + link from every PDP
+- [x] **(me)** PDP **financing block** — "Delbetala från X kr/mån i upp till 36 mån via Klarna & Qliro", live per variant, on every PDP ✅ done
+- [x] **(me)** Financing explainer page (`/pages/delbetalning`) linked from every PDP ✅ done
+- [ ] **(me)** Cart + drawer financing line → wire to the real provider figure once Klarna is connected
 - [ ] **(you)** Confirm terms with the credit provider (interest, min/max, admin fee) so the copy is accurate
 
 ## 4. Trust & social proof  *(honest only)*
@@ -59,7 +59,7 @@ Footer links now render only when the page exists — creating these auto-popula
 - [x] Meta/OG/Twitter, JSON-LD (Org, WebSite, Product, Breadcrumb, FAQ, BlogPosting), canonical, self-hosted fonts
 - [ ] **(you)** Set products **Active** (drafts aren't indexable) at go-live
 - [ ] **(you)** Connect **Google Search Console** + submit sitemap; **GA4** (consent-gated)
-- [ ] **(me)** Keyword-driven **content articles** (e.g. "Sur-Ron Ultra Bee: allt du behöver veta", "Är elmotocross lagligt i Sverige?", "L1e vs L3e", "Bäst i test elenduro")
+- [x] **(me)** Keyword-driven **content articles** ✅ 5 published to /blogs/journal (Ultra Bee guide, "är elmotocross lagligt", delbetala-guide, modell-jämförelse, batteriunderhåll)
 - [ ] **(me)** Collection/category SEO copy; internal linking
 - [ ] **(you)** Custom domain **emoto.se** (DNS → Shopify); hreflang if EN added
 - [ ] **(me)** Image alt text + descriptive filenames across the store
