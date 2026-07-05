@@ -18,13 +18,13 @@ Two authoritative research passes completed — **Swedish/EU vehicle law** (Tran
 - **Battery care:** 20–80 % charging, avoid charging <0 °C, ~40–70 % winter storage, cold range loss 20–50 % — all sound.
 - **Core SE law:** L1e-B (45 km/h + 4 kW), L3e-A1 (11 kW · A1 · 16 yr), moped kl. II (25 km/h), elcykel (250 W/25 km/h), EU 168/2013, CoC/registreringsbesiktning, 14-day ångerrätt — all confirmed.
 
-**Law corrections still to APPLY to pages/articles (next)**
-- **AM / moped age is 15, not 16** (registreringshjälp page).
-- **MC fordonsskatt is a flat ~180 kr/år for ALL motorcycles incl. electric** (not "zero/electric-exempt"); mopeds pay 0.
-- **Don't imply "private land + permission = ride anywhere off-road"** — the terrängkörningslag barmark ban still applies; only enclosed tracks / designated areas.
-- **"Off-road Sur-Ron can be road-registered" is model-specific** — the standard off-road SKU has no CoC; only a homologated L1e/L3e variant can register. Make it per-SKU explicit.
-- **Financing copy** must show *effektiv ränta* in a "representativt exempel" wherever any rate/figure appears (Konsumentkreditlag 7–8 §).
-- **Comparison article** (`sur-ron-modeller-jamforelse`) still carries the old Ultra Bee 21 kW / 85 kg — align to 12,5 kW / 87 kg.
+**Law corrections — status**
+- [x] **AM / moped age = 15** — already correct on the live registreringshjälp page ✅
+- [x] **MC fordonsskatt = flat ~180 kr/år** (incl. electric); mopeds pay 0 — fixed on registreringshjälp page + `elmotocross-lagligt-sverige` article ✅
+- [x] **Terrängkörning nuance** — "private land + permission" now caveated (barmark ban still applies; only prepared tracks/areas) in the legal article ✅
+- [x] **Comparison article** (`sur-ron-modeller-jamforelse`) Ultra Bee → **12,5 kW / 87 kg** ✅
+- [~] **"Off-road can be road-registered" is model-specific** — pages already separate off-road vs. vägklassad and say "med rätt utförande och rätt papper"; keep per-SKU honest once real homologation is confirmed.
+- [ ] **Financing copy** must show *effektiv ränta* in a "representativt exempel" wherever any rate/figure appears (Konsumentkreditlag 7–8 §). **Blocked on real Klarna/Qliro terms** — needs the provider's actual interest/fees before a compliant example can be written; recommend softening "0 % ränta / X kr/mån" claims until then.
 
 **Still owner-only (business terms — cannot be web-verified):** 2-yr warranty scope, free EU DDP shipping, registration-help inclusions, Klarna/Qliro 36-mo terms, Swedish-warehouse claim, exact prices, phone/email/showroom, Sur-Ron® trademark usage.
 

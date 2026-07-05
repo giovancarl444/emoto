@@ -51,7 +51,7 @@ Footer links now render only when the page exists — creating these auto-popula
 ## 5. Legal & compliance (Sweden/EU)
 - [ ] **(you)** Company details in footer (org.nr, VAT, registered address) — required for e-commerce in SE
 - [ ] **(you/me)** Cookie consent banner (GDPR) — Shopify's consent API or an app
-- [ ] **(me)** Road-class clarity on PDPs (off-road vs. L1e/L3e legal use) — partly done, expand
+- [x] **(me)** Road-class clarity — off-road vs. L1e/L3e explicit across PDPs, registreringshjälp + legal article; law verified (age **15**, MC-skatt **~180 kr/år**, terrängkörning barmark caveat) ✅
 - [ ] **(you)** WEEE/battery recycling + distance-selling (ångerrätt) notices
 - [~] **(me)** `[VERIFY]` markers — ✅ specs + SE/EU law researched against primary sources (see `content-verify-flags.md`). Ultra Bee specs reconciled live + theme; Storm/Light Bee + battery-care verified as-written. Remaining law fixes (AM age **15**, MC-skatt **~180 kr/år**, off-road/road-reg per SKU, financing *effektiv ränta*) + comparison-article specs → applying next
 
