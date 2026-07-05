@@ -35,6 +35,12 @@
 
     {%- comment -%} ── Info / buy ── {%- endcomment -%}
     <div class="pdp__info">
+      <div class="pdp__tp" aria-label="Trustpilot">
+        <span class="pdp__tp-stars">
+          {%- for i in (1..5) -%}<span class="pdp__tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.86-5-4.87 7.1-1.01z"/></svg></span>{%- endfor -%}
+        </span>
+        <span class="pdp__tp-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.86-5-4.87 7.1-1.01z"/></svg>Trustpilot</span>
+      </div>
       {%- if product.vendor != blank -%}<span class="eyebrow">{{ product.vendor }}</span>{%- endif -%}
       <h1 class="pdp__title">{{ product.title }}</h1>
 
@@ -50,8 +56,6 @@
         · {{ 'product.incl_vat' | t: default: 'inkl. moms' }}
       </p>
 
-      <div class="pdp__rating">{% render 'trustpilot', tone: 'light', compact: true %}</div>
-
       {%- if product.description != blank -%}
         <div class="pdp__lead">{{ product.description | strip_html | truncatewords: 34 }}</div>
       {%- endif -%}
@@ -61,12 +65,12 @@
       {%- assign hi = section.blocks | where: 'type', 'highlight' -%}
       {%- if mf_hi -%}
         <ul class="pdp__highlights">
-          {%- for h in mf_hi -%}<li><strong>{{ h.value }}</strong><span>{{ h.label }}</span></li>{%- endfor -%}
+          {%- for h in mf_hi -%}<li>{%- render 'chip-icon', label: h.label -%}<strong>{{ h.value }}</strong><span>{{ h.label }}</span></li>{%- endfor -%}
         </ul>
       {%- elsif hi.size > 0 -%}
         <ul class="pdp__highlights">
           {%- for block in hi -%}
-            <li {{ block.shopify_attributes }}><strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></li>
+            <li {{ block.shopify_attributes }}>{%- render 'chip-icon', label: block.settings.label -%}<strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></li>
           {%- endfor -%}
         </ul>
       {%- endif -%}
