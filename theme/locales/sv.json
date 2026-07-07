@@ -1,0 +1,85 @@
+{
+  "general": {
+    "cart": "Varukorg",
+    "search": "Sök",
+    "menu": "Meny",
+    "close": "Stäng",
+    "password_prompt": "Ange lösenord",
+    "enter": "Gå in",
+    "announcement": "Meddelanden",
+    "skip_to_content": "Hoppa till innehåll"
+  },
+  "showroom": {
+    "from": "Från",
+    "or": "eller",
+    "month": "mån",
+    "configure": "Konfigurera",
+    "prev": "Föregående",
+    "next": "Nästa"
+  },
+  "product": {
+    "add_to_cart": "Lägg i varukorg",
+    "sold_out": "Slutsåld",
+    "unavailable": "Ej tillgänglig",
+    "or": "eller",
+    "month": "mån",
+    "incl_vat": "inkl. moms",
+    "media": "Bild",
+    "klarna": "Klarna",
+    "month_short": "/mån",
+    "finance_label": "Delbetala",
+    "finance_from": "från",
+    "finance_up_to": "i upp till",
+    "finance_via": "månader via Klarna & Qliro",
+    "finance_note": "Representativt exempel och villkor visas i kassan. Kreditbeslut sker hos långivaren.",
+    "finance_link": "Läs om delbetalning",
+    "from": "Från",
+    "view": "Se modellen",
+    "on_sale": "Kampanj",
+    "new": "Nyhet"
+  },
+  "cart": {
+    "title": "Din varukorg",
+    "empty": "Din varukorg är tom.",
+    "continue": "Fortsätt handla",
+    "subtotal": "Delsumma",
+    "checkout": "Till kassan",
+    "update": "Uppdatera",
+    "remove": "Ta bort",
+    "quantity": "Antal",
+    "klarna": "via Klarna",
+    "taxes_note": "Frakt och moms beräknas i kassan."
+  },
+  "collection": {
+    "all": "Alla modeller",
+    "empty": "Inga produkter hittades.",
+    "items": "produkter"
+  },
+  "search": {
+    "title": "Sök",
+    "placeholder": "Sök i butiken",
+    "results": "Resultat för",
+    "no_results": "Inga resultat hittades."
+  },
+  "reviews": {
+    "count": "recensioner"
+  },
+  "footer": {
+    "newsletter": "Håll dig uppdaterad",
+    "models": "Modeller",
+    "company": "Företag",
+    "support": "Kundservice",
+    "about": "Om EMOTO",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "delivery": "Leverans",
+    "financing": "Delbetalning",
+    "payments": "Betalsätt",
+    "independent": "Oberoende återförsäljare. Sur-Ron är ett varumärke som tillhör respektive ägare."
+  },
+  "404": {
+    "title": "Sidan hittades inte",
+    "body": "Sidan du letade efter finns inte.",
+    "home": "Tillbaka till startsidan"
+  }
+}

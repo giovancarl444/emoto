@@ -1,0 +1,44 @@
+{%- comment -%}
+  EMOTO — small yellow icon for a highlight/spec chip. Picks an icon from the label keyword.
+  Usage: {% render 'chip-icon', label: h.label %}
+{%- endcomment -%}
+{%- liquid
+  assign l = label | downcase
+  assign icon = 'hex'
+  if l contains 'effekt' or l contains 'kw'
+    assign icon = 'bolt'
+  elsif l contains 'fart'
+    assign icon = 'speed'
+  elsif l contains 'räckvidd' or l contains 'räckv'
+    assign icon = 'range'
+  elsif l contains 'vikt'
+    assign icon = 'weight'
+  elsif l contains 'km/h' or l contains '0–50' or l contains '0-50' or l contains 'accel'
+    assign icon = 'timer'
+  elsif l contains 'batteri' or l contains 'volt' or l contains 'spänning'
+    assign icon = 'battery'
+  elsif l contains 'motor' or l contains 'kyl'
+    assign icon = 'drop'
+  elsif l contains 'moped' or l contains 'klass' or l contains 'l1e' or l contains 'väg'
+    assign icon = 'road'
+  elsif l contains 'terräng' or l contains 'fullstor' or l contains 'format'
+    assign icon = 'mountain'
+  elsif l contains 'ladd'
+    assign icon = 'plug'
+  endif
+-%}
+<svg class="chip-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+{%- case icon -%}
+  {%- when 'bolt' -%}<path fill="currentColor" d="M13 2 4 14h6l-1 8 9-12h-6z"/>
+  {%- when 'speed' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 19a8 8 0 1 1 16 0"/><path d="M12 13l4-3"/></g>
+  {%- when 'range' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="15" height="9" rx="2"/><path d="M20 11v3"/></g><path fill="currentColor" d="M9 9.5 6.5 14H9l-1 2.5L11.5 12H9z"/>
+  {%- when 'weight' -%}<g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 8h10l1.6 11H5.4z"/><circle cx="12" cy="6" r="2"/></g>
+  {%- when 'timer' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="14" r="7"/><path d="M12 14v-3"/><path d="M10 3h4"/></g>
+  {%- when 'battery' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="2" y="8" width="15" height="9" rx="2"/><path d="M20 11v3"/><path d="M6 12.5h6"/></g>
+  {%- when 'drop' -%}<path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3s6 6 6 10a6 6 0 0 1-12 0c0-4 6-10 6-10z"/>
+  {%- when 'road' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M7 20 9 4"/><path d="M17 20 15 4"/><path d="M12 6v2M12 11v2M12 16v2"/></g>
+  {%- when 'mountain' -%}<path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M3 19l6-10 4 6 2-3 6 7z"/>
+  {%- when 'plug' -%}<g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></g>
+  {%- else -%}<path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3l7 4v10l-7 4-7-4V7z"/>
+{%- endcase -%}
+</svg>

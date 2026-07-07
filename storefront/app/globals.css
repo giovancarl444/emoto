@@ -1,0 +1,248 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   BASE LAYER — element defaults driven by tokens
+   ============================================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    font-weight: var(--weight-regular);
+    min-height: 100dvh;
+    text-underline-offset: 0.18em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-black);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-strong);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Global focus-visible ring — never removed, only styled (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  ::selection {
+    background: var(--signal);
+    color: var(--ink-950);
+  }
+
+  /* Form controls inherit type */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Skip-link target visibility */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* ============================================================================
+   COMPONENT UTILITIES — layout primitives used across pages
+   ============================================================================ */
+@layer components {
+  .container-emoto {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  /* Uppercase mono eyebrow/label — the EMOTO technical detailing signature */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: var(--weight-medium);
+  }
+
+  .eyebrow--signal {
+    color: var(--signal-ink);
+  }
+
+  /* Hairline divider */
+  .rule {
+    height: 1px;
+    background: var(--border);
+    border: 0;
+  }
+
+  /* Section vertical rhythm */
+  .section {
+    padding-block: clamp(3rem, 1.5rem + 6vw, 7rem);
+  }
+  .section-tight {
+    padding-block: clamp(2rem, 1rem + 4vw, 4rem);
+  }
+
+  /* Screen-reader-only (skip links etc.) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* ============================================================================
+   MOTION PRIMITIVES — transform/opacity only (CWV-safe), reduced-motion honored
+   ============================================================================ */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: reveal var(--dur-4) var(--ease-out) forwards;
+  }
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Hero media entrance — slow scale-in, transform-only (CWV-safe) */
+  .hero-media {
+    animation: hero-scale 1100ms var(--ease-out) both;
+    will-change: transform;
+  }
+  @keyframes hero-scale {
+    from {
+      transform: scale(1.07);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .hairline-top {
+    box-shadow: var(--hairline-top);
+  }
+
+  /* Grid backdrop — technical/mechanical detailing, GPU-cheap */
+  .grid-etch {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 75%);
+    opacity: 0.5;
+  }
+
+  /* Showcase hero — ghosted oversized wordmark (outline only) */
+  .showcase-ghost {
+    font-size: clamp(5rem, 27vw, 23rem);
+    color: rgba(245, 197, 24, 0.05);
+    -webkit-text-stroke: 2px rgba(245, 197, 24, 0.32);
+  }
+
+  /* Showcase hero entrance — transform-only, CWV-safe */
+  .showcase-bike {
+    animation: showcase-rise 1000ms var(--ease-out) 80ms both;
+    will-change: transform;
+  }
+  @keyframes showcase-rise {
+    from {
+      opacity: 0;
+      transform: translateY(26px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Seamless honeycomb texture (Hero Patterns "Hexagons", tinted signal) */
+  .showcase-comb {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23F5C518' fill-opacity='0.5'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 34px 60px;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+    .hero-media {
+      animation: none;
+    }
+    .showcase-bike {
+      animation: none;
+    }
+  }
+}

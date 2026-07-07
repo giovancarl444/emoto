@@ -1,0 +1,70 @@
+{%- comment -%}
+  EMOTO — JSON-LD structured data for rich results (SEO).
+  Organization + WebSite on every page; Product + Breadcrumb on product pages.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | append: '/' | json }},
+  "logo": "{{ 'emoto-mark.png' | asset_url | prepend: 'https:' }}"
+  {%- if settings.social_instagram != blank or settings.social_facebook != blank or settings.social_youtube != blank -%}
+  ,"sameAs": [
+    {%- assign links = '' -%}
+    {%- if settings.social_instagram != blank -%}{%- assign links = links | append: settings.social_instagram | append: '|' -%}{%- endif -%}
+    {%- if settings.social_facebook != blank -%}{%- assign links = links | append: settings.social_facebook | append: '|' -%}{%- endif -%}
+    {%- if settings.social_youtube != blank -%}{%- assign links = links | append: settings.social_youtube | append: '|' -%}{%- endif -%}
+    {%- assign links = links | split: '|' -%}
+    {%- for l in links -%}{{ l | json }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}
+  ]
+  {%- endif -%}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ shop.name | json }},
+  "url": {{ shop.url | append: '/' | json }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ shop.url }}/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{%- if template.name == 'product' -%}
+  {%- assign variant = product.selected_or_first_available_variant -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "description": {{ product.description | strip_html | truncatewords: 60 | json }},
+    "brand": { "@type": "Brand", "name": {{ product.vendor | default: shop.name | json }} },
+    "sku": {{ variant.sku | default: variant.id | json }},
+    "url": {{ product.url | prepend: shop.url | json }},
+    {%- if product.featured_media -%}
+    "image": "{{ product.featured_media | image_url: width: 1200 | prepend: 'https:' }}",
+    {%- endif -%}
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": {{ cart.currency.iso_code | json }},
+      "price": "{{ variant.price | divided_by: 100.0 }}",
+      "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "url": {{ product.url | prepend: shop.url | json }}
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hem", "item": {{ shop.url | append: '/' | json }} },
+      { "@type": "ListItem", "position": 2, "name": {{ product.title | json }}, "item": {{ product.url | prepend: shop.url | json }} }
+    ]
+  }
+  </script>
+{%- endif -%}

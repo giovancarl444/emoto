@@ -1,0 +1,90 @@
+{%- comment -%} EMOTO — technical specifications table (PDP) {%- endcomment -%}
+<section class="specs">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <div class="specs__head">
+        <span class="eyebrow">{{ section.settings.eyebrow | default: 'Specifikationer' }}</span>
+        <h2 class="specs__title">{{ section.settings.heading }}</h2>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Prefer per-product spec data from a metafield; fall back to section blocks. {%- endcomment -%}
+    {%- assign spec_groups = product.metafields.custom.spec_groups.value -%}
+    {%- if spec_groups -%}
+      <dl class="specs__grid">
+        {%- for group in spec_groups -%}
+          <div class="specs__group">{{ group.group }}</div>
+          {%- for row in group.rows -%}
+            <div class="specs__row"><dt>{{ row.label }}</dt><dd>{{ row.value }}</dd></div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </dl>
+    {%- elsif section.blocks.size > 0 -%}
+      <dl class="specs__grid">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'group' -%}
+              <div class="specs__group" {{ block.shopify_attributes }}>{{ block.settings.label }}</div>
+            {%- when 'row' -%}
+              <div class="specs__row" {{ block.shopify_attributes }}>
+                <dt>{{ block.settings.label }}</dt>
+                <dd>{{ block.settings.value }}</dd>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </dl>
+    {%- endif -%}
+
+    {%- if section.settings.note != blank -%}
+      <p class="specs__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product specs",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Specifikationer" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Teknisk data" },
+    { "type": "text", "id": "note", "label": "Footnote", "default": "Specifikationer kan variera mellan versioner. Uppgifter från tillverkaren." }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Group heading",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Group label", "default": "Motor & prestanda" }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Spec row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Toppeffekt" },
+        { "type": "text", "id": "value", "label": "Value", "default": "≈12,5 kW" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product specs",
+      "blocks": [
+        { "type": "group", "settings": { "label": "Motor & prestanda" } },
+        { "type": "row", "settings": { "label": "Toppeffekt", "value": "≈12,5 kW" } },
+        { "type": "row", "settings": { "label": "Toppfart", "value": "≈90 km/h" } },
+        { "type": "row", "settings": { "label": "Vridmoment", "value": "≈440 Nm (hjul)" } },
+        { "type": "group", "settings": { "label": "Batteri & räckvidd" } },
+        { "type": "row", "settings": { "label": "Batteri", "value": "74 V · 55 Ah" } },
+        { "type": "row", "settings": { "label": "Räckvidd", "value": "upp till 140 km" } },
+        { "type": "row", "settings": { "label": "Laddtid", "value": "≈4 h" } },
+        { "type": "group", "settings": { "label": "Chassi" } },
+        { "type": "row", "settings": { "label": "Vikt", "value": "≈87 kg" } },
+        { "type": "row", "settings": { "label": "Fjädringsväg", "value": "fram 240 mm / bak 240 mm" } },
+        { "type": "row", "settings": { "label": "Bromsar", "value": "hydrauliska skivbromsar" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+{%- comment -%} EMOTO — static page {%- endcomment -%}
+<section class="page">
+  <div class="container">
+    <header class="page__head">
+      <h1 class="page__title">{{ page.title }}</h1>
+    </header>
+    <div class="page__body rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Page", "tag": "section", "settings": [] }
+{% endschema %}

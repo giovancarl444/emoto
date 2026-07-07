@@ -1,0 +1,39 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "EMOTO",
+    "theme_version": "0.1.0",
+    "theme_author": "EMOTO",
+    "theme_documentation_url": "https://emoto.se",
+    "theme_support_url": "https://emoto.se"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "signal", "label": "Signal (bee yellow)", "default": "#f5c518" },
+      { "type": "color", "id": "ink", "label": "Ink (black)", "default": "#0b0c0e" }
+    ]
+  },
+  {
+    "name": "Reviews",
+    "settings": [
+      { "type": "header", "content": "Trustpilot" },
+      { "type": "paragraph", "content": "Leave blank until you have real reviews — the badge stays hidden. Never enter a rating you can't back up (EU/Swedish law prohibits fake reviews)." },
+      { "type": "text", "id": "trustpilot_rating", "label": "Rating (0–5)", "info": "e.g. 4.8" },
+      { "type": "text", "id": "trustpilot_count", "label": "Review count" },
+      { "type": "url", "id": "trustpilot_url", "label": "Trustpilot profile URL" }
+    ]
+  },
+  {
+    "name": "Social & sharing",
+    "settings": [
+      { "type": "header", "content": "SEO / sharing" },
+      { "type": "image_picker", "id": "share_image", "label": "Default share image", "info": "Used when a page has no image (Open Graph). 1200×630 recommended." },
+      { "type": "header", "content": "Social profiles" },
+      { "type": "url", "id": "social_instagram", "label": "Instagram" },
+      { "type": "url", "id": "social_facebook", "label": "Facebook" },
+      { "type": "url", "id": "social_youtube", "label": "YouTube" },
+      { "type": "text", "id": "social_tiktok", "label": "TikTok URL" }
+    ]
+  }
+]

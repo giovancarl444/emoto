@@ -1,0 +1,40 @@
+{%- comment -%}
+  EMOTO — product card. Params: card_product (product), index (int for loading priority).
+{%- endcomment -%}
+{%- liquid
+  assign p = card_product
+  assign monthly = p.price | divided_by: 36
+-%}
+<a class="pcard" href="{{ p.url }}">
+  <div class="pcard__media">
+    {%- if p.featured_media -%}
+      {{ p.featured_media | image_url: width: 720 | image_tag:
+         loading: 'lazy', widths: '360, 540, 720', alt: p.featured_media.alt | default: p.title,
+         class: 'pcard__img' }}
+    {%- else -%}
+      <img class="pcard__img" src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ p.title }}" width="803" height="429" loading="lazy">
+    {%- endif -%}
+    {%- if p.compare_at_price > p.price -%}
+      <span class="pcard__flag">{{ 'product.on_sale' | t: default: 'Kampanj' }}</span>
+    {%- elsif p.tags contains 'nyhet' or p.tags contains 'new' -%}
+      <span class="pcard__flag pcard__flag--new">{{ 'product.new' | t: default: 'Nyhet' }}</span>
+    {%- endif -%}
+  </div>
+  <div class="pcard__body">
+    {%- if p.vendor != blank -%}<span class="pcard__vendor">{{ p.vendor }}</span>{%- endif -%}
+    <h3 class="pcard__title">{{ p.title }}</h3>
+    <div class="pcard__pricerow">
+      <span class="pcard__price">
+        {%- if p.price_varies -%}{{ 'product.from' | t: default: 'Från' }} {% endif %}{{ p.price | money }}
+      </span>
+      {%- if p.compare_at_price > p.price -%}
+        <s class="pcard__compare">{{ p.compare_at_price | money }}</s>
+      {%- endif -%}
+    </div>
+    <span class="pcard__fin">{{ 'product.or' | t: default: 'eller' }} {{ monthly | money }}/{{ 'product.month' | t: default: 'mån' }}</span>
+    <span class="pcard__cta">
+      {{ 'product.view' | t: default: 'Se modellen' }}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </div>
+</a>

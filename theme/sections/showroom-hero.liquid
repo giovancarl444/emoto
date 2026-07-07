@@ -1,0 +1,121 @@
+{%- liquid
+  assign blocks = section.blocks
+  assign count = blocks.size
+  assign active = count | minus: 1 | divided_by: 2
+  assign a = blocks[active]
+-%}
+<section class="showroom" data-showroom
+  data-fin-or="{{ 'showroom.or' | t: default: 'eller' | escape }}"
+  data-fin-month="{{ 'showroom.month' | t: default: 'mån' | escape }}">
+  <div class="showroom__atmos" aria-hidden="true">
+    <div class="showroom__grad"></div>
+    <div class="showroom__comb"></div>
+    <div class="showroom__glow"></div>
+    <div class="showroom__horizon"></div>
+  </div>
+
+  <span class="showroom__ghost" aria-hidden="true">{{ section.settings.wordmark | default: 'EMOTO' }}</span>
+
+  <div class="container showroom__head">
+    <span class="eyebrow" data-sr-eyebrow>{{ a.settings.marque | default: 'Sur-Ron' }} · {{ a.settings.badge }}</span>
+    <h1 class="showroom__title" data-sr-title>{{ a.settings.name }}</h1>
+    <p class="showroom__tag" data-sr-tag>{{ a.settings.tagline }}</p>
+  </div>
+
+  <div class="showroom__stage" data-sr-stage>
+    {%- for block in blocks -%}
+      {%- liquid
+        assign price = block.settings.price | times: 100 | money_without_trailing_zeros
+        assign monthly = block.settings.price | divided_by: 36 | times: 100 | money_without_trailing_zeros
+        assign url = '#'
+        if block.settings.product != blank
+          assign url = block.settings.product.url
+        endif
+      -%}
+      <button
+        class="showroom__bike"
+        type="button"
+        data-sr-bike
+        data-index="{{ forloop.index0 }}"
+        data-name="{{ block.settings.name | escape }}"
+        data-marque="{{ block.settings.marque | default: 'Sur-Ron' | escape }}"
+        data-tagline="{{ block.settings.tagline | escape }}"
+        data-badge="{{ block.settings.badge | escape }}"
+        data-price="{{ price | escape }}"
+        data-monthly="{{ monthly | escape }}"
+        data-url="{{ url }}"
+        {{ block.shopify_attributes }}
+      >
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: block.settings.name }}
+        {%- elsif block.settings.product != blank and block.settings.product.featured_media != blank -%}
+          {{ block.settings.product.featured_media | image_url: width: 1200 | image_tag: loading: 'eager', alt: block.settings.product.featured_media.alt | default: block.settings.name }}
+        {%- else -%}
+          <img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ block.settings.name }}" width="803" height="429">
+        {%- endif -%}
+        <span class="showroom__bike-label">{{ block.settings.name }}</span>
+      </button>
+    {%- endfor -%}
+  </div>
+
+  <div class="container showroom__foot">
+    <div class="showroom__chip">
+      <div>
+        <div class="showroom__from">{{ 'showroom.from' | t: default: 'Från' }}</div>
+        <div class="showroom__price" data-sr-price>{{ a.settings.price | times: 100 | money_without_trailing_zeros }}</div>
+        <div class="showroom__fin" data-sr-fin>{{ 'showroom.or' | t: default: 'eller' }} {{ a.settings.price | divided_by: 36 | times: 100 | money_without_trailing_zeros }}/{{ 'showroom.month' | t: default: 'mån' }}</div>
+      </div>
+      <a class="btn-signal" data-sr-cta href="{% if a.settings.product != blank %}{{ a.settings.product.url }}{% else %}#{% endif %}">
+        {{ 'showroom.configure' | t: default: 'Konfigurera' }}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="showroom__nav">
+      <button class="showroom__arrow" type="button" data-sr-prev aria-label="{{ 'showroom.prev' | t: default: 'Föregående' }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="showroom__dots" data-sr-dots></div>
+      <button class="showroom__arrow" type="button" data-sr-next aria-label="{{ 'showroom.next' | t: default: 'Nästa' }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Showroom hero",
+  "tag": "section",
+  "class": "section-showroom",
+  "settings": [
+    { "type": "text", "id": "wordmark", "label": "Ghosted wordmark", "default": "EMOTO" }
+  ],
+  "blocks": [
+    {
+      "type": "model",
+      "name": "Model",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Linked product (for price & CTA)" },
+        { "type": "text", "id": "name", "label": "Model name", "default": "Ultra Bee" },
+        { "type": "text", "id": "marque", "label": "Marque", "default": "Sur-Ron" },
+        { "type": "text", "id": "tagline", "label": "Tagline", "default": "Stadsgodkänd. Terrängfödd." },
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Mest mångsidig" },
+        { "type": "number", "id": "price", "label": "From price (SEK)", "default": 64900 },
+        { "type": "image_picker", "id": "image", "label": "Cut-out image (transparent PNG)" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Showroom hero",
+      "blocks": [
+        { "type": "model", "settings": { "name": "Light Bee X", "tagline": "Ren elektrisk enduro. Runt 50 kg.", "badge": "Lättast", "price": 54900 } },
+        { "type": "model", "settings": { "name": "Ultra Bee", "tagline": "Stadsgodkänd. Terrängfödd.", "badge": "Mest mångsidig", "price": 64900 } },
+        { "type": "model", "settings": { "name": "Storm Bee", "tagline": "Vätskekyld. 0–50 km/h på 1,9 s.", "badge": "Starkast", "price": 99900 } }
+      ]
+    }
+  ]
+}
+{% endschema %}

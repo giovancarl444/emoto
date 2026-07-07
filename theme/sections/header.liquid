@@ -1,0 +1,74 @@
+{%- liquid
+  assign is_home = false
+  if template.name == 'index'
+    assign is_home = true
+  endif
+-%}
+<header class="site-header" {% if is_home %}data-overlay data-header-overlay{% else %}data-solid{% endif %}>
+  <div class="container site-header__row">
+    <button class="site-header__burger" type="button" data-nav-open aria-label="{{ 'general.menu' | t: default: 'Menu' }}" aria-expanded="false" aria-controls="mobile-nav">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a href="{{ routes.root_url }}" class="brand" aria-label="{{ shop.name }} home">
+      {%- render 'bee-mark' -%}
+      <span class="brand__word">{{ shop.name | default: 'EMOTO' }}<span class="brand__dot">.</span></span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <a href="{{ routes.cart_url }}" class="site-header__cart" data-cart-open aria-label="{{ 'general.cart' | t: default: 'Cart' }}">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+      <span class="site-header__cart-count{% if cart.item_count == 0 %} is-empty{% endif %}" data-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+    </a>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="{{ 'general.menu' | t: default: 'Menu' }}">
+    <div class="mobile-nav__top">
+      <span class="brand__word">{{ shop.name | default: 'EMOTO' }}<span class="brand__dot">.</span></span>
+      <button class="mobile-nav__close" type="button" data-nav-close aria-label="{{ 'general.close' | t: default: 'Close' }}">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav__links" aria-label="Mobile">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+    <a class="btn-signal mobile-nav__cart" href="{{ routes.cart_url }}">{{ 'general.cart' | t: default: 'Cart' }}</a>
+  </div>
+  <button class="mobile-nav__scrim" type="button" data-nav-close aria-label="{{ 'general.close' | t: default: 'Close' }}"></button>
+</div>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-mobile-nav]');
+    if (!root) return;
+    var open = document.querySelector('[data-nav-open]');
+    var closers = document.querySelectorAll('[data-nav-close]');
+    function set(state) {
+      root.classList.toggle('is-open', state);
+      root.setAttribute('aria-hidden', state ? 'false' : 'true');
+      if (open) open.setAttribute('aria-expanded', state ? 'true' : 'false');
+      document.documentElement.style.overflow = state ? 'hidden' : '';
+    }
+    if (open) open.addEventListener('click', function () { set(true); });
+    closers.forEach(function (c) { c.addEventListener('click', function () { set(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" }
+  ]
+}
+{% endschema %}

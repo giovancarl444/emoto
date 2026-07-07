@@ -1,0 +1,176 @@
+{%- liquid
+  assign product = product
+  assign variant = product.selected_or_first_available_variant
+-%}
+<section class="pdp" data-product-section data-product-url="{{ product.url }}">
+  <div class="pdp__hero">
+  <div class="pdp__atmos" aria-hidden="true">
+    <div class="pdp__comb"></div>
+    <div class="pdp__glow"></div>
+  </div>
+  <div class="container pdp__grid">
+    {%- comment -%} ── Media gallery ── {%- endcomment -%}
+    <div class="pdp__media">
+      <div class="pdp__stage" data-pdp-stage>
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            <div class="pdp__slide{% if forloop.first %} is-active{% endif %}" data-pdp-slide="{{ forloop.index0 }}">
+              {{ media.preview_image | image_url: width: 1400 | image_tag: alt: media.alt | default: product.title, loading: forloop.first | default: 'lazy' }}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="pdp__slide is-active"><img src="{{ 'ultra-bee.png' | asset_url }}" alt="{{ product.title }}" width="803" height="429"></div>
+        {%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="pdp__thumbs" data-pdp-thumbs>
+          {%- for media in product.media -%}
+            <button type="button" class="pdp__thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb="{{ forloop.index0 }}" aria-label="{{ 'product.media' | t: default: 'Image' }} {{ forloop.index }}">
+              {{ media.preview_image | image_url: width: 200 | image_tag: alt: '', loading: 'lazy' }}
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Info / buy ── {%- endcomment -%}
+    <div class="pdp__info">
+      <div class="pdp__tp" aria-label="Trustpilot">
+        <span class="pdp__tp-stars">
+          {%- for i in (1..5) -%}<span class="pdp__tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.86-5-4.87 7.1-1.01z"/></svg></span>{%- endfor -%}
+        </span>
+        <span class="pdp__tp-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.86-5-4.87 7.1-1.01z"/></svg>Trustpilot</span>
+      </div>
+      {%- if product.vendor != blank -%}<span class="eyebrow">{{ product.vendor }}</span>{%- endif -%}
+      <h1 class="pdp__title">{{ product.title }}</h1>
+
+      <div class="pdp__pricerow">
+        <span class="pdp__price" data-pdp-price>{{ variant.price | money }}</span>
+        {%- if variant.compare_at_price > variant.price -%}
+          <s class="pdp__compare" data-pdp-compare>{{ variant.compare_at_price | money }}</s>
+        {%- endif -%}
+      </div>
+      <p class="pdp__fin" data-pdp-fin>
+        {{ 'product.or' | t: default: 'eller' }} <span data-pdp-monthly>{{ variant.price | divided_by: 36 | money }}</span>/{{ 'product.month' | t: default: 'mån' }}
+        <span class="pdp__klarna">{{ 'product.klarna' | t: default: 'Klarna' }}</span>
+        · {{ 'product.incl_vat' | t: default: 'inkl. moms' }}
+      </p>
+
+      {%- if product.description != blank -%}
+        <div class="pdp__lead">{{ product.description | strip_html | truncatewords: 34 }}</div>
+      {%- endif -%}
+
+      {%- comment -%} Prefer per-product highlights from a metafield; fall back to section blocks. {%- endcomment -%}
+      {%- assign mf_hi = product.metafields.custom.highlights.value -%}
+      {%- assign hi = section.blocks | where: 'type', 'highlight' -%}
+      {%- if mf_hi -%}
+        <ul class="pdp__highlights">
+          {%- for h in mf_hi -%}<li>{%- render 'chip-icon', label: h.label -%}<strong>{{ h.value }}</strong><span>{{ h.label }}</span></li>{%- endfor -%}
+        </ul>
+      {%- elsif hi.size > 0 -%}
+        <ul class="pdp__highlights">
+          {%- for block in hi -%}
+            <li {{ block.shopify_attributes }}>{%- render 'chip-icon', label: block.settings.label -%}<strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- form 'product', product, id: 'product-form', class: 'pdp__form' -%}
+        <input type="hidden" name="id" value="{{ variant.id }}" data-pdp-variant-id>
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="pdp__opt" data-pdp-option="{{ option.position }}">
+              <div class="pdp__opt-head">
+                <span class="pdp__opt-label">{{ option.name }}</span>
+                <span class="pdp__opt-selected" data-pdp-opt-selected="{{ option.position }}">{{ option.selected_value }}</span>
+              </div>
+              <div class="pdp__opt-values">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="pdp__opt-btn{% if option.selected_value == value %} is-selected{% endif %}"
+                    data-pdp-value
+                    data-option-position="{{ option.position }}"
+                    data-value="{{ value | escape }}"
+                  >{{ value }}</button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        <button type="submit" name="add" class="pdp__atc btn-action" data-pdp-atc {% unless variant.available %}disabled{% endunless %}>
+          <span data-pdp-atc-text>
+            {%- if variant.available -%}{{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' }}{%- else -%}{{ 'product.sold_out' | t: default: 'Slutsåld' }}{%- endif -%}
+          </span>
+        </button>
+        <p class="pdp__atc-error" data-atc-error hidden role="alert"></p>
+      {%- endform -%}
+
+      {% render 'financing-block', price: variant.price, months: section.settings.financing_months %}
+
+      <ul class="pdp__trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg> {{ section.settings.trust_1 | default: '2 års garanti' }}</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg> {{ section.settings.trust_2 | default: 'Fri leverans inom EU (DDP)' }}</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg> {{ section.settings.trust_3 | default: 'Registreringshjälp ingår' }}</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  {%- if product.description != blank -%}
+    <div class="container pdp__body">
+      <div class="pdp__prose rte">{{ product.description }}</div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} Sticky mobile add-to-cart {%- endcomment -%}
+  <div class="pdp-sticky" data-pdp-sticky>
+    <div class="pdp-sticky__info">
+      <span class="pdp-sticky__title">{{ product.title }}</span>
+      <span class="pdp-sticky__price" data-pdp-price>{{ variant.price | money }}</span>
+    </div>
+    <button type="submit" form="product-form" name="add" class="btn-action pdp-sticky__btn" data-pdp-atc {% unless variant.available %}disabled{% endunless %}>
+      <span data-pdp-atc-text>{%- if variant.available -%}{{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' }}{%- else -%}{{ 'product.sold_out' | t: default: 'Slutsåld' }}{%- endif -%}</span>
+    </button>
+  </div>
+</section>
+
+<script type="application/json" data-pdp-variants>
+{{ product.variants | json }}
+</script>
+
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.money_format = {{ shop.money_format | json }};
+  window.EMOTO_STR = {
+    add: {{ 'product.add_to_cart' | t: default: 'Lägg i varukorg' | json }},
+    soldout: {{ 'product.sold_out' | t: default: 'Slutsåld' | json }},
+    unavailable: {{ 'product.unavailable' | t: default: 'Ej tillgänglig' | json }}
+  };
+</script>
+<script src="{{ 'product.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Product — main",
+  "tag": "section",
+  "settings": [
+    { "type": "range", "id": "financing_months", "min": 12, "max": 48, "step": 6, "unit": "mån", "label": "Financing months", "default": 36 },
+    { "type": "text", "id": "trust_1", "label": "Trust 1", "default": "2 års garanti" },
+    { "type": "text", "id": "trust_2", "label": "Trust 2", "default": "Fri leverans inom EU (DDP)" },
+    { "type": "text", "id": "trust_3", "label": "Trust 3", "default": "Registreringshjälp ingår" }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight chip",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "≈12,5 kW" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Toppeffekt" }
+      ]
+    }
+  ]
+}
+{% endschema %}
